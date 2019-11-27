@@ -96,47 +96,53 @@
 				Un filtro passa-basso è un filtro RC che permette il passaggio di frequenze al di sotto di una data soglia, detta frequenza di taglio.
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.6]{filtroPassaBasso}
-					\caption{Circuito corrispondente ad un filtro passa-basso.}
-					\label{fig:filtroPassaBasso}
-				\end{figure}
-				\newline
-				\begin{figure}[h!]
-					\centering
-					\includegraphics[scale=0.4]{filtroPassaBassoBode}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.6]{filtroPassaBasso}
+						\caption{Circuito corrispondente ad un filtro passa-basso.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.4]{filtroPassaBassoBode}
+						\caption{Sonda sovracompensata.}
+					\end{subfigure}
 					\caption{Diagramma di Bode corrispondente ad un filtro passa-basso.}
-					\label{fig:filtroPassaBassoBode}
+					\label{fig:filtroPassaBasso}
 				\end{figure}
 			\subsubsection{Filtro passa-alto}
 				Un filtro passa-alto è un filtro RC che permette il passaggio di frequenze al di sopra di una data soglia, detta frequenza di taglio.
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.6]{filtroPassaAlto}
-					\caption{Circuito corrispondente ad un un filtro passa-alto.}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.6]{filtroPassaAlto}
+						\caption{Circuito corrispondente ad un filtro passa-alto.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.4]{filtroPassaAltoBode}
+						\caption{Sonda sovracompensata.}
+					\end{subfigure}
+					\caption{Diagramma di Bode corrispondente ad un filtro passa-alto.}
 					\label{fig:filtroPassaAlto}
-				\end{figure}
-				\newline
-				\begin{figure}[h!]
-					\centering
-					\includegraphics[scale=0.4]{filtroPassaAltoBode}
-					\caption{Diagramma di Bode corrispondente ad un filtro passa-basso.}
-					\label{fig:filtroPassaAltoBode}
 				\end{figure}
 				\newpage
 			\subsubsection{Filtro passa-banda}
 				Un filtro passa-banda è un filtro RC che permette il passaggio di frequenze entro un certo range; questo filtro è caratterizzato dalla presenza di due frequenze di taglio.
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.6]{filtroPassaBanda}
-					\caption{Circuito corrispondente ad un un filtro passa-banda.}
-					\label{fig:filtroPassaBanda}
-				\end{figure}
-				\newline
-				\begin{figure}[h!]
-					\centering
-					\includegraphics[scale=0.4]{filtroPassaBandaBode}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.6]{filtroPassaBanda}
+						\caption{Circuito corrispondente ad un filtro passa-banda.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.4]{filtroPassaBandaBode}
+						\caption{Sonda sovracompensata.}
+					\end{subfigure}
 					\caption{Diagramma di Bode corrispondente ad un filtro passa-banda.}
-					\label{fig:filtroPassaBandaBode}
+					\label{fig:filtroPassaBanda}
 				\end{figure}
 	%-----------------------------------------------------------------------------
 	%  LABORATORY EXPERIENCE
@@ -169,19 +175,11 @@
 			L'interruttore che gestisce la presenza del secondo condensatore è posto in parallelo al primo condensatore presente nel filtro; quando esso viene chiuso, il secondo condensatore viene collegato in parallelo al circuito, aumentando l'attenuazione del filtro, ovvero la sua frequenza di taglio.
 			\begin{figure}[h!]
 				\centering
-				\begin{subfigure}{0.4\textwidth}
-					\centering
-					\includegraphics[scale=0.7]{filtroPassaBassoUnCondensatore}
-					\caption{Filtro passa-basso con un condensatore.}
-				\end{subfigure}
-				\begin{subfigure}{0.4\textwidth}
-					\centering
-					\includegraphics[scale=0.7]{filtroPassaBassoDueCondensatori}
-					\caption{Filtro passa-basso con due condensatori.}
-				\end{subfigure}
-				\label{fig:filtroPassaBassoCondensatori}
+				\includegraphics[scale=0.5]{circuitoFiltroPassaBasso}
+				\caption{Filtro passa-basso.}
+				\label{fig:circuitoFiltroPassaBasso}
 			\end{figure}
-			\newline
+			\newpage
 			La resistenza, invece, ha un valore pari a $ 1 \, \mathrm{k\Omega} $; tale valore è stato verificato tramite l'uso del multimetro, ottenendo una misurazione di $ 1'020 \pm 10.2 \, \mathrm{\Omega} $, che rientra nel $ 5 \% $ di tolleranza dato dal costruttore.
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-basso: diagrammi di Bode}
 			Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 800 \, \mathrm{mV} $ e frequenza $ f = 1 \, \mathrm{kHz} $; successivamente abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
