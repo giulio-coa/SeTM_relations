@@ -165,10 +165,10 @@
 				Infine, tramite la definizione di $ \mathrm{dB} $, abbiamo ottenuto la frequenza al di sopra della quale il segnale viene attenuato di $ 1 \, \mathrm{dB} $.
 			\subsubsection{Offset}
 				Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 1 \, \mathrm{V} $, frequenza $ f = 1 \, \mathrm{kHz} $ e offset di $ 0.2 \, \mathrm{V} $; a questo punto, abbiamo visualizzato le rappresentazioni in continua (modalità d'accoppiamento in DC) e in alternata (modalità d'accoppiamento in AC) del segnale.
-				% IMMAGINI
+				% IMMAGINI SEGNALE AFFIANCATE
 				\newline
 				Infine, abbiamo ripetuto il procedimento per un offset di $ - 0.2 \, \mathrm{V} $.
-				% IMMAGINI
+				% IMMAGINI SEGNALE AFFIANCATE
 		\subsection{Scheda con filtro RC}
 			Abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
 			\newline
@@ -183,15 +183,17 @@
 			La resistenza, invece, ha un valore pari a $ 1 \, \mathrm{k\Omega} $; tale valore è stato verificato tramite l'uso del multimetro, ottenendo una misurazione di $ 1'020 \pm 10.2 \, \mathrm{\Omega} $, che rientra nel $ 5 \% $ di tolleranza dato dal costruttore.
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-basso: diagrammi di Bode}
 			Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 800 \, \mathrm{mV} $ e frequenza $ f = 1 \, \mathrm{kHz} $; successivamente abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
-			% IMMAGINE
 			\newline
 			In particolare è stato connesso l'ingresso del filtro al canale $ \mathrm{CH1} $ dell'oscilloscopio, mentre l'uscita è stata connessa al canale $ \mathrm{CH2} $; successivamente, abbiamo impostato il coefficente di deflessione verticale dell'oscilloscopio , per entrambi i canali, a $ 200 \, \mathrm{\frac{mV}{div}} $ e la velocità di scansione orizzontale in modo da poter visualizzare almeno un periodo del segnale.
 			\newline
+			% IMMAGINE SEGNALE
 			Infine, abbiamo proceduto col variare la frequenza del segnale al fine di misurare lo sfasamento e l'attenuazione subita da esso, riportando tutti i dati nell'apposita tabella e costruendo i relativi grafici. Inoltre, si è calcolato la frequenza per cui lo sfasamento tra l'ingresso e l'uscita del filtro si avvicina maggiormente ai $ 45 $ \textdegree.
 			\newline
 			Abbiamo ripetuto il procedimento dopo aver chiuso l'interruttore del filtro, inserendo, in parallelo, il secondo condensatore.
+			% IMMAGINE SEGNALE
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-alto: diagrammi di Bode}
 			Abbiamo sostituito il filtro passa-basso usato precedentemente con un filtro passa-alto, ovvero abbiamo spostato i cavi coassiali di collegamento sui morsetti del filtro passa-alto presente sulla scheda premontata, ed abbiamo ripetuto l'esperienza.
+			% IMMAGINE SEGNALE
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -368,7 +370,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			% IMMAGINI MODULO E FASE
+			% IMMAGINI MODULO E FASE AFFIANCATE
 			Mentre i dati misurati usando il filtro passa-basso con l'interruttore chiuso, ovvero sfruttando entrambi i condensatori, sono riportati di seguito.
 			\begin{center}
 				\begin{tabular}{ |c|c|c|c|c| }
@@ -393,7 +395,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			% IMMAGINI MODULO E FASE
+			% IMMAGINI MODULO E FASE AFFIANCATE
 			\newline
 			Nel primo caso, la frequenza per cui si aveva uno sfasamento il più vicino possibile ai $ 45 $\textdegree \ è $ 18 \, \mathrm{kHz} $, mentre, nel secondo caso, è $ 8.5 \, \mathrm{kHz} $.
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-alto: diagrammi di Bode}
@@ -418,7 +420,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			% IMMAGINI MODULO E FASE
+			% IMMAGINI MODULO E FASE AFFIANCATE
 			\newline
 			La frequenza per cui si aveva uno sfasamento il più vicino possibile ai $ 45 $\textdegree \ è $ 17 \, \mathrm{kHz} $.
 	%-----------------------------------------------------------------------------
