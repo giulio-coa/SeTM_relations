@@ -73,6 +73,9 @@
 				\multirow{Generatore di segnali} & Rigol DG1022				& 2 canali, \\
 												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
 												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
+				\multirow{Alimentatore in DC}	 & Rigol DP832				& 2 canali, \\
+												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
+												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
 				\multirow{Sonda}				 & Rigol PVP215				& $ B = 35 \, \mathrm{MHz} $, \\
 												 &							& $ V_{\mathrm{nominale}} = 300 \, \mathrm{V} $, \\
 												 &							& $ L_{\mathrm{cavo}} = 1.2 \, \mathrm{m} $, \\
@@ -81,8 +84,9 @@
 				\multirow{Cavi coassiali}		 &							& Capacità dell'ordine dei $ 80 \div 100 \, \mathrm{p\frac{F}{m}} $ \\
 				\multirow{Connettori}			 &							& \\
 				\multirow{Breadboard}			 &							& \\
-				\multirow{Diodo zener}			 &							& \\
-				\multirow{Diodo}				 &							& \\
+				\multirow{Resistenza}			 &							& $ R = 9.9 \, \mathrm{k\Omega} $ \\
+				\multirow{Diodo Zener}			 & N5228					& \\
+				\multirow{Diodo}				 & N4148					& \\
 				\multirow{Condensatori}			 &							& $ C_{1} = 10 \, \mathrm{nF} $, \\
 												 &							& $ C_{2} = 100 \, \mathrm{nF} $, \\
 												 &							& $ C_{3} = 1 \, \mathrm{\mu F} $ \\
@@ -161,6 +165,12 @@
 				\caption{Sonda compensata.}
 				\label{fig:sondaSegnaleCompensato}
 			\end{figure}
+		\subsection{Diodo}
+			Il diodo è un elemento circuitale non lineare il cui comportamento è descitto da:
+			% ESPRESSIONE ANALITICA + GRAFICO CARATTERISTICA STATICA
+			\newline
+			Si può notare come, al crescere di $ V(D) $ la corrente che attaversa il diodo aumenti (polarizzazione), in particolare dopo il raggiungimento della tensione di soglia $ V(\gamma) $, quando $ V(D) $ è troppo bassa il diodo non conduce, ma particolari tipi di diodi, detti diodi di zener, raggiunta la tensione di breakdown, un determinato valore negativo della tensione, sono in grado di condurre corrente nel verso opposto (polarizzazione inversa).
+			% GRAFICO CARRATTERISCICA STATICA DIODI DI ZENER
 		\subsection{Other}
 			.
 	%-----------------------------------------------------------------------------
@@ -168,9 +178,19 @@
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
 		\subsection{Caratteristiche statiche}
-			.
+			Abbiamo montanto sulla basetta la resistenza, il diodo D=1N4148 e l'elemento di collegamento.
+			Per mezzo del multimetro abbiamo misurato la resistenza e abbiamo verificato la correttezza del valore misurato confrontandolo con il valore della resistenza riportato dal produttore, tenendo conto della sua incertezza.
+			Abbiamo connesso la basetta all'alimentatore tramite due cavi a banana, quello rosso a connettere i poli positivi, quello nero usato per la messa a terra, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, ed abbiamo misurato, con il multimetro, i valori di tensione ai capi della resistenza.
+			
+			In seguito abbiamo connesso, al posto dell'alimentatore, il generatore di segnali alla basetta con un cavo BNC-banana, impostato ampiezza di picco $ V_{\mathrm{p}} = 5 \, \mathrm{V} $ e $ f = 1 \, \mathrm{kHz} $, dando come input il segnale sinusoidale caratterizato da queste due grandezze.
+			Abbiammo connesso la sonda ... e osservato i cambiamenti che il diodo ha apportato al segnale.
+			
+			Abbiamo ripetuto la procedura con il diodo di zener.
 		\subsection{Raddrizzatore a semplice semionda}
-			.
+			Abbiamo costruito i circuito richiesto, aggiungendo il condensatori e sostituendo il diodo zener con il precedente.
+			Abbiamo misurato prima le tensioni picco-picco al variare del condensatore, abbiamo potuto apprezzare come la capacità di quest'ultimo influenzi il segnale in uscita rendendolo più o meno (approssimato?).
+			In seguito abbiamo ripetuto l'esperienza 
+			
 		\subsection{Rivelatore di picco}
 			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
@@ -180,9 +200,89 @@
 	%-----------------------------------------------------------------------------
 	\section{Risultati}
 		\subsection{Caratteristiche statiche}
-			.
+			\subsubsection{Diodo}
+			I risultati ottenuti al variare della tensione in ingresso, fornita con l'alimentatore, sono stati riportati nella seguente tabella.
+			%aggiungere una colonna per la caratteristica
+			\begin{center}
+				\begin{tabular}{ |c|c| }
+					\hline
+					\multirow{\textbf{Tensione in input [$ \mathrm{V} $]}}	 & \textbf{Tensione in output} \\
+					\hline
+					\multirow{$ -4 $}										 & $ -0.046 \, \mathrm{mV} $ \\
+					\multirow{$ -3.5 $}										 & $ -0.043 \, \mathrm{mV} $ \\
+					\multirow{$ -3 $}										 & $ -0.038 \, \mathrm{mV} $ \\
+					\multirow{$ -2 $}										 & $ -0.032 \, \mathrm{mV} $ \\
+					\multirow{$ -1 $}										 & $ -0.027 \, \mathrm{mV} $ \\
+					\multirow{$ 0 $}										 & $ 0.001 \, \mathrm{mV} $ \\
+					\multirow{$ 0.2 $}										 & $ 2.067 \, \mathrm{mV} $ \\
+					\multirow{$ 0.4 $}										 & $ 45.306 \, \mathrm{mV} $ \\
+					\multirow{$ 0.6 $}										 & $ 0.177 \, \mathrm{V} $ \\
+					\multirow{$ 0.8 $}										 & $ 0.344 \, \mathrm{V} $ \\
+					\multirow{$ 1 $}										 & $ 0.526 \, \mathrm{V} $ \\
+					\multirow{$ 1.5 $}										 & $ 0.997 \, \mathrm{V} $ \\
+					\multirow{$ 2 $}										 & $ 1.477 \, \mathrm{V} $ \\
+					\hline
+				\end{tabular}
+			\end{center}
+			Si può notare che il diodo utilizzato non è adatto alla polarizzazione inversa, infatti per tensioni negative otteniamo valori molto bassi che, però, si mantengono intorno allo $ 0 $. Inoltre abbiamo toccato e superato la tensione di soglia (deve essere minore di $ 0 $ ?).
+		
+			% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
+			
+			Dopo aver connesso generatore di segnali, sonda e oscilloscopio (GIULIO NON HO SPEIFICATO COME ABBIAMO CONNESSO LE ROBE PERCHE' E' NELLA PARTE DELLE PREMESSE)abbiamo ottenuto le seguenti immagini, dove il segnale di input è rappresentato dalla linea blu e l'output da quella gialla. 
+			%foto 3
+			Si può notare come l'input sia un segnale sinusoidale standard, mentre l'output è distorto per effetto del cisrcuito, in particolare la parte negativa del segnale è stata portata a 0 (poichè le tensioni negative ricevute in input dal diodo diventano 0 in output), ed anche la curva sinusoidale risulta un po' schiacciata (perchè?).
+			
+			In seguito, per misurare l'ampiezza di picco del segnale di output abbiamo posizionato i cursori come in figura ottenendo Vu(t) = 4.440V %ho letto bene?
+			%transcaratteristica statica Vu = f(Ve)
+			
+			\subsubsection{Diodo zener}
+			Abbiamo seguito la stessa procedura con il diodo zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo zener.
+
+			(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
+
+			%tabella
+		% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
+		La tensione di soglia è: 
+		La tensione di breakdown è:
+		
+		Connettendo il generatore di segnali come al punto precedente, con la linea blu per l'input e quella gialla per l'output abbiamo ottenuto la seguente imagine
+		%foto 6
+		
+		Qui, a differenza del diodo usato in precedenza, le tensioni tegative vengono rappresentate.		
+		
+		Anche in questo caso abbiamo misurato l'ampiezza di picco del segnale in output con i cursori, ottenendo Vp = 4.320 %ho letto bene?)
+		%foto 7
+		
+		%disegnare tanscaratteristica di Vu = f(Ve)
 		\subsection{Raddrizzatore a semplice semionda}
-			.
+			\subsubsection{Diodo}
+				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
+				per il condensatore da 10nF abbiamo una Vpp = 4.48V :
+				%foto 9
+				per il condensatore da 100nF abbiamo una Vpp = 2.56V :
+				%foto 10
+				per il condensatore da 10microF abbiamo una Vpp = 480 mV :
+				%foto 11
+				
+				Possiamo notare come, al decrescere della capacità del condensatore, il segnale in output abbia una Vpp sempre minore, cioè il segnae in input viene attenuato (?) sempre di più.
+			\subsubsection{Diodo di Zener}	
+				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
+				per il condensatore da 10nF abbiamo una Vpp = 7.2V:
+				%foto 15
+				per il condensatore da 100nF abbiamo una Vpp = 6.88V :
+				%foto 14
+				per il condensatore da 10microF abbiamo una Vpp = 5.52V :
+				%foto 13
+			Lasciando il condensatore da 1 microF e connettendo il circuito con il generatore di segnali abbiamo impostato $ V_{\mathrm{p}} = 5 \, \mathrm{V} $ e, al variare della frequenza, abbiamo ottenuto diversi valori per la tensione picco-picco, di seguito abbiamo riportato le immagini ottenute dall'oscilloscopio (in blu il segnale in input ed in giallo l'output).
+			per $ f = 1 \, \mathrm{kHz} $
+			%foto 16
+			per $ f = 500 \, \mathrm{Hz} $
+			%foto 17
+			per $ f = 100 \, \mathrm{Hz} $
+			%foto 18
+			
+			Al decrescere della fequenza...
+			
 		\subsection{Rivelatore di picco}
 			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
