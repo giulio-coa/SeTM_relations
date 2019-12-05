@@ -52,7 +52,7 @@ urlcolor=blue,
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		.
+		Scopo di questa esercitazione è lavorare con amplificatori invertenti e non per apprezzare la differenza tra i due comportamenti, visualizzare in che modo un amplificatore influenza il segnale in ingresso, e sottolineare la differenza tra comportamento ideale studiato e comportamento reale degli amplificatori, mediante il confronto tra le misurazioni effettuate ed i valori ottenuti tramite calcoli.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -73,11 +73,6 @@ urlcolor=blue,
 				\multirow{Generatore di segnali} & Rigol DG1022				& 2 canali, \\
 												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
 												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
-				\multirow{Sonda}				 & Rigol PVP215				& $ B = 35 \, \mathrm{MHz} $, \\
-												 &							& $ V_{\mathrm{nominale}} = 300 \, \mathrm{V} $, \\
-												 &							& $ L_{\mathrm{cavo}} = 1.2 \, \mathrm{m} $, \\
-												 &							& $ R_{\mathrm{s}} = 1 \, \mathrm{M\Omega} $, \\
-												 &							& Intervallo di pensazione: $ 10 \div 25 \, \mathrm{pF} $ \\
 				\multirow{Cavi coassiali}		 &							& Capacità dell'ordine dei $ 80 \div 100 \, \mathrm{p\frac{F}{m}} $ \\
 				\multirow{Connettori}			 &							& \\
 				\hline
@@ -100,12 +95,64 @@ urlcolor=blue,
 	%  LABORATORY EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
-		\subsection{Other}
-			.
+		In questa esercitazione ci viene richiesta la misura del guadagno, il calcolo della resistenza i ingresso e in uscita dei due amplificatori, e per quello non-invertente anche la risposta in frequenza con celle RC esterne (che vuol dire?)
+		Per fare ciò abbiamo lavorato con una basetta premontana sulla quale, modificando i vari interruttori si aggingevano/toglievano al circuito varie resistenze.
+		S1 in particolare è l'interruttore che determina se stiamo lavorando con un amplificatore invertente o con uno non-invertente.
+		
+		Il generatore di segnali viene collegato alla basetta tramite il connettore J1.
+		
+		L'alimentatore duale ... connesso su J8
+		
+		Abbiamo connesso all'oscilloscopio, tramite due BNC-coccodrillo, ingresso (J2 e J5 sulla basetta)
+		e uscita (J6 e J7 sulla basetta) del circuito premontato sulla basetta. %dovremmo fare una foto
+		
+		In seguito verranno riportate rappresentazioni dei vari circuiti analizzati e misurati.
+		\subsection{Amplificatore non-invertente}
+			\subsubsection{Misura del guadagno}
+				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
+				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
+			\subsubsection{Misura della resistenza equivalente in ingresso}
+				Per misurare Ri, la resistenza all'ingresso dell'amplificatore ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore.
+				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
+				Nel concreto questo viene otenuto modificando la  posizione dello switch S5, che, se aperto, fa passare la corrente nella resistenza R9, se chiuso la cortocicuita.
+				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R9, notando come la tensione in uscita ali quando la resisteza è connessa, usare Vu invece di Vi permette di evidenziare maggiormente quanto la resistenza influenzi il segnale. %riportare calcoli effettuari per ottenere Ri
+				%pezzo da mettere in una parte più teorica.
+				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
+			\subsubsection{Misura della resistenza equivalente in uscita}	
+				Per misurare Ru, la resistenza all'uscita dell'amplificatore ci avvaliamo di una resistenza esterna R10, di valore noto, mettendola in parallelo all'uscita.
+				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
+				Nel concreto questo viene otenuto modificando la  posizione dello switch S6, che, se chiuso, collega R10, se aperto non vi permette il passaggio di corrente.
+				
+				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R10, notando come la tensione in uscita cali quando la resisteza è connessa. %riportare calcoli effettuari per ottenere Ru
+				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
+				
+		\subsection{Amplificatore invertente}
+			\subsubsection{Misura del guadagno}
+				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
+				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
+			\subsubsection{Misura della resistenza equivalente in ingresso}	
+			
+			\subsubsection{Misura della resistenza equivalente in uscita}	
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
 	\section{Risultati}
+		\subsection{Amplificatore non-invertente}
+			\subsubsection{Misura del guadagno}
+				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 8.72 V, di conseguenza Av = 7.78, Av = 17.82 dB. 
+				Evidenziamo come l'amplificatore abbia amplificato il segnale ricevuto come input.
+				%foto1
+			\subsubsection{Misura della resistenza equivalente in ingresso}	
+				Con R9 connessa Vu = 4.64 V, con R9 disconnessa Vu = 8.72 V
+				%rispettivamente foto 2 e foto 3
+			\subsubsection{Misura della resistenza equivalente in uscita}
+			
+		\subsection{Amplificatore invertente}
+			\subsubsection{Misura del guadagno}
+		
+			\subsubsection{Misura della resistenza equivalente in ingresso}	
+			\subsubsection{Misura della resistenza equivalente in uscita}	
+	
 		\subsection{Other}
 			.
 \end{document}

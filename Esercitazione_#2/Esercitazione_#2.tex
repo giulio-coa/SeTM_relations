@@ -162,10 +162,36 @@
 				Infine, tramite la definizione di $ \mathrm{dB} $, abbiamo ottenuto la frequenza al di sopra della quale il segnale viene attenuato di $ 1 \, \mathrm{dB} $.
 			\subsubsection{Offset}
 				Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 1 \, \mathrm{V} $, frequenza $ f = 1 \, \mathrm{kHz} $ e offset di $ 0.2 \, \mathrm{V} $; a questo punto, abbiamo visualizzato le rappresentazioni in continua (modalità d'accoppiamento in DC) e in alternata (modalità d'accoppiamento in AC) del segnale.
-				% IMMAGINI SEGNALE AFFIANCATE
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{offsetPositivoDC}
+						\caption{Accoppiamento in DC.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{offsetPositivoAC}
+						\caption{Accoppiamento in AC.}
+					\end{subfigure}
+					\label{fig:offsetPositivo}
+				\end{figure}
 				\newline
 				Infine, abbiamo ripetuto il procedimento per un offset di $ - 0.2 \, \mathrm{V} $.
-				% IMMAGINI SEGNALE AFFIANCATE
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{offsetNegativoDC}
+						\caption{Accoppiamento in DC.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{offsetNegativoAC}
+						\caption{Accoppiamento in AC.}
+					\end{subfigure}
+					\label{fig:offsetNegativo}
+				\end{figure}
 		\subsection{Scheda con filtro RC}
 			Abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
 			\newline
@@ -280,7 +306,7 @@
 				\begin{equation*}
 					\begin{split}
 						\delta f &= \epsilon f \cdot f = \\
-								 &= X \cdot X = \\
+								 &= X \cdot 15.9k = \\
 								 &= X \, \mathrm{kHz}
 					\end{split}
 				\end{equation*}
@@ -293,16 +319,16 @@
 				\centering
 				\begin{equation*}
 					\begin{split}
-						f &= \frac{1}{2 \pi \cdot R \cdot (C_{1} + C_{2})} = \\
-						  &= \frac{1}{2 \pi \cdot 1k \cdot (10n + 10n)} = \\
+						f &= \frac{1}{2 \pi \cdot R \cdot 2 \cdot C} = \\
+						  &= \frac{1}{2 \pi \cdot 1k \cdot 2 \cdot 10n} = \\
 						  &= 7.96 \, \mathrm{kHz}
 					\end{split}
 				\end{equation*}
 				\newline
 				\begin{equation*}
 					\begin{split}
-						\epsilon f &= \epsilon R + \epsilon C_{1} + \epsilon C_{2} = \\
-								   &= 0.05 + X + X = \\
+						\epsilon f &= \epsilon R + 2 \cdot\epsilon C = \\
+								   &= 0.05 + 2 \cdot X = \\
 								   &= X
 					\end{split}
 				\end{equation*}
@@ -310,7 +336,7 @@
 				\begin{equation*}
 					\begin{split}
 						\delta f &= \epsilon f \cdot f = \\
-								 &= X \cdot X = \\
+								 &= X \cdot 7.96k = \\
 								 &= X \, \mathrm{kHz}
 					\end{split}
 				\end{equation*}
@@ -339,7 +365,7 @@
 			\begin{equation*}
 				\begin{split}
 					\delta f &= \epsilon f \cdot f = \\
-							 &= X \cdot X = \\
+							 &= X \cdot 15.9k = \\
 							 &= X \, \mathrm{kHz}
 				\end{split}
 			\end{equation*}
