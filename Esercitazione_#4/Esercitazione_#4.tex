@@ -111,6 +111,7 @@ urlcolor=blue,
 			\subsubsection{Misura del guadagno}
 				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
 				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
+				In seguito abbiamoeseguito i cacoli per diversi valori di frequenza.
 			\subsubsection{Misura della resistenza equivalente in ingresso}
 				Per misurare Ri, la resistenza all'ingresso dell'amplificatore ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore.
 				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
@@ -122,37 +123,66 @@ urlcolor=blue,
 				Per misurare Ru, la resistenza all'uscita dell'amplificatore ci avvaliamo di una resistenza esterna R10, di valore noto, mettendola in parallelo all'uscita.
 				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
 				Nel concreto questo viene otenuto modificando la  posizione dello switch S6, che, se chiuso, collega R10, se aperto non vi permette il passaggio di corrente.
-				
 				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R10, notando come la tensione in uscita cali quando la resisteza è connessa. %riportare calcoli effettuari per ottenere Ru
 				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
-				
+				\subsubsection{Calcolo poli e zero}
+					%homework matlab? 
 		\subsection{Amplificatore invertente}
+			Abbiamo commutato S1 ed S2 in modo che fosse connesso l'amplificatore invertente ed abbiamo effettuato le stesse misurazioni del punto precedente.
+		
 			\subsubsection{Misura del guadagno}
 				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
 				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
+				Abbiamo poi effettuato il guadagno per una frequenza di 1 KHz.
 			\subsubsection{Misura della resistenza equivalente in ingresso}	
-			
+				Per misurare Ri, la resistenza all'ingresso dell'amplificatore ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore.
+				Nel concreto questo viene otenuto modificando la  posizione dello switch S5, che, se aperto, fa passare la corrente nella resistenza R9, se chiuso la cortocicuita.
+				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R9, notando come la tensione in uscita ali quando la resisteza è connessa, usare Vu invece di Vi permette di evidenziare maggiormente quanto la resistenza influenzi il segnale. %riportare calcoli effettuari per ottenere Ri
+				%pezzo da mettere in una parte più teorica.
+				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
 			\subsubsection{Misura della resistenza equivalente in uscita}	
+				Per misurare Ru, la resistenza all'uscita dell'amplificatore ci avvaliamo di una resistenza esterna R10, di valore noto, mettendola in parallelo all'uscita.
+				Nel concreto questo viene otenuto modificando la  posizione dello switch S6, che, se chiuso, collega R10, se aperto non vi permette il passaggio di corrente.
+				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R10, questa volta la connessione della resistenza non infuenza la tensione in uscita, deduciamo che è trascurabile. %riportare calcoli effettuari per ottenere Ru
+				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
 	\section{Risultati}
 		\subsection{Amplificatore non-invertente}
+			
 			\subsubsection{Misura del guadagno}
 				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 8.72 V, di conseguenza Av = 7.78, Av = 17.82 dB. 
 				Evidenziamo come l'amplificatore abbia amplificato il segnale ricevuto come input.
 				%foto1
 			\subsubsection{Misura della resistenza equivalente in ingresso}	
+				R9 = 10 kOhm.
 				Con R9 connessa Vu = 4.64 V, con R9 disconnessa Vu = 8.72 V
 				%rispettivamente foto 2 e foto 3
 			\subsubsection{Misura della resistenza equivalente in uscita}
-			
+				R10 = 1kOhm.
+				Con R10 connessa Vu = 4.40 V, con R10 disconnessa Vu = 8.72 V
+				%rispettivamente foto 4 e foto 3
+				
+				
 		\subsection{Amplificatore invertente}
+			Rispetto al non-invertente possiamo notare come Vs e Vu risultino invertite. 
+		%foto 6
 			\subsubsection{Misura del guadagno}
-		
+			Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 10.30 V, di conseguenza Av = 9.20, Av = 19.27 dB. 
+			%foto6
+			Abbiamo effettuato la misurazione anche per f = 1kHz:
+			Vi = 1.08 V e Vu = 10.3 V, quindi Av= 9.53, Av = 19.59 dB
+			%foto 9
 			\subsubsection{Misura della resistenza equivalente in ingresso}	
+				R9 = 10 kOhm.
+				Con R9 connessa Vu = 6.24 V, con R9 disconnessa Vu = 10.3 V
+				%rispettivamente foto7 e foto 8
 			\subsubsection{Misura della resistenza equivalente in uscita}	
-	
+				R10 = 1kOhm.
+				Con R10 connessa Vu = 10.3 V, con R10 disconnessa Vu = 10.3 V.
+				Notiamo, quindi, che la resistenza non influenza la tensione in uscita.
+				%rispettivamente foto 8 e foto 8
 		\subsection{Other}
 			.
 \end{document}
