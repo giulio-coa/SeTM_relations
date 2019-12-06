@@ -209,14 +209,11 @@
 			\newline
 			In particolare è stato connesso l'ingresso del filtro al canale $ \mathrm{CH1} $ dell'oscilloscopio, mentre l'uscita è stata connessa al canale $ \mathrm{CH2} $; successivamente, abbiamo impostato il coefficente di deflessione verticale dell'oscilloscopio , per entrambi i canali, a $ 200 \, \mathrm{\frac{mV}{div}} $ e la velocità di scansione orizzontale in modo da poter visualizzare almeno un periodo del segnale.
 			\newline
-			% IMMAGINE SEGNALE
 			Infine, abbiamo proceduto col variare la frequenza del segnale al fine di misurare lo sfasamento e l'attenuazione subita da esso, riportando tutti i dati nell'apposita tabella e costruendo i relativi grafici. Inoltre, si è calcolato la frequenza per cui lo sfasamento tra l'ingresso e l'uscita del filtro si avvicina maggiormente ai $ 45 $ \textdegree.
 			\newline
 			Abbiamo ripetuto il procedimento dopo aver chiuso l'interruttore del filtro, inserendo, in parallelo, il secondo condensatore.
-			% IMMAGINE SEGNALE
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-alto: diagrammi di Bode}
 			Abbiamo sostituito il filtro passa-basso usato precedentemente con un filtro passa-alto, ovvero abbiamo spostato i cavi coassiali di collegamento sui morsetti del filtro passa-alto presente sulla scheda premontata, ed abbiamo ripetuto l'esperienza.
-			% IMMAGINE SEGNALE
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -453,7 +450,12 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			% IMMAGINI MODULO E FASE AFFIANCATE
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.4]{filtroPassaAltoBode}
+				\caption{Diagramma di Bode associato al filtro.}
+				\label{fig:filtroPassaAltoBode}
+			\end{figure}
 			\newline
 			La frequenza per cui si aveva uno sfasamento il più vicino possibile ai $ 45 $\textdegree \ è $ 17 \, \mathrm{kHz} $.
 	%-----------------------------------------------------------------------------
