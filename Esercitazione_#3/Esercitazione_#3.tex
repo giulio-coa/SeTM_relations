@@ -196,14 +196,13 @@
 				\end{figure}
 		\subsection{Raddrizzatore a semplice semionda}
 			Circuito fondamentale che, data una tensione in input, caratterizzata da un valor medio non nullo, ne estrae la parte positiva; il segnale in uscita presenta valor medio nullo.
-			\newline
-			\begin{center}
-				$ i_{\mathrm{D}} = I_{\mathrm{S}} \cdot (e^{\mathrm{\frac{v_{\mathrm{D}}}{\eta \cdot V_{\mathrm{T}}}}} - 1) $
-			\end{center}
-			f(n)=
-			\begin{cases}
-				n/2, & \mbox{se }n\mbox{ pari} \\ 3n+1, & \mbox{se }n\mbox{ dispari}
-			\end{cases} 
+			\begin{equation*}
+				v_{\mathrm{out}} =
+				\begin{cases}
+					v_{\mathrm{in}} & v_{\mathrm{in}} > 0 \\
+					0 				& v_{\mathrm{in}} \le 0
+				\end{cases}
+			\end{equation*}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{transcaratteristicaStaticaRaddrizzatoreASempliceSemionda}
@@ -212,10 +211,14 @@
 			\end{figure}
 		\subsection{Protezione ESD}
 			Circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
-			\newline
-			\begin{center}
-				$ \Biggl\{ \Biggr\} $
-			\end{center}
+			\begin{equation*}
+				v_{\mathrm{out}} =
+				\begin{cases}
+					-V_{\mathrm{\gamma}}				  & v_{\mathrm{in}} < -V_{\mathrm{\gamma}} \\
+					v_{\mathrm{in}} 				 	  & -V_{\mathrm{\gamma}} \le v_{\mathrm{in}} \le V_{\mathrm{DD}} + V_{\mathrm{\gamma}} \\
+					V_{\mathrm{DD}} + V_{\mathrm{\gamma}} & v_{\mathrm{in}} > V_{\mathrm{DD}} + V_{\mathrm{\gamma}}
+				\end{cases}
+			\end{equation*}
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{transcaratteristicaStaticaProtezioneESD}
