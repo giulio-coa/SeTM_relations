@@ -52,7 +52,7 @@
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		.
+		Lo scopo di questa esercitazione è stato analizzare vari circuiti contenenti diodi, tramite l’esecuzione di una serie di misure in condizioni statiche al fine di determinare la caratteristica statica $ I_{\mathrm{d}}(V_{\mathrm{d}}) $ dei suddetti diodi, e la successiva visualizzazione del loro comportamento con una tensione d'ingresso di tipo sinusoidale.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -166,13 +166,62 @@
 				\label{fig:sondaSegnaleCompensato}
 			\end{figure}
 		\subsection{Diodo}
-			Il diodo è un elemento circuitale non lineare il cui comportamento è descitto da:
-			% ESPRESSIONE ANALITICA + GRAFICO CARATTERISTICA STATICA
+			Il diodo è un bipolo non lineare il cui comportamento è descritto dalle due seguenti espressioni analitiche equivalenti tra loro
 			\newline
-			Si può notare come, al crescere di $ V(D) $ la corrente che attaversa il diodo aumenti (polarizzazione), in particolare dopo il raggiungimento della tensione di soglia $ V(\gamma) $, quando $ V(D) $ è troppo bassa il diodo non conduce, ma particolari tipi di diodi, detti diodi di zener, raggiunta la tensione di breakdown, un determinato valore negativo della tensione, sono in grado di condurre corrente nel verso opposto (polarizzazione inversa).
-			% GRAFICO CARRATTERISCICA STATICA DIODI DI ZENER
-		\subsection{Other}
-			.
+			\begin{center}
+				$ i_{\mathrm{D}} = I_{\mathrm{S}} \cdot (e^{\mathrm{\frac{v_{\mathrm{D}}}{\eta \cdot V_{\mathrm{T}}}}} - 1) $
+			\end{center}
+			\newline
+			\begin{center}
+				$ v_{\mathrm{D}} = \eta \cdot V_{\mathrm{T}} \cdot \ln (\frac{i_{\mathrm{D}}}{I_{\mathrm{S}}} + 1) $
+			\end{center}
+			dove $ V_{\mathrm{T}} $ è la tensione termica del diodo.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{caratteristicaStatica}
+				\caption{Caratteristica statica di un diodo.}
+				\label{fig:caratteristicaStatica}
+			\end{figure}
+			\newpage
+			Si noti come, al crescere di $ v_{\mathrm{D}} $, la corrente $ i_{\mathrm{D}} $, ovvero la corrente che attaversa il diodo, aumenti (regione di polarizzazione); in particolare, dopo il raggiungimento della tensione di soglia $ V_{\mathrm{\gamma} $, il diodo tende a comportarsi come un generatore ideale indipendente di tensione di valore pari a $ V_{\mathrm{\gamma} $.
+			\newline
+			Al contrario, quando $ v_{\mathrm{D}} $ è troppo bassa, la corrente $ i_{\mathrm{D}} $ è pari a $ -I_{\mathrm{S}} $, ovvero circa nulla; ciò porta il diodo a comportarsi similmente ad un circuito aperto (regione di polarizzazione inversa). Questa condizione può dare luogo al fenomeno del breakdown, ovvero quando il diodo conduce in direzione opposta; tale fenomeno porta, solitamente, alla rottura del diodo.
+			\subsubsection{Diodo di Zener}
+				Sono particolari tipi di diodi proggettati appositamente per lavorare anche in polarizzazione inversa; questi diodi non si rompono se si verifica il breakdown, anzi sono caratterizzati da una tensione di soglia negativa, detta, per l'appunto, tensione di breakdown.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.7]{caratteristicaStaticaDiodoZener}
+					\caption{Caratteristica statica di un diodo di Zener.}
+					\label{fig:caratteristicaStaticaDiodoZener}
+				\end{figure}
+		\subsection{Raddrizzatore a semplice semionda}
+			Circuito fondamentale che, data una tensione in input, caratterizzata da un valor medio non nullo, ne estrae la parte positiva; il segnale in uscita presenta valor medio nullo.
+			\newline
+			\begin{center}
+				$ i_{\mathrm{D}} = I_{\mathrm{S}} \cdot (e^{\mathrm{\frac{v_{\mathrm{D}}}{\eta \cdot V_{\mathrm{T}}}}} - 1) $
+			\end{center}
+			f(n)=
+			\begin{cases}
+				n/2, & \mbox{se }n\mbox{ pari} \\ 3n+1, & \mbox{se }n\mbox{ dispari}
+			\end{cases} 
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{transcaratteristicaStaticaRaddrizzatoreASempliceSemionda}
+				\caption{Circuito e transcaratteristica statica di un raddrizzatore a semplice semionda.}
+				\label{fig:transcaratteristicaStaticaRaddrizzatoreASempliceSemionda}
+			\end{figure}
+		\subsection{Protezione ESD}
+			Circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
+			\newline
+			\begin{center}
+				$ \Biggl\{ \Biggr\} $
+			\end{center}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{transcaratteristicaStaticaProtezioneESD}
+				\caption{Circuito e transcaratteristica statica di una protezione ESD.}
+				\label{fig:transcaratteristicaStaticaProtezioneESD}
+			\end{figure}
 	%-----------------------------------------------------------------------------
 	%  LABORATORY EXPERIENCE
 	%-----------------------------------------------------------------------------
