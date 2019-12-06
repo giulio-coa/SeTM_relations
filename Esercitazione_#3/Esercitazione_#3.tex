@@ -85,7 +85,7 @@
 				\multirow{Connettori}			 &							& \\
 				\multirow{Breadboard}			 &							& \\
 				\multirow{Resistenza}			 &							& $ R = 9.9 \, \mathrm{k\Omega} $ \\
-				\multirow{Diodo Zener}			 & 1N5228					& \\
+				\multirow{Diodo di Zener}		 & 1N5228					& \\
 				\multirow{Diodo}				 & 1N4148					& \\
 				\multirow{Condensatori}			 &							& $ C_{1} = 10 \, \mathrm{nF} $, \\
 												 &							& $ C_{2} = 100 \, \mathrm{nF} $, \\
@@ -175,7 +175,7 @@
 			\begin{center}
 				$ v_{\mathrm{D}} = \eta \cdot V_{\mathrm{T}} \cdot \ln (\frac{i_{\mathrm{D}}}{I_{\mathrm{S}}} + 1) $
 			\end{center}
-			dove $ V_{\mathrm{T}} $ è la tensione termica del diodo.
+			dove $ V_{\mathrm{T}} $ è la tensione termica del diodo ($ V_{\mathrm{T}} = \frac{\mathrm{k \cdot T}}{\mathrm{q}} $), $ I_{\mathrm{S}} $ è la corrente di saturazione ed $ \eta $ è il fattore di non idealità.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{caratteristicaStatica}
@@ -230,19 +230,30 @@
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
 		\subsection{Caratteristiche statiche}
-			Abbiamo montanto sulla basetta la resistenza, il diodo D=1N4148 e l'elemento di collegamento.
-			Per mezzo del multimetro abbiamo misurato la resistenza e abbiamo verificato la correttezza del valore misurato confrontandolo con il valore della resistenza riportato dal produttore, tenendo conto della sua incertezza.
-			Abbiamo connesso la basetta all'alimentatore tramite due cavi a banana, quello rosso a connettere i poli positivi, quello nero usato per la messa a terra, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, ed abbiamo misurato, con il multimetro, i valori di tensione ai capi della resistenza.
-			
-			In seguito abbiamo connesso, al posto dell'alimentatore, il generatore di segnali alla basetta con un cavo BNC-banana, impostato ampiezza di picco $ V_{\mathrm{p}} = 5 \, \mathrm{V} $ e $ f = 1 \, \mathrm{kHz} $, dando come input il segnale sinusoidale caratterizato da queste due grandezze.
-			Abbiammo connesso la sonda ... e osservato i cambiamenti che il diodo ha apportato al segnale.
-			
-			Abbiamo ripetuto la procedura con il diodo di zener.
+			Abbiamo montanto sulla breadboard la resistenza, il diodo D=1N4148 e l'elemento di collegamento seguendo lo schema in figura.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{circuitoCaratteristicheStatiche}
+				\caption{Circuito.}
+				\label{fig:circuitoCaratteristicheStatiche}
+			\end{figure}
+			\newline
+			Successivamente, per mezzo del multimetro, abbiamo misurato la resistenza, verificando che tale valore rientri nel $ 5 \% $ di tolleranza dato dal costruttore. Abbiamo alimentato, collegando la breadboard all'alimentatore in DC per mezzo di due cavi a banana, il circuito, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, misurando, sempre tramite il multimetro, i valori di tensione ai capi della resistenza.
+			\newline
+			In seguito abbiamo connesso alla breadboard, al posto dell'alimentatore in DC, il generatore di segnali tramite un cavo coassiale BNC-banana, impostandolo per fornire un segnale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $, ed, al posto del multimetro, l'oscilloscopio tramite due sonde.
+			\newline
+			Infine, abbiamo sostituito il diodo con il diodo di Zener D=1N5228 ed abbiamo ripetuto l'esperienza.
 		\subsection{Raddrizzatore a semplice semionda}
-			Abbiamo costruito i circuito richiesto, aggiungendo il condensatori e sostituendo il diodo zener con il precedente.
-			Abbiamo misurato prima le tensioni picco-picco al variare del condensatore, abbiamo potuto apprezzare come la capacità di quest'ultimo influenzi il segnale in uscita rendendolo più o meno (approssimato?).
-			In seguito abbiamo ripetuto l'esperienza 
-			
+			Abbiamo realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, ed abbiamo misurato l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condesatore.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{circuitoRaddrizzatoreASempliceSemionda}
+				\caption{Circuito.}
+				\label{fig:circuitoRaddrizzatoreASempliceSemionda}
+			\end{figure}
+			\newline
+			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita rendendolo più o meno \textbf{(approssimato?)}.
+			Infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
 		\subsection{Rivelatore di picco}
 			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
@@ -254,25 +265,24 @@
 		\subsection{Caratteristiche statiche}
 			\subsubsection{Diodo}
 			I risultati ottenuti al variare della tensione in ingresso, fornita con l'alimentatore, sono stati riportati nella seguente tabella.
-			%aggiungere una colonna per la caratteristica
 			\begin{center}
-				\begin{tabular}{ |c|c| }
+				\begin{tabular}{ |c|c|c| }
 					\hline
-					\multirow{\textbf{Tensione in input [$ \mathrm{V} $]}}	 & \textbf{Tensione in output} \\
+					\multirow{\textbf{$ V_{\mathrm{e}} $ [$ \mathrm{V} $]}}	 & \textbf{$ V_{\mathrm{u}} $} & \textbf{$ I_{\mathrm{D}} $} \\
 					\hline
-					\multirow{$ -4 $}										 & $ -0.046 \, \mathrm{mV} $ \\
-					\multirow{$ -3.5 $}										 & $ -0.043 \, \mathrm{mV} $ \\
-					\multirow{$ -3 $}										 & $ -0.038 \, \mathrm{mV} $ \\
-					\multirow{$ -2 $}										 & $ -0.032 \, \mathrm{mV} $ \\
-					\multirow{$ -1 $}										 & $ -0.027 \, \mathrm{mV} $ \\
-					\multirow{$ 0 $}										 & $ 0.001 \, \mathrm{mV} $ \\
-					\multirow{$ 0.2 $}										 & $ 2.067 \, \mathrm{mV} $ \\
-					\multirow{$ 0.4 $}										 & $ 45.306 \, \mathrm{mV} $ \\
-					\multirow{$ 0.6 $}										 & $ 0.177 \, \mathrm{V} $ \\
-					\multirow{$ 0.8 $}										 & $ 0.344 \, \mathrm{V} $ \\
-					\multirow{$ 1 $}										 & $ 0.526 \, \mathrm{V} $ \\
-					\multirow{$ 1.5 $}										 & $ 0.997 \, \mathrm{V} $ \\
-					\multirow{$ 2 $}										 & $ 1.477 \, \mathrm{V} $ \\
+					\multirow{$ -4 $}										 & $ -0.046 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ -3.5 $}										 & $ -0.043 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ -3 $}										 & $ -0.038 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ -2 $}										 & $ -0.032 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ -1 $}										 & $ -0.027 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 0 $}										 & $ 0.001 \, \mathrm{mV} $	   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 0.2 $}										 & $ 2.067 \, \mathrm{mV} $    & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 0.4 $}										 & $ 45.306 \, \mathrm{mV} $   & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 0.6 $}										 & $ 0.177 \, \mathrm{V} $     & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 0.8 $}										 & $ 0.344 \, \mathrm{V} $     & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 1 $}										 & $ 0.526 \, \mathrm{V} $     & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 1.5 $}										 & $ 0.997 \, \mathrm{V} $     & $ -0 \, \mathrm{mA} $ \\
+					\multirow{$ 2 $}										 & $ 1.477 \, \mathrm{V} $     & $ -0 \, \mathrm{mA} $ \\
 					\hline
 				\end{tabular}
 			\end{center}
@@ -287,8 +297,8 @@
 			In seguito, per misurare l'ampiezza di picco del segnale di output abbiamo posizionato i cursori come in figura ottenendo Vu(t) = 4.440V %ho letto bene?
 			%transcaratteristica statica Vu = f(Ve)
 			
-			\subsubsection{Diodo zener}
-			Abbiamo seguito la stessa procedura con il diodo zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo zener.
+			\subsubsection{Diodo di Zener}
+			Abbiamo seguito la stessa procedura con il diodo di Zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo di Zener.
 
 			(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
 
