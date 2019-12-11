@@ -302,19 +302,39 @@
 %					\label{fig:caratteristicheStaticheDiodo}
 %				\end{figure}
 				\newline
-				Dopo aver connesso il generatore di segnali, la sonda e l'oscilloscopio  come illustrato precedentemente, abbiamo ottenuto la seguente immagine, dove l'output è distorto per effetto del circuito; in particolare, la parte dove il segnale assume valori negativi è stata azzerata e parte dove il segnale assume valori positivi risulta attenuata a causa della non idealità del diodo.
+				Dopo aver connesso il generatore di segnali, la sonda e l'oscilloscopio  come illustrato precedentemente, abbiamo ottenuto la seguente immagine, dove l'output è distorto per effetto del circuito; in particolare, la parte dove il segnale assume valori negativi è stata azzerata e la parte dove il segnale assume valori positivi è stata attenuata a causa della non idealità del diodo.
 				\begin{figure}[h!]
 					\centering
-					\includegraphics[scale=0.7]{ampiezzaDiPiccoDiodo}
+					\includegraphics[scale=0.5]{ampiezzaDiPiccoDiodo}
 					\caption{Segnale originale e segnale prelevato a valle del diodo.}
 					\label{fig:ampiezzaDiPiccoDiodo}
 				\end{figure}
-				\newline
+				\newpage
 				In seguito, abbiamo misurato l'ampiezza di picco del segnale in output, ottenendo $ 4.40 \, \mathrm{V} $.
 			\subsubsection{Diodo di Zener}
-				Abbiamo seguito la stessa procedura con il diodo di Zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo di Zener.
-				(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
-				%tabella
+				Successivamente, abbiamo rieseguito la procedura utilizzando il diodo di Zener; vanno sottilineati i valori ottenuti per tensioni negative in input che sono coerenti con la definizione di diodo di Zener.
+				\begin{center}
+					\begin{tabular}{ |c|c|c| }
+						\hline
+						\multirow{\textbf{$ V_{\mathrm{e}} $ [$ \mathrm{V} $]}}	 & \textbf{$ V_{\mathrm{u}} $} & \textbf{$ I_{\mathrm{D}} $} \\
+						\hline
+						\multirow{$ -4 $}										 & $ -3.31 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -3.5 $}										 & $ -2.81 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -3 $}										 & $ -2.32 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -2 $}										 & $ -1.33 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -1 $}										 & $ -0.37 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0 $}										 & $ 0.006 \, \mathrm{mV} $	  & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.2 $}										 & $ 0.019 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.4 $}										 & $ 0.966 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.6 $}										 & $ 43.5 \, \mathrm{mV} $    & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.8 $}										 & $ 191 \, \mathrm{mV} $     & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 1 $}										 & $ 373 \, \mathrm{mV} $     & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 1.5 $}										 & $ 847 \, \mathrm{mV} $     & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 2 $}										 & $ 1.33 \, \mathrm{V} $     & $ 0 \, \mathrm{mA} $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{BR}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
 %				\begin{figure}[h!]
 %					\centering
 %					\begin{subfigure}{0.4\textwidth}
@@ -329,40 +349,102 @@
 %					\end{subfigure}
 %					\label{fig:caratteristicheStaticheDiodoDiZener}
 %				\end{figure}
-				La tensione di soglia è: 
-				La tensione di breakdown è:
-				Connettendo il generatore di segnali come al punto precedente, con la linea blu per l'input e quella gialla per l'output abbiamo ottenuto la seguente imagine
-				%foto 6
-				Qui, a differenza del diodo usato in precedenza, le tensioni tegative vengono rappresentate.		
-				Anche in questo caso abbiamo misurato l'ampiezza di picco del segnale in output con i cursori, ottenendo Vp = 4.320 %ho letto bene?)
-				%foto 7
-				%disegnare tanscaratteristica di Vu = f(Ve)
+				A differenza del diodo usato in precedenza, il diodo di Zener, proprio perchè adatto a lavorare in polarizzazione inversa, conduce anche per valori di tensione negativi, portandoci ad osservare il seguente segnale.		
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.5]{ampiezzaDiPiccoDiodoDiZener}
+					\caption{Segnale originale e segnale prelevato a valle del diodo di Zener.}
+					\label{fig:ampiezzaDiPiccoDiodoDiZener}
+				\end{figure}
+				\newline
+				Come fatto in precedenza, abbiamo misurato l'ampiezza di picco del segnale in output, ottenendo $ 4.32 \, \mathrm{V} $.
 		\subsection{Raddrizzatore a semplice semionda}
 			\subsubsection{Diodo}
-				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
-				per il condensatore da 10nF abbiamo una Vpp = 4.48V :
-				%foto 9
-				per il condensatore da 100nF abbiamo una Vpp = 2.56V :
-				%foto 10
-				per il condensatore da 10microF abbiamo una Vpp = 480 mV :
-				%foto 11
-				Possiamo notare come, al decrescere della capacità del condensatore, il segnale in output abbia una Vpp sempre minore, cioè il segnae in input viene attenuato (?) sempre di più.
+				Abbiamo costruito il circuito usando i vari condensatori, misurando, ogni volta, l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
+				\begin{center}
+					\begin{tabular}{ |c|c|c| }
+						\hline
+						\multirow{\textbf{$ C_{1} $}} & \textbf{$ C_{2} $} & \textbf{$ C_{3} $} \\
+						\hline
+						\multirow{$ 4.48 \, \mathrm{V} $} & $ 2.56 \, \mathrm{V} $ & $ 480 \, \mathrm{mV} $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemiondaDiodo10n}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 10 \, \mathrm{nF} $.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemiondaDiodo100n}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 100 \, \mathrm{nF} $.}
+					\end{subfigure}
+					\begin{subfigure}{1\textwidth}
+						\centering
+						\includegraphics[scale=0.4]{raddrizzatoreASempliceSemiondaDiodo1micro}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 1 \, \mathrm{\mu F} $.}
+					\end{subfigure}
+					\label{fig:raddrizzatoreASempliceSemiondaDiodo}
+				\end{figure}
+				\newpage
+				Possiamo notare come, al decrescere della capacità del condensatore, aumenti l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output, ovvero come il segnale in input viene distorto sempre di più.
 			\subsubsection{Diodo di Zener}	
-				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
-				per il condensatore da 10nF abbiamo una Vpp = 7.2V:
-				%foto 15
-				per il condensatore da 100nF abbiamo una Vpp = 6.88V :
-				%foto 14
-				per il condensatore da 10microF abbiamo una Vpp = 5.52V :
-				%foto 13
-			Lasciando il condensatore da 1 microF e connettendo il circuito con il generatore di segnali abbiamo impostato $ V_{\mathrm{p}} = 5 \, \mathrm{V} $ e, al variare della frequenza, abbiamo ottenuto diversi valori per la tensione picco-picco, di seguito abbiamo riportato le immagini ottenute dall'oscilloscopio (in blu il segnale in input ed in giallo l'output).
-			per $ f = 1 \, \mathrm{kHz} $
-			%foto 16
-			per $ f = 500 \, \mathrm{Hz} $
-			%foto 17
-			per $ f = 100 \, \mathrm{Hz} $
-			%foto 18
-			Al decrescere della fequenza...
+				Successivamente, abbiamo sostituito il diodo con il diodo di Zener, ripetendo l'intera esperienza.
+				\begin{center}
+					\begin{tabular}{ |c|c|c| }
+						\hline
+						\multirow{\textbf{$ C_{1} $}} & \textbf{$ C_{2} $} & \textbf{$ C_{3} $} \\
+						\hline
+						\multirow{$ 7.20 \, \mathrm{V} $} & $ 6.88 \, \mathrm{V} $ & $ 5.52 \, \mathrm{V} $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemiondaDiodoDiZener10n}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 10 \, \mathrm{nF} $.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemiondaDiodoDiZener100n}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 100 \, \mathrm{nF} $.}
+					\end{subfigure}
+					\begin{subfigure}{1\textwidth}
+						\centering
+						\includegraphics[scale=0.3]{raddrizzatoreASempliceSemiondaDiodoDiZener1micro}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 1 \, \mathrm{\mu F} $.}
+					\end{subfigure}
+					\label{fig:raddrizzatoreASempliceSemiondaDiodoDiZener}
+				\end{figure}
+				\newpage
+				Possiamo notare come, anche in questo caso, al decrescere della capacità del condensatore, aumenti l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
+				\newline
+				Infine abbiamo rimontato il diodo D=1N4148 ed, lasciando montato il condensatore da $ 1 \, \mathrm{\mu F} $ e connettendo al circuito il generatore di segnali, impostato al fine di avere un'ampiezza $ V_{\mathrm{pp}} $ pari a $ 10 \, \mathrm{V} $, abbiamo verificato come, al variare della frequenza, variasse l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemionda1micro100}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 1 \, \mathrm{\mu F} $ e con una frequenza di $ 100 \, \mathrm{Hz} $.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{raddrizzatoreASempliceSemionda1micro500}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 1 \, \mathrm{\mu F} $ e con una frequenza di $ 500 \, \mathrm{Hz} $.}
+					\end{subfigure}
+					\begin{subfigure}{1\textwidth}
+						\centering
+						\includegraphics[scale=0.3]{raddrizzatoreASempliceSemionda1micro1k}
+						\caption{Raddrizzatore a semplice semionda con il condensatore da $ 1 \, \mathrm{\mu F} $ e con una frequenza di $ 1 \, \mathrm{kHz} $.}
+					\end{subfigure}
+					\label{fig:raddrizzatoreASempliceSemionda1micro}
+				\end{figure}
+				\newpage
 		\subsection{Rivelatore di picco}
 			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
