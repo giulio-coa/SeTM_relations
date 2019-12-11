@@ -52,7 +52,7 @@
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		Lo scopo di questa esercitazione è stato analizzare vari circuiti contenenti diodi, tramite l’esecuzione di una serie di misure in condizioni statiche al fine di determinare la caratteristica statica $ I_{\mathrm{d}}(V_{\mathrm{d}}) $ dei suddetti diodi, e la successiva visualizzazione del loro comportamento con una tensione d'ingresso di tipo sinusoidale.
+		Lo scopo di questa esercitazione è analizzare vari circuiti contenenti diodi, tramite l’esecuzione di una serie di misure in condizioni statiche al fine di determinare la caratteristica statica $ I_{\mathrm{d}}(V_{\mathrm{d}}) $ dei suddetti diodi, e la successiva visualizzazione del loro comportamento con una tensione d'ingresso di tipo sinusoidale.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -237,14 +237,14 @@
 				\caption{Circuito.}
 				\label{fig:circuitoCaratteristicheStatiche}
 			\end{figure}
-			\newline
+			\newpage
 			Successivamente, per mezzo del multimetro, abbiamo misurato la resistenza, verificando che tale valore rientri nel $ 5 \% $ di tolleranza dato dal costruttore. Abbiamo alimentato, collegando la breadboard all'alimentatore in DC per mezzo di due cavi a banana, il circuito, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, misurando, sempre tramite il multimetro, i valori di tensione ai capi della resistenza.
 			\newline
 			In seguito abbiamo connesso alla breadboard, al posto dell'alimentatore in DC, il generatore di segnali tramite un cavo coassiale BNC-banana, impostandolo per fornire un segnale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $, ed, al posto del multimetro, l'oscilloscopio tramite due sonde.
 			\newline
 			Infine, abbiamo sostituito il diodo con il diodo di Zener D=1N5228 ed abbiamo ripetuto l'esperienza.
 		\subsection{Raddrizzatore a semplice semionda}
-			Abbiamo realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, ed abbiamo misurato l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condesatore.
+			Abbiamo realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, ed abbiamo misurato l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condensatore.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{circuitoRaddrizzatoreASempliceSemionda}
@@ -264,59 +264,65 @@
 	\section{Risultati}
 		\subsection{Caratteristiche statiche}
 			\subsubsection{Diodo}
-			I risultati ottenuti al variare della tensione in ingresso, fornita con l'alimentatore, sono stati riportati nella seguente tabella.
-			\begin{center}
-				\begin{tabular}{ |c|c|c| }
-					\hline
-					\multirow{\textbf{$ V_{\mathrm{e}} $ [$ \mathrm{V} $]}}	 & \textbf{$ V_{\mathrm{u}} $} & \textbf{$ I_{\mathrm{D}} $} \\
-					\hline
-					\multirow{$ -4 $}										 & $ -0.046 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ -3.5 $}										 & $ -0.043 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ -3 $}										 & $ -0.038 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ -2 $}										 & $ -0.032 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ -1 $}										 & $ -0.027 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 0 $}										 & $ 0.001 \, \mathrm{mV} $	   & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 0.2 $}										 & $ 2.07 \, \mathrm{mV} $     & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 0.4 $}										 & $ 45.31 \, \mathrm{mV} $    & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 0.6 $}										 & $ 177 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 0.8 $}										 & $ 344 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 1 $}										 & $ 526 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 1.5 $}										 & $ 997 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
-					\multirow{$ 2 $}										 & $ 1.48 \, \mathrm{V} $      & $ 0 \, \mathrm{mA} $ \\
-					\hline
-				\end{tabular}
-			\end{center}
-			Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero.
-			La tensione di soglia $ V_{\mathrm{\gamma}} $
-		
-			% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
-			
-			Dopo aver connesso generatore di segnali, sonda e oscilloscopio (GIULIO NON HO SPEIFICATO COME ABBIAMO CONNESSO LE ROBE PERCHE' E' NELLA PARTE DELLE PREMESSE)abbiamo ottenuto le seguenti immagini, dove il segnale di input è rappresentato dalla linea blu e l'output da quella gialla. 
-			%foto 3
-			Si può notare come l'input sia un segnale sinusoidale standard, mentre l'output è distorto per effetto del cisrcuito, in particolare la parte negativa del segnale è stata portata a 0 (poichè le tensioni negative ricevute in input dal diodo diventano 0 in output), ed anche la curva sinusoidale risulta un po' schiacciata (perchè?).
-			
-			In seguito, per misurare l'ampiezza di picco del segnale di output abbiamo posizionato i cursori come in figura ottenendo Vu(t) = 4.440V %ho letto bene?
-			%transcaratteristica statica Vu = f(Ve)
-			
+				I risultati ottenuti al variare della tensione in ingresso, fornita con l'alimentatore, sono stati riportati nella seguente tabella.
+				\begin{center}
+					\begin{tabular}{ |c|c|c| }
+						\hline
+						\multirow{\textbf{$ V_{\mathrm{e}} $ [$ \mathrm{V} $]}}	 & \textbf{$ V_{\mathrm{u}} $} & \textbf{$ I_{\mathrm{D}} $} \\
+						\hline
+						\multirow{$ -4 $}										 & $ -0.046 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -3.5 $}										 & $ -0.043 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -3 $}										 & $ -0.038 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -2 $}										 & $ -0.032 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ -1 $}										 & $ -0.027 \, \mathrm{mV} $   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0 $}										 & $ 0.001 \, \mathrm{mV} $	   & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.2 $}										 & $ 2.07 \, \mathrm{mV} $     & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.4 $}										 & $ 45.31 \, \mathrm{mV} $    & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.6 $}										 & $ 177 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 0.8 $}										 & $ 344 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 1 $}										 & $ 526 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 1.5 $}										 & $ 997 \, \mathrm{mV} $      & $ 0 \, \mathrm{mA} $ \\
+						\multirow{$ 2 $}										 & $ 1.48 \, \mathrm{V} $      & $ 0 \, \mathrm{mA} $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero.
+				La tensione di soglia $ V_{\mathrm{\gamma}} $
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.5]{sondaSegnaleSottocompensato}
+						\caption{Sonda sottocompensata.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.5]{sondaSegnaleSovracompensato}
+						\caption{Sonda sovracompensata.}
+					\end{subfigure}
+					\caption{Visualizzazione del segnale al variare della compensazione della sonda.}
+					\label{fig:sondaSegnaleNonCompensato}
+				\end{figure}
+				\newline
+				% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
+				Dopo aver connesso generatore di segnali, sonda e oscilloscopio (GIULIO NON HO SPEIFICATO COME ABBIAMO CONNESSO LE ROBE PERCHE' E' NELLA PARTE DELLE PREMESSE)abbiamo ottenuto le seguenti immagini, dove il segnale di input è rappresentato dalla linea blu e l'output da quella gialla. 
+				%foto 3
+				Si può notare come l'input sia un segnale sinusoidale standard, mentre l'output è distorto per effetto del cisrcuito, in particolare la parte negativa del segnale è stata portata a 0 (poichè le tensioni negative ricevute in input dal diodo diventano 0 in output), ed anche la curva sinusoidale risulta un po' schiacciata (perchè?).
+				In seguito, per misurare l'ampiezza di picco del segnale di output abbiamo posizionato i cursori come in figura ottenendo Vu(t) = 4.440V %ho letto bene?
+				%transcaratteristica statica Vu = f(Ve)
 			\subsubsection{Diodo di Zener}
-			Abbiamo seguito la stessa procedura con il diodo di Zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo di Zener.
-
-			(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
-
-			%tabella
-		% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
-		La tensione di soglia è: 
-		La tensione di breakdown è:
-		
-		Connettendo il generatore di segnali come al punto precedente, con la linea blu per l'input e quella gialla per l'output abbiamo ottenuto la seguente imagine
-		%foto 6
-		
-		Qui, a differenza del diodo usato in precedenza, le tensioni tegative vengono rappresentate.		
-		
-		Anche in questo caso abbiamo misurato l'ampiezza di picco del segnale in output con i cursori, ottenendo Vp = 4.320 %ho letto bene?)
-		%foto 7
-		
-		%disegnare tanscaratteristica di Vu = f(Ve)
+				Abbiamo seguito la stessa procedura con il diodo di Zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo di Zener.
+				(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
+				%tabella
+				% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
+				La tensione di soglia è: 
+				La tensione di breakdown è:
+				Connettendo il generatore di segnali come al punto precedente, con la linea blu per l'input e quella gialla per l'output abbiamo ottenuto la seguente imagine
+				%foto 6
+				Qui, a differenza del diodo usato in precedenza, le tensioni tegative vengono rappresentate.		
+				Anche in questo caso abbiamo misurato l'ampiezza di picco del segnale in output con i cursori, ottenendo Vp = 4.320 %ho letto bene?)
+				%foto 7
+				%disegnare tanscaratteristica di Vu = f(Ve)
 		\subsection{Raddrizzatore a semplice semionda}
 			\subsubsection{Diodo}
 				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
@@ -326,7 +332,6 @@
 				%foto 10
 				per il condensatore da 10microF abbiamo una Vpp = 480 mV :
 				%foto 11
-				
 				Possiamo notare come, al decrescere della capacità del condensatore, il segnale in output abbia una Vpp sempre minore, cioè il segnae in input viene attenuato (?) sempre di più.
 			\subsubsection{Diodo di Zener}	
 				Abbiamo inserito i vari condensatori ed ogni volta abbiamo misurato la tensione picco-picco con i cursori.
@@ -343,9 +348,7 @@
 			%foto 17
 			per $ f = 100 \, \mathrm{Hz} $
 			%foto 18
-			
 			Al decrescere della fequenza...
-			
 		\subsection{Rivelatore di picco}
 			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
