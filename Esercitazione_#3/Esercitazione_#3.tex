@@ -286,35 +286,49 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero.
-				La tensione di soglia $ V_{\mathrm{\gamma}} $
+				Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero. Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
+%				\begin{figure}[h!]
+%					\centering
+%					\begin{subfigure}{0.4\textwidth}
+%						\centering
+%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoCaratteristica}
+%						\caption{Caratteristica statica del diodo.}
+%					\end{subfigure}
+%					\begin{subfigure}{0.4\textwidth}
+%						\centering
+%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoTranscaratteristica}
+%						\caption{Transcaratteristica statica del diodo.}
+%					\end{subfigure}
+%					\label{fig:caratteristicheStaticheDiodo}
+%				\end{figure}
+				\newline
+				Dopo aver connesso il generatore di segnali, la sonda e l'oscilloscopio  come illustrato precedentemente, abbiamo ottenuto la seguente immagine, dove l'output è distorto per effetto del circuito; in particolare, la parte dove il segnale assume valori negativi è stata azzerata e parte dove il segnale assume valori positivi risulta attenuata a causa della non idealità del diodo.
 				\begin{figure}[h!]
 					\centering
-					\begin{subfigure}{0.4\textwidth}
-						\centering
-						\includegraphics[scale=0.5]{sondaSegnaleSottocompensato}
-						\caption{Sonda sottocompensata.}
-					\end{subfigure}
-					\begin{subfigure}{0.4\textwidth}
-						\centering
-						\includegraphics[scale=0.5]{sondaSegnaleSovracompensato}
-						\caption{Sonda sovracompensata.}
-					\end{subfigure}
-					\caption{Visualizzazione del segnale al variare della compensazione della sonda.}
-					\label{fig:sondaSegnaleNonCompensato}
+					\includegraphics[scale=0.7]{ampiezzaDiPiccoDiodo}
+					\caption{Segnale originale e segnale prelevato a valle del diodo.}
+					\label{fig:ampiezzaDiPiccoDiodo}
 				\end{figure}
 				\newline
-				% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
-				Dopo aver connesso generatore di segnali, sonda e oscilloscopio (GIULIO NON HO SPEIFICATO COME ABBIAMO CONNESSO LE ROBE PERCHE' E' NELLA PARTE DELLE PREMESSE)abbiamo ottenuto le seguenti immagini, dove il segnale di input è rappresentato dalla linea blu e l'output da quella gialla. 
-				%foto 3
-				Si può notare come l'input sia un segnale sinusoidale standard, mentre l'output è distorto per effetto del cisrcuito, in particolare la parte negativa del segnale è stata portata a 0 (poichè le tensioni negative ricevute in input dal diodo diventano 0 in output), ed anche la curva sinusoidale risulta un po' schiacciata (perchè?).
-				In seguito, per misurare l'ampiezza di picco del segnale di output abbiamo posizionato i cursori come in figura ottenendo Vu(t) = 4.440V %ho letto bene?
-				%transcaratteristica statica Vu = f(Ve)
+				In seguito, abbiamo misurato l'ampiezza di picco del segnale in output, ottenendo $ 4.40 \, \mathrm{V} $.
 			\subsubsection{Diodo di Zener}
 				Abbiamo seguito la stessa procedura con il diodo di Zener, vanno sottilineati i valori ottenuti con tensioni negative in input, che sono coerenti con la definizione di diodo di Zener.
 				(Ricordiamo che stiamo di nuovo utilizzando l'alimentatore e che le misurazioni sono state effettuate con il multimetro)
 				%tabella
-				% RIPORTARE GRAFICO DELLA TANSCARATTERISTICA E DELLA CARATTERISTICA
+%				\begin{figure}[h!]
+%					\centering
+%					\begin{subfigure}{0.4\textwidth}
+%						\centering
+%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoDiZenerCaratteristica}
+%						\caption{Caratteristica statica del diodo di Zener.}
+%					\end{subfigure}
+%					\begin{subfigure}{0.4\textwidth}
+%						\centering
+%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoDiZenerTranscaratteristica}
+%						\caption{Transcaratteristica statica del diodo di Zener.}
+%					\end{subfigure}
+%					\label{fig:caratteristicheStaticheDiodoDiZener}
+%				\end{figure}
 				La tensione di soglia è: 
 				La tensione di breakdown è:
 				Connettendo il generatore di segnali come al punto precedente, con la linea blu per l'input e quella gialla per l'output abbiamo ottenuto la seguente imagine
