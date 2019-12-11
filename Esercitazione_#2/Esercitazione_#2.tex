@@ -53,7 +53,7 @@
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		Lo scopo di questa esercitazione è stato studiare la risposta in frequenza di due filtri RC per mezzo di un segnale sinusoidale di ampiezza e frequenza note.
+		Lo scopo di questa esercitazione è studiare la risposta in frequenza di due filtri RC per mezzo di un segnale sinusoidale di ampiezza e frequenza note.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -93,7 +93,7 @@
 		\subsection{Filtro RC}
 			Un filtro RC è un circuito elettrico del primo ordine composto da una resistenza e da un condensatore.
 			\subsubsection{Filtro passa-basso}
-				Un filtro passa-basso è un filtro RC che permette il passaggio di frequenze al di sotto della frequenza di taglio, dove quest'ultima è la frequenza tale per cui il segnale viene attenuato di $ 3 \, \mathrm{dB} $.
+				Un filtro passa-basso è un filtro RC che permette il passaggio di frequenze al di sotto della frequenza di taglio; quest'ultima è la frequenza tale per cui il segnale viene attenuato di $ 3 \, \mathrm{dB} $.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -108,8 +108,9 @@
 					\end{subfigure}
 					\label{fig:filtroPassaBasso}
 				\end{figure}
+				\newpage
 			\subsubsection{Filtro passa-alto}
-				Un filtro passa-alto è un filtro RC che permette il passaggio di frequenze al di sopra della frequenza di taglio, dove quest'ultima è la frequenza tale per cui il segnale viene attenuato di $ 3 \, \mathrm{dB} $.
+				Un filtro passa-alto è un filtro RC che permette il passaggio di frequenze al di sopra della frequenza di taglio; quest'ultima è la frequenza tale per cui il segnale viene attenuato di $ 3 \, \mathrm{dB} $.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -146,7 +147,7 @@
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
 		\subsection{Operazioni preliminari}
-			Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 1 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $; successivamente abbiamo collegato il generatore di segnali all'oscilloscopio tramite un cavo coassiale BNC-BNC, di lunghezza pari a $ 1 \, \mathrm{m} $, al fine di visualizzare la forma d'onda, ottentendo il circuito qui rappresentato.
+			Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 1 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $; successivamente abbiamo collegato il generatore di segnali all'oscilloscopio tramite un cavo coassiale BNC-BNC, di lunghezza pari a $ 1 \, \mathrm{m} $, al fine di visualizzare la forma d'onda, ottenendo il circuito qui rappresentato.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.4]{theveninCavoDSO}
@@ -193,7 +194,7 @@
 					\label{fig:offsetNegativo}
 				\end{figure}
 		\subsection{Scheda con filtro RC}
-			Abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
+			Abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle dei condensatori.
 			\newline
 			L'interruttore che gestisce la presenza del secondo condensatore è posto in parallelo al primo condensatore presente nel filtro; quando esso viene chiuso, il secondo condensatore viene collegato in parallelo al circuito, aumentando l'attenuazione del filtro, ovvero la sua frequenza di taglio.
 			\begin{figure}[h!]
@@ -207,7 +208,7 @@
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-basso: diagrammi di Bode}
 			Abbiamo regolato il generatore di segnali in modo da visualizzare un segnale sinusoidale di ampiezza $ V_{\mathrm{pp}} = 800 \, \mathrm{mV} $ e frequenza $ f = 1 \, \mathrm{kHz} $; successivamente abbiamo collegato la scheda coi filtri RC premontati al generatore di segnali tramite un cavo BNC-BNC e all'oscilloscopio tramite due cavi coassiali BNC-coccodrillo, uno attaccato a monte della resistenza e uno a valle del dei condensatori.
 			\newline
-			In particolare è stato connesso l'ingresso del filtro al canale $ \mathrm{CH1} $ dell'oscilloscopio, mentre l'uscita è stata connessa al canale $ \mathrm{CH2} $; successivamente, abbiamo impostato il coefficente di deflessione verticale dell'oscilloscopio , per entrambi i canali, a $ 200 \, \mathrm{\frac{mV}{div}} $ e la velocità di scansione orizzontale in modo da poter visualizzare almeno un periodo del segnale.
+			In particolare abbiamo connesso l'ingresso del filtro al canale $ \mathrm{CH1} $ dell'oscilloscopio, mentre l'uscita l'abbiamo connessa al canale $ \mathrm{CH2} $; successivamente, abbiamo impostato il coefficente di deflessione verticale dell'oscilloscopio , per entrambi i canali, a $ 200 \, \mathrm{\frac{mV}{div}} $ e la velocità di scansione orizzontale in modo da poter visualizzare almeno un periodo del segnale.
 			\newline
 			Infine, abbiamo proceduto col variare la frequenza del segnale al fine di misurare lo sfasamento e l'attenuazione subita da esso, riportando tutti i dati nell'apposita tabella e costruendo i relativi grafici. Inoltre, si è calcolato la frequenza per cui lo sfasamento tra l'ingresso e l'uscita del filtro si avvicina maggiormente ai $ 45 $ \textdegree.
 			\newline
@@ -396,6 +397,7 @@
 				\caption{Diagramma di Bode associato al filtro.}
 				\label{fig:filtroPassaBassoUnCondensatoreBode}
 			\end{figure}
+			\newline
 			Mentre i dati misurati usando il filtro passa-basso con l'interruttore chiuso, ovvero sfruttando entrambi i condensatori, sono riportati di seguito.
 			\begin{center}
 				\begin{tabular}{ |c|c|c|c|c| }
@@ -463,7 +465,7 @@
 	%-----------------------------------------------------------------------------
 	\section{Conclusioni}
 		\subsection{Uso dei generatori di segnali}
-			Dai valori riportati si evince la compatibilità fra i valori di frequenza e tensione misurati tramite l'oscilloscopio e quelli impostati nel generatore di segnali; inoltre possiamo notare come il segnale uscente dal generatore tenda ad avere una diminuzione del proprio valore data la non idealità del generatore stesso.
+			Dai valori riportati si evince la compatibilità fra i valori di frequenza e tensione misurati tramite l'oscilloscopio e quelli impostati nel generatore di segnali; inoltre possiamo notare come il segnale uscente dal generatore tenda ad avere una diminuzione del proprio valore, data la non idealità del generatore stesso.
 			\subsubsection{Offset}
 				In seguito all’aggiunta di un offset al segnale, si nota come quest’ultimo venga traslato verso l’alto, o verso il basso, rispetto all’asse orizzontale; passando dalla modalità DC a quella in AC, è possibile rimuovere tale effetto in quanto, in tale modalità, l’oscilloscopio rimuove la componente continua del segnale, che, nel nostro caso, coincide con il valore di offset.
 		\subsection{Risposta nel dominio della frequenza di un filtro passa-basso: diagrammi di Bode}
