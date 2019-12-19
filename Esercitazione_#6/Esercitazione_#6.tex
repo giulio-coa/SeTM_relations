@@ -1,0 +1,111 @@
+\documentclass[a4paper]{article}
+\usepackage[
+				pdftex,
+				colorlinks=true,
+				bookmarksnumbered=true,
+				bookmarksopen=true,
+				bookmarksopenlevel=3,
+				pdfstartview=FitP,
+				urlcolor=blue,
+			]{hyperref}
+\pdfinfo{
+			/Title(Esercitazione di Laboratorio: Arduino)
+			/Author(Coa Giulio, Licastro Dario, Montano Alessandra)
+		}
+\usepackage[italian]{babel}
+\usepackage{geometry,titling,mdsymbol,stmaryrd,graphicx,subcaption,amsmath}
+\graphicspath{{./Image/}}
+\renewcommand\maketitlehooka{
+								\null
+								\mbox{}
+								\vfill
+							}
+\renewcommand\maketitlehookd{
+								\vfill
+								\null
+							}
+\title{
+		\begin{center}
+			Esercitazione di Laboratorio:
+		\end{center}
+		\newline
+		\begin{center}
+			Arduino
+		\end{center}
+	}
+\author{
+			Coa Giulio
+			\and
+			Licastro Dario
+			\and
+			Montano Alessandra
+		}
+\begin{document}
+	%-----------------------------------------------------------------------------
+	%  TITLE
+	%-----------------------------------------------------------------------------
+	\begin{titlingpage}
+		\maketitle
+	\end{titlingpage}
+	\newpage
+	%-----------------------------------------------------------------------------
+	%  PURPOSE OF THE EXPERIENCE
+	%-----------------------------------------------------------------------------
+	\section{Scopo dell'esperienza}
+		.
+	%-----------------------------------------------------------------------------
+	%  INSTRUMENTATION USED
+	%-----------------------------------------------------------------------------
+	\section{Strumentazione utilizzata}
+		La strumentazione usata durante l'esercitazione è:
+		\begin{center}
+			\begin{tabular}{ |c|c|c| }
+				\hline
+				\multirow{\textbf{Strumento}}	 & \textbf{Marca e Modello} & \textbf{Caratteristiche} \\
+				\hline
+				\multirow{Multimetro}			 & Agilent 34401A			& \\
+				\multirow{Oscilloscopio}		 & Rigol DS1054Z			& 4 canali, \\
+												 &							& $ B = 50 \, \mathrm{MHz} $, \\
+												 &							& $ f_{\mathrm{c}} = 1 \, \mathrm{G\frac{Sa}{s}} $, \\
+												 &							& $ R_{\mathrm{i}} = 1 \, \mathrm{M\Omega} $, \\
+												 &							& $ C_{\mathrm{i}} = 13 \, \mathrm{pF} $, \\
+												 &							& $ 12 \, \mathrm{Mbps} $ di profondità di memoria \\
+				\multirow{Generatore di segnali} & Rigol DG1022				& 2 canali, \\
+												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
+												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
+				\multirow{Sonda}				 & Rigol PVP215				& $ B = 35 \, \mathrm{MHz} $, \\
+												 &							& $ V_{\mathrm{nominale}} = 300 \, \mathrm{V} $, \\
+												 &							& $ L_{\mathrm{cavo}} = 1.2 \, \mathrm{m} $, \\
+												 &							& $ R_{\mathrm{s}} = 1 \, \mathrm{M\Omega} $, \\
+												 &							& Intervallo di pensazione: $ 10 \div 25 \, \mathrm{pF} $ \\
+				\multirow{Cavi coassiali}		 &							& Capacità dell'ordine dei $ 80 \div 100 \, \mathrm{p\frac{F}{m}} $ \\
+				\multirow{Connettori}			 &							& \\
+				\hline
+			\end{tabular}
+		\end{center}
+	%-----------------------------------------------------------------------------
+	%  THEORETICAL PREMISES
+	%-----------------------------------------------------------------------------
+	\section{Premesse teoriche}
+		\subsection{Incertezza sulla misura dell'oscilloscopio}
+			La misura del valore di un segnale tramite l’oscilloscopio (sia esso l'ampiezza, la frequenza, il periodo, etc.) presenta un'incertezza che dipende, principalmente, da due fattori:
+			\begin{itemize}
+				\item l’incertezza strumentale introdotta dall’oscilloscopio (ricavabile dal manuale).
+				\item l’incertezza di lettura dovuta all’errore del posizionamento dei cursori.
+			\end{itemize}
+			Quest’ultima incertezza deriva dal fatto che il segnale visualizzato non ha uno spessore nullo sullo schermo.
+		\subsection{Other}
+			.
+	%-----------------------------------------------------------------------------
+	%  LABORATORY EXPERIENCE
+	%-----------------------------------------------------------------------------
+	\section{Esperienza in laboratorio}
+		\subsection{Other}
+			.
+	%-----------------------------------------------------------------------------
+	%  RESULTS
+	%-----------------------------------------------------------------------------
+	\section{Risultati}
+		\subsection{Other}
+			.
+\end{document}
