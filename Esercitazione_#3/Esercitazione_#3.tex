@@ -183,7 +183,7 @@
 				\label{fig:caratteristicaStatica}
 			\end{figure}
 			\newpage
-			Si noti come, al crescere di $ v_{\mathrm{D}} $, la corrente $ i_{\mathrm{D}} $, ovvero la corrente che attaversa il diodo, aumenti (regione di polarizzazione); in particolare, dopo il raggiungimento della tensione di soglia $ V_{\mathrm{\gamma} $, il diodo tende a comportarsi come un generatore ideale indipendente di tensione di valore pari a $ V_{\mathrm{\gamma} $.
+			Si noti come, al crescere di $ v_{\mathrm{D}} $, la corrente $ i_{\mathrm{D}} $, ovvero la corrente che attaversa il diodo, aumenti (regione di polarizzazione); in particolare, dopo il raggiungimento della tensione di soglia $ V_{\mathrm{\gamma}} $, il diodo tende a comportarsi come un generatore ideale indipendente di tensione di valore pari a $ V_{\mathrm{\gamma}} $.
 			\newline
 			Al contrario, quando $ v_{\mathrm{D}} $ è troppo bassa, la corrente $ i_{\mathrm{D}} $ è pari a $ -I_{\mathrm{S}} $, ovvero circa nulla; ciò porta il diodo a comportarsi similmente ad un circuito aperto (regione di polarizzazione inversa). Questa condizione può dare luogo al fenomeno del breakdown, ovvero quando il diodo conduce in direzione opposta; tale fenomeno porta, solitamente, alla rottura del diodo.
 			\subsubsection{Diodo di Zener}
@@ -195,7 +195,7 @@
 					\label{fig:caratteristicaStaticaDiodoZener}
 				\end{figure}
 		\subsection{Raddrizzatore a semplice semionda}
-			Circuito fondamentale che, data una tensione in input, caratterizzata da un valor medio non nullo, ne estrae la parte positiva; il segnale in uscita presenta valor medio nullo.
+			Il raddrizzatore a semplice semionda è un circuito che, data una tensione in input, caratterizzata da un valor medio non nullo, ne estrae la parte positiva; il segnale in uscita presenta valor medio nullo.
 			\begin{equation*}
 				v_{\mathrm{out}} =
 				\begin{cases}
@@ -210,10 +210,23 @@
 				\label{fig:transcaratteristicaStaticaRaddrizzatoreASempliceSemionda}
 			\end{figure}
 		\subsection{Rivelatore di picco}
-			Il rivelatore di picco è un circuito costituito da un diodo in serie con un condensatore, quando lo si alimenta il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso.
-			Data la presenza del diodo la corrente non può "tornare indietro", quindi, anche se l'ampiezza del segnale scende sotto il valore di picco, il condensatore rimane carico al massimo valore che è stato raggiunto.
+			Il rivelatore di picco è un circuito che, dato un segnale in ingresso, ne determina il valore di picco.
+			\newline
+			\begin{center}
+				$ v_{\mathrm{in}} = V_{\mathrm{p}} \cdot \sin(2 \pi \cdot f \cdot t) $
+			\end{center}
+			\newline
+			\begin{center}
+				$ v_{\mathrm{out}} = V_{\mathrm{p}} $
+			\end{center}
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.7]{circuitoRivelatoreDiPicco}
+				\caption{Circuito del rivelatore di picco.}
+				\label{fig:circuitoRivelatoreDiPicco}
+			\end{figure}
 		\subsection{Protezione ESD}
-			Circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
+			La protezione ESD è un circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
 			\begin{equation*}
 				v_{\mathrm{out}} =
 				\begin{cases}
@@ -255,8 +268,7 @@
 				\label{fig:circuitoRaddrizzatoreASempliceSemionda}
 			\end{figure}
 			\newline
-			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita rendendolo più o meno \textbf{(approssimato?)}.
-			Infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
+			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita; infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
 		\subsection{Rivelatore di picco}
 			Abbiamo posizionato sulla basetta gli elementi circuitali in modo da costruire i rivelatore di picco, ed abbiammo connesso ingresso ed uscita all'oscilloscopio.
 			Il segnle in ingresso è sinusoidale, metre in uscita abbiamo una funzione lineare sul valore di picco della sinusoide.
@@ -302,11 +314,11 @@
 						\includegraphics[scale=0.3]{caratteristicheStaticheDiodoCaratteristica}
 						\caption{Caratteristica statica del diodo.}
 					\end{subfigure}
-%					\begin{subfigure}{0.4\textwidth}
-%						\centering
-%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoTranscaratteristica}
-%						\caption{Transcaratteristica statica del diodo.}
-%					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoTranscaratteristica}
+						\caption{Transcaratteristica statica del diodo.}
+					\end{subfigure}
 					\label{fig:caratteristicheStaticheDiodo}
 				\end{figure}
 				\newline
@@ -342,7 +354,7 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{BR}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
+				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{br}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -350,11 +362,11 @@
 						\includegraphics[scale=0.3]{caratteristicheStaticheDiodoDiZenerCaratteristica}
 						\caption{Caratteristica statica del diodo di Zener.}
 					\end{subfigure}
-%					\begin{subfigure}{0.4\textwidth}
-%						\centering
-%						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoDiZenerTranscaratteristica}
-%						\caption{Transcaratteristica statica del diodo di Zener.}
-%					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoDiZenerTranscaratteristica}
+						\caption{Transcaratteristica statica del diodo di Zener.}
+					\end{subfigure}
 					\label{fig:caratteristicheStaticheDiodoDiZener}
 				\end{figure}
 				A differenza del diodo usato in precedenza, il diodo di Zener, proprio perchè adatto a lavorare in polarizzazione inversa, conduce anche per valori di tensione negativi, portandoci ad osservare il seguente segnale.		
@@ -374,7 +386,7 @@
 						\hline
 						\multirow{\textbf{$ C_{1} $}} & \textbf{$ C_{2} $} & \textbf{$ C_{3} $} \\
 						\hline
-						\multirow{$ 4.48 \, \mathrm{V} $} & $ 2.56 \, \mathrm{V} $ & $ 480 \, \mathrm{mV} $ \\
+						\multirow{$ 4.56 \, \mathrm{V} $} & $ 2.56 \, \mathrm{V} $ & $ 480 \, \mathrm{mV} $ \\
 						\hline
 					\end{tabular}
 				\end{center}
@@ -406,7 +418,7 @@
 						\hline
 						\multirow{\textbf{$ C_{1} $}} & \textbf{$ C_{2} $} & \textbf{$ C_{3} $} \\
 						\hline
-						\multirow{$ 7.20 \, \mathrm{V} $} & $ 6.88 \, \mathrm{V} $ & $ 5.52 \, \mathrm{V} $ \\
+						\multirow{$ 7.36 \, \mathrm{V} $} & $ 7.12 \, \mathrm{V} $ & $ 5.68 \, \mathrm{V} $ \\
 						\hline
 					\end{tabular}
 				\end{center}
@@ -462,11 +474,11 @@
 	%-----------------------------------------------------------------------------
 	\section{Conclusioni}
 		\subsection{Caratteristiche statiche}
-			.
+			Come si può notare dal grafico della transcaratteristica, il diodo D=1N4148 presenta una tensione di soglia $ V_{\mathrm{\gamma}} $ pari a $ 600 \, \mathrm{mV} $, mentre il diodo di Zener D=1N5228 presenta una tensione di soglia $ V_{\mathrm{\gamma}} $ pari a $ 600 \, \mathrm{mV} $ e  una tensione di breakdown $ V_{\mathrm{br}} $ pari a $ -600 \, \mathrm{mV} $.
 		\subsection{Raddrizzatore a semplice semionda}
 			.
 		\subsection{Rivelatore di picco}
-			Il rivelatore di picco è un circuito costituito da un diodo in serie con un condensatore, quando lo si alimenta il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso.
+			Come abbiamo potuto vedere, una volta che viene alimentato il circuito, il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso; a tal punto, il segnale inizia la "fase di discesa", dove diminuisce la sua ampiezza. Il diodo, analizzato
 			Data la presenza del diodo la corrente non può "tornare indietro", quindi, anche se l'ampiezza del segnale scende sotto il valore di picco, il condensatore rimane carico al massimo valore che è stato raggiunto.
 			Questo perchè il diodo può condurre solo in un verso, quando l'ampiezza del segnale cala il condensatore non può scaricarsi e rimane alla tensione massima raggiunta.
 			Una volta che il segnale supera la tensione di soglia del diodo, esso inizierà a condurre per cui il condensatore si caricherà mantenendo il valore di tensione pari alla tensione di picco.
