@@ -209,6 +209,9 @@
 				\caption{Circuito e transcaratteristica statica di un raddrizzatore a semplice semionda.}
 				\label{fig:transcaratteristicaStaticaRaddrizzatoreASempliceSemionda}
 			\end{figure}
+		\subsection{Rivelatore di picco}
+			Il rivelatore di picco è un circuito costituito da un diodo in serie con un condensatore, quando lo si alimenta il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso.
+			Data la presenza del diodo la corrente non può "tornare indietro", quindi, anche se l'ampiezza del segnale scende sotto il valore di picco, il condensatore rimane carico al massimo valore che è stato raggiunto.
 		\subsection{Protezione ESD}
 			Circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
 			\begin{equation*}
@@ -255,9 +258,14 @@
 			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita rendendolo più o meno \textbf{(approssimato?)}.
 			Infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
 		\subsection{Rivelatore di picco}
-			.
+			Abbiamo posizionato sulla basetta gli elementi circuitali in modo da costruire i rivelatore di picco, ed abbiammo connesso ingresso ed uscita all'oscilloscopio.
+			Il segnle in ingresso è sinusoidale, metre in uscita abbiamo una funzione lineare sul valore di picco della sinusoide.
+			%foto 12-13-14
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			.
+			Abbiamo posizionato sulla basetta gli elementi circuitali in modo da costruire il circuito per la protezione da scariche elettrostatiche, ed abbiammo connesso ingresso ed uscita all'oscilloscopio.
+			Il segnale in ingresso è sinusoidale, quello in uscita subisce le limitazione dovute al circuito, per cui risulta tagliato entro i valori di tensione dovuti ai diodi, in particolare a Vgamma ed alla tensione di alimentazione (come scritto precedentemente).
+			%foto 15
+			%foto 16 transcaratteristica
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -445,10 +453,10 @@
 					\label{fig:raddrizzatoreASempliceSemionda1micro}
 				\end{figure}
 				\newpage
-		\subsection{Rivelatore di picco}
-			.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			.
+			Vmin = -600 mV
+			Vmax = 6 V
+			%foto 16
 	%-----------------------------------------------------------------------------
 	%  CONCLUSION
 	%-----------------------------------------------------------------------------
@@ -458,7 +466,12 @@
 		\subsection{Raddrizzatore a semplice semionda}
 			.
 		\subsection{Rivelatore di picco}
-			.
+			Il rivelatore di picco è un circuito costituito da un diodo in serie con un condensatore, quando lo si alimenta il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso.
+			Data la presenza del diodo la corrente non può "tornare indietro", quindi, anche se l'ampiezza del segnale scende sotto il valore di picco, il condensatore rimane carico al massimo valore che è stato raggiunto.
+			Questo perchè il diodo può condurre solo in un verso, quando l'ampiezza del segnale cala il condensatore non può scaricarsi e rimane alla tensione massima raggiunta.
+			Una volta che il segnale supera la tensione di soglia del diodo, esso inizierà a condurre per cui il condensatore si caricherà mantenendo il valore di tensione pari alla tensione di picco.
+			Una volta che il segnale diminuirà la sua ampiezza il diodo smetterà di condurre per cui il condensatore rimarrà carico.
+			Il valore  cui rimane i condensatore è leggermente inferiore a quello della tensione di picco poichè vi è un periodo in cui il segnale presenta una rensione magiore di quella di soglia, ma inferiore a quella di picco, che porta ad una leggera scarica del condensatore.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
 			.
 \end{document}
