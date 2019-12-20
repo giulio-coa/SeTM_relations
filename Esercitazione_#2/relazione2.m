@@ -27,7 +27,7 @@ hold on
 bode(H, x, 'r*')
 grid on
 
-% DATI FILTRO PASSSA-ALTO
+% DATI FILTRO PASSA-ALTO
 
 figure()
 x = [100, 5000, 8000, 10000, 15000, 16000, 17000, 18000, 20000, 25000, 29000, 1000000]; % vettore con le frequenze
