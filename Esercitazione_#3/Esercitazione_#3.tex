@@ -114,7 +114,7 @@
 				\caption{Circuito analizzato collegato all'oscilloscopio tramite un cavo coassiale BNC-BNC.}
 				\label{fig:theveninCavoDSO}
 			\end{figure}
-			\newpage
+			\newline
 			In questo caso, l’oscilloscopio si comporta, in ingresso, come un filtro passa-basso con una frequenza di taglio ($ f = \frac{1}{2\pi R_{i} (C_{s} + C_{i})} $). L'uso di una sonda per misurare delle grandezze in un circuito, si può vedere come l'inserimento di un condensatore in serie al circuito.
 			\begin{figure}[h!]
 				\centering
@@ -122,7 +122,7 @@
 				\caption{Circuito analizzato collegato all'oscilloscopio tramite una sonda.}
 				\label{fig:theveninSondaDSOCircuito}
 			\end{figure}
-			\newline
+			\newpage
 			L'introduzione di questo condensatore comporta un calo della capacità equivalenti vista all'ingresso del circuito ($ \mathrm{\frac{C_{s} (C_{c} + C_{i})}{C_{s} + C_{c} + C_{i}} \ll C_{c} + C_{i}} $), ovvero una riduzione della frequenza del polo ($ f_{\mathrm{polo}} = \frac{1}{2\pi R_{i} (C_{s} + C_{i})} $); ciò porta ad una perdita d'informazioni in bassa frequenza.
 			\newline
 			Al fine di evitare tale perdita d'informazioni, si pone, in parallelo al condensatore, una resistenza.
@@ -221,9 +221,9 @@
 			\end{center}
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[scale=0.7]{circuitoRivelatoreDiPicco}
+				\includegraphics[scale=0.7]{rivelatoreDiPiccoCircuito}
 				\caption{Circuito del rivelatore di picco.}
-				\label{fig:circuitoRivelatoreDiPicco}
+				\label{fig:rivelatoreDiPiccoCircuito}
 			\end{figure}
 		\subsection{Protezione ESD}
 			La protezione ESD è un circuito usato come protezione da scariche elettrostatiche, caratterizzato dall'imposizione di una tensione massima e di una tensione minima.
@@ -249,11 +249,11 @@
 			Abbiamo montanto sulla breadboard la resistenza, il diodo D=1N4148 e l'elemento di collegamento seguendo lo schema in figura.
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[scale=0.7]{circuitoCaratteristicheStatiche}
+				\includegraphics[scale=0.7]{caratteristicheStaticheCircuito}
 				\caption{Circuito.}
-				\label{fig:circuitoCaratteristicheStatiche}
+				\label{fig:caratteristicheStaticheCircuito}
 			\end{figure}
-			\newpage
+			\newline
 			Successivamente, per mezzo del multimetro, abbiamo misurato la resistenza, verificando che tale valore rientri nel $ 5 \% $ di tolleranza dato dal costruttore. Abbiamo alimentato, collegando la breadboard all'alimentatore in DC per mezzo di due cavi a banana, il circuito, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, misurando, sempre tramite il multimetro, i valori di tensione ai capi della resistenza.
 			\newline
 			In seguito abbiamo connesso alla breadboard, al posto dell'alimentatore in DC, il generatore di segnali tramite un cavo coassiale BNC-banana, impostandolo per fornire un segnale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $, ed, al posto del multimetro, l'oscilloscopio tramite due sonde.
@@ -263,21 +263,58 @@
 			Abbiamo realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, ed abbiamo misurato l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condensatore.
 			\begin{figure}[h!]
 				\centering
-				\includegraphics[scale=0.7]{circuitoRaddrizzatoreASempliceSemionda}
+				\includegraphics[scale=0.7]{raddrizzatoreASempliceSemiondaCircuito}
 				\caption{Circuito.}
-				\label{fig:circuitoRaddrizzatoreASempliceSemionda}
+				\label{fig:raddrizzatoreASempliceSemiondaCircuito}
 			\end{figure}
-			\newline
+			\newpage
 			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita; infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
 		\subsection{Rivelatore di picco}
-			Abbiamo posizionato sulla basetta gli elementi circuitali in modo da costruire i rivelatore di picco, ed abbiammo connesso ingresso ed uscita all'oscilloscopio.
-			Il segnle in ingresso è sinusoidale, metre in uscita abbiamo una funzione lineare sul valore di picco della sinusoide.
-			%foto 12-13-14
+			Abbiamo posizionato gli elementi circuitali sulla breadboard in modo da costruire il rivelatore di picco, connettendo, tramite due sonde, l'ingresso e l'uscita all'oscilloscopio ed abbiamo impostato il generatore di segnali di modo da visualizzare un segnale sinusoidale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $.
+			\newline
+			Come ci aspettavamo, in uscita, visualizziamo un segnale costante sul valore di picco del segnale in ingresso; come si può vedere dalle immagini, tale fenomeno è indipendente dalla capacità del condensatore usato.
+			\begin{figure}[h!]
+				\centering
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{rivelatoreDiPicco10n}
+					\caption{Rivelatore di picco con il condensatore da $ 10 \, \mathrm{nF} $.}
+				\end{subfigure}
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{rivelatoreDiPicco100n}
+					\caption{Rivelatore di picco con il condensatore da $ 100 \, \mathrm{nF} $.}
+				\end{subfigure}
+				\begin{subfigure}{1\textwidth}
+					\centering
+					\includegraphics[scale=0.4]{rivelatoreDiPicco1micro}
+					\caption{Rivelatore di picco con il condensatore da $ 1 \, \mathrm{\mu F} $.}
+				\end{subfigure}
+				\label{fig:rivelatoreDiPicco}
+			\end{figure}
+			\newpage
+			Ciò avviene poichè, una volta alimentato il circuito, il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso; a tal punto, il segnale inizia la "fase di discesa", dove diminuisce la sua ampiezza.
+			\newline
+			Il diodo, analizzato in condizioni di ampio segnale, si comporta come un circuito aperto per ogni valore di tensione $ v_{\mathrm{D}} $ inferiore alla tensione di soglia $ V_{\mathrm{\gamma}} $; ciò implica che, quando il segnale dimuinisce la sua ampiezza, il diodo smette di condurre corrente in quanto la tensione $ v_{\mathrm{D}} $ diventa inferiore alla tensione di soglia.
+			\newline
+			Questo evento comporta l'impossibilità, da parte del condensatore, della fase di scarica, per cui esso preserverà la tensione di picco del segnale in ingresso.
+			Data la non-immediatezza del calo di tensione, esiste un momento in cui il segnale diminuisce la sua ampiezza, ma essa rimane superiore alla tensione di soglia del diodo; in tale momento il condensatore effettua una breve fase di scarica, che porta ad un errore nel funzionamento del circuito, in quanto il valore "memorizzato" non è quello della tensione di picco, ma uno leggermente inferiore.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			Abbiamo posizionato sulla basetta gli elementi circuitali in modo da costruire il circuito per la protezione da scariche elettrostatiche, ed abbiammo connesso ingresso ed uscita all'oscilloscopio.
-			Il segnale in ingresso è sinusoidale, quello in uscita subisce le limitazione dovute al circuito, per cui risulta tagliato entro i valori di tensione dovuti ai diodi, in particolare a Vgamma ed alla tensione di alimentazione (come scritto precedentemente).
-			%foto 15
-			%foto 16 transcaratteristica
+			Abbiamo posizionato gli elementi circuitali sulla breadboard in modo da costruire la protezione ESD; come ci aspettavamo, in uscita, visualizziamo un segnale che presenta i valori di picco limitati, di cui abbiamo determinato $ V_{\mathrm{min}} $ e $ V_{\mathrm{max}} $.
+			\begin{figure}[h!]
+				\centering
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{protezioneESD}
+					\caption{Protezione ESD.}
+				\end{subfigure}
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{protezioneESDTranscaratteristica}
+					\caption{Transcaratteristica della protezione ESD.}
+				\end{subfigure}
+				\label{fig:protezioneESD}
+			\end{figure}
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -306,17 +343,17 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero. Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
+				Si può notare che il diodo utilizzato non è adatto all'uso in polarizzazione inversa, infatti, per valori di $ V_{\mathrm{e}} $ negativi, otteniamo valori di $ V_{\mathrm{u}} $ molto bassi, che si mantengono intorno allo zero. Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a $ 600 \, \mathrm{mV} $.
 				\begin{figure}[h!]
 					\centering
-					\begin{subfigure}{0.4\textwidth}
+					\begin{subfigure}{0.5\textwidth}
 						\centering
-						\includegraphics[scale=0.3]{caratteristicheStaticheDiodoCaratteristica}
+						\includegraphics[scale=0.2]{caratteristicheStaticheDiodoCaratteristica}
 						\caption{Caratteristica statica del diodo.}
 					\end{subfigure}
-					\begin{subfigure}{0.4\textwidth}
+					\begin{subfigure}{0.3\textwidth}
 						\centering
-						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoTranscaratteristica}
+						\includegraphics[scale=0.2]{caratteristicheStaticheDiodoTranscaratteristica}
 						\caption{Transcaratteristica statica del diodo.}
 					\end{subfigure}
 					\label{fig:caratteristicheStaticheDiodo}
@@ -329,7 +366,7 @@
 					\caption{Segnale originale e segnale prelevato a valle del diodo.}
 					\label{fig:ampiezzaDiPiccoDiodo}
 				\end{figure}
-				\newpage
+				\newline
 				In seguito, abbiamo misurato l'ampiezza di picco del segnale in output, ottenendo $ 4.40 \, \mathrm{V} $.
 			\subsubsection{Diodo di Zener}
 				Successivamente, abbiamo rieseguito la procedura utilizzando il diodo di Zener; vanno sottilineati i valori ottenuti per tensioni negative in input che sono coerenti con la definizione di diodo di Zener.
@@ -354,21 +391,22 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{br}} $ è pari a, circa, $ 500 \, \mathrm{mV} $.
+				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{br}} $ è pari a, circa, $ 600 \, \mathrm{mV} $.
 				\begin{figure}[h!]
 					\centering
-					\begin{subfigure}{0.4\textwidth}
+					\begin{subfigure}{0.5\textwidth}
 						\centering
-						\includegraphics[scale=0.3]{caratteristicheStaticheDiodoDiZenerCaratteristica}
+						\includegraphics[scale=0.2]{caratteristicheStaticheDiodoDiZenerCaratteristica}
 						\caption{Caratteristica statica del diodo di Zener.}
 					\end{subfigure}
-					\begin{subfigure}{0.4\textwidth}
+					\begin{subfigure}{0.3\textwidth}
 						\centering
-						\includegraphics[scale=0.5]{caratteristicheStaticheDiodoDiZenerTranscaratteristica}
+						\includegraphics[scale=0.2]{caratteristicheStaticheDiodoDiZenerTranscaratteristica}
 						\caption{Transcaratteristica statica del diodo di Zener.}
 					\end{subfigure}
 					\label{fig:caratteristicheStaticheDiodoDiZener}
 				\end{figure}
+				\newline
 				A differenza del diodo usato in precedenza, il diodo di Zener, proprio perchè adatto a lavorare in polarizzazione inversa, conduce anche per valori di tensione negativi, portandoci ad osservare il seguente segnale.		
 				\begin{figure}[h!]
 					\centering
@@ -409,7 +447,7 @@
 					\end{subfigure}
 					\label{fig:raddrizzatoreASempliceSemiondaDiodo}
 				\end{figure}
-				\newpage
+				\newline
 				Possiamo notare come, al decrescere della capacità del condensatore, aumenti l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output, ovvero come il segnale in input viene distorto sempre di più.
 			\subsubsection{Diodo di Zener}	
 				Successivamente, abbiamo sostituito il diodo con il diodo di Zener, ripetendo l'intera esperienza.
@@ -466,24 +504,11 @@
 				\end{figure}
 				\newpage
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			Vmin = -600 mV
-			Vmax = 6 V
-			%foto 16
-	%-----------------------------------------------------------------------------
-	%  CONCLUSION
-	%-----------------------------------------------------------------------------
-	\section{Conclusioni}
-		\subsection{Caratteristiche statiche}
-			Come si può notare dal grafico della transcaratteristica, il diodo D=1N4148 presenta una tensione di soglia $ V_{\mathrm{\gamma}} $ pari a $ 600 \, \mathrm{mV} $, mentre il diodo di Zener D=1N5228 presenta una tensione di soglia $ V_{\mathrm{\gamma}} $ pari a $ 600 \, \mathrm{mV} $ e  una tensione di breakdown $ V_{\mathrm{br}} $ pari a $ -600 \, \mathrm{mV} $.
-		\subsection{Raddrizzatore a semplice semionda}
-			.
-		\subsection{Rivelatore di picco}
-			Come abbiamo potuto vedere, una volta che viene alimentato il circuito, il condensatore inizia a caricarsi, raggiungendo il valore di picco del segnale in ingresso; a tal punto, il segnale inizia la "fase di discesa", dove diminuisce la sua ampiezza. Il diodo, analizzato
-			Data la presenza del diodo la corrente non può "tornare indietro", quindi, anche se l'ampiezza del segnale scende sotto il valore di picco, il condensatore rimane carico al massimo valore che è stato raggiunto.
-			Questo perchè il diodo può condurre solo in un verso, quando l'ampiezza del segnale cala il condensatore non può scaricarsi e rimane alla tensione massima raggiunta.
-			Una volta che il segnale supera la tensione di soglia del diodo, esso inizierà a condurre per cui il condensatore si caricherà mantenendo il valore di tensione pari alla tensione di picco.
-			Una volta che il segnale diminuirà la sua ampiezza il diodo smetterà di condurre per cui il condensatore rimarrà carico.
-			Il valore  cui rimane i condensatore è leggermente inferiore a quello della tensione di picco poichè vi è un periodo in cui il segnale presenta una rensione magiore di quella di soglia, ma inferiore a quella di picco, che porta ad una leggera scarica del condensatore.
-		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			.
+			\begin{center}
+				$ V_{\mathrm{min}}= -600 \, \mathrm{mV} $
+			\end{center}
+			\newline
+			\begin{center}
+				$ V_{\mathrm{max}}= 6.00 \, \mathrm{V} $
+			\end{center}
 \end{document}
