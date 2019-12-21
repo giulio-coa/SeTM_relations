@@ -52,7 +52,7 @@
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		Lo scopo di questa esercitazione è analizzare vari circuiti contenenti diodi, tramite l’esecuzione di una serie di misure in condizioni statiche al fine di determinare la caratteristica statica $ I_{\mathrm{d}}(V_{\mathrm{d}}) $ dei suddetti diodi, e la successiva visualizzazione del loro comportamento con una tensione d'ingresso di tipo sinusoidale.
+		Lo scopo di questa esercitazione è analizzare vari circuiti contenenti diodi, tramite l’esecuzione di una serie di misure al fine di determinare la caratteristica statica $ I_{\mathrm{d}}(V_{\mathrm{d}}) $ dei suddetti diodi, e la successiva visualizzazione del loro comportamento con una tensione d'ingresso di tipo sinusoidale.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -123,7 +123,7 @@
 				\label{fig:theveninSondaDSOCircuito}
 			\end{figure}
 			\newpage
-			L'introduzione di questo condensatore comporta un calo della capacità equivalenti vista all'ingresso del circuito ($ \mathrm{\frac{C_{s} (C_{c} + C_{i})}{C_{s} + C_{c} + C_{i}} \ll C_{c} + C_{i}} $), ovvero una riduzione della frequenza del polo ($ f_{\mathrm{polo}} = \frac{1}{2\pi R_{i} (C_{s} + C_{i})} $); ciò porta ad una perdita d'informazioni in bassa frequenza.
+			L'introduzione di questo condensatore comporta un calo della capacità equivalente vista all'ingresso del circuito ($ \mathrm{\frac{C_{s} (C_{c} + C_{i})}{C_{s} + C_{c} + C_{i}} \ll C_{c} + C_{i}} $), ovvero una riduzione della frequenza del polo ($ f_{\mathrm{polo}} = \frac{1}{2\pi R_{i} (C_{s} + C_{i})} $); ciò porta ad una perdita d'informazioni in bassa frequenza.
 			\newline
 			Al fine di evitare tale perdita d'informazioni, si pone, in parallelo al condensatore, una resistenza.
 			\begin{figure}[h!]
@@ -187,7 +187,7 @@
 			\newline
 			Al contrario, quando $ v_{\mathrm{D}} $ è troppo bassa, la corrente $ i_{\mathrm{D}} $ è pari a $ -I_{\mathrm{S}} $, ovvero circa nulla; ciò porta il diodo a comportarsi similmente ad un circuito aperto (regione di polarizzazione inversa). Questa condizione può dare luogo al fenomeno del breakdown, ovvero quando il diodo conduce in direzione opposta; tale fenomeno porta, solitamente, alla rottura del diodo.
 			\subsubsection{Diodo di Zener}
-				Sono particolari tipi di diodi proggettati appositamente per lavorare anche in polarizzazione inversa; questi diodi non si rompono se si verifica il breakdown, anzi sono caratterizzati da una tensione di soglia negativa, detta, per l'appunto, tensione di breakdown.
+				Sono particolari tipi di diodi progettati appositamente per lavorare anche in polarizzazione inversa; questi diodi non si rompono se si verifica il breakdown, anzi sono caratterizzati da una tensione di soglia negativa, detta, per l'appunto, tensione di breakdown.
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.7]{caratteristicaStaticaDiodoZener}
@@ -246,7 +246,7 @@
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
 		\subsection{Caratteristiche statiche}
-			Abbiamo montanto sulla breadboard la resistenza, il diodo D=1N4148 e l'elemento di collegamento seguendo lo schema in figura.
+			Abbiamo montato sulla breadboard la resistenza, il diodo D=1N4148 e l'elemento di collegamento seguendo lo schema in figura.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{caratteristicheStaticheCircuito}
@@ -254,13 +254,13 @@
 				\label{fig:caratteristicheStaticheCircuito}
 			\end{figure}
 			\newline
-			Successivamente, per mezzo del multimetro, abbiamo misurato la resistenza, verificando che tale valore rientri nel $ 5 \% $ di tolleranza dato dal costruttore. Abbiamo alimentato, collegando la breadboard all'alimentatore in DC per mezzo di due cavi a banana, il circuito, dopodichè abbiamo variato la tensione in ingresso secondo i valori fornitici, misurando, sempre tramite il multimetro, i valori di tensione ai capi della resistenza.
+			Successivamente, per mezzo del multimetro, abbiamo misurato la resistenza, verificando che tale valore rientri nel $ 5 \% $ di tolleranza dato dal costruttore. Dopo aver alimentato, collegando la breadboard all'alimentatore in DC per mezzo di due cavi a banana, il circuito, abbiamo variato la tensione in ingresso secondo i valori fornitici, misurando, sempre tramite il multimetro, i valori di tensione ai capi della resistenza.
 			\newline
 			In seguito abbiamo connesso alla breadboard, al posto dell'alimentatore in DC, il generatore di segnali tramite un cavo coassiale BNC-banana, impostandolo per fornire un segnale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $, ed, al posto del multimetro, l'oscilloscopio tramite due sonde.
 			\newline
-			Infine, abbiamo sostituito il diodo con il diodo di Zener D=1N5228 ed abbiamo ripetuto l'esperienza.
+			Infine, abbiamo sostituito il diodo con il diodo di Zener D=1N5228 e ripetuto l'esperienza.
 		\subsection{Raddrizzatore a semplice semionda}
-			Abbiamo realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, ed abbiamo misurato l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condensatore.
+			Dopo aver realizzato il circuito richiesto, collegando un condensatore in parallelo al circuito e sostituendo il diodo di Zener con il diodo usato precedentemente, si è proceduto col misurare l'ampiezza $ V_{\mathrm{pp}} $ del segnale al variare della capacità del condensatore.
 			\begin{figure}[h!]
 				\centering
 				\includegraphics[scale=0.7]{raddrizzatoreASempliceSemiondaCircuito}
@@ -268,11 +268,11 @@
 				\label{fig:raddrizzatoreASempliceSemiondaCircuito}
 			\end{figure}
 			\newpage
-			In questo modo, abbiamo potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita; infine, abbiamo sostituito il diodo con il diodo di Zener ed abbiamo ripetuto l'esperienza.
+			In questo modo, si è potuto apprezzare come la capacità del condensatore influenzi il segnale in uscita; infine, si è sostituito il diodo con il diodo di Zener e ripetuto l'esperienza.
 		\subsection{Rivelatore di picco}
 			Abbiamo posizionato gli elementi circuitali sulla breadboard in modo da costruire il rivelatore di picco, connettendo, tramite due sonde, l'ingresso e l'uscita all'oscilloscopio ed abbiamo impostato il generatore di segnali di modo da visualizzare un segnale sinusoidale d'ampiezza $ V_{\mathrm{pp}} = 10 \, \mathrm{V} $ e frequenza $ f = 1 \, \mathrm{kHz} $.
 			\newline
-			Come ci aspettavamo, in uscita, visualizziamo un segnale costante sul valore di picco del segnale in ingresso; come si può vedere dalle immagini, tale fenomeno è indipendente dalla capacità del condensatore usato.
+			In tal modo, in uscita, visualizziamo un segnale costante sul valore di picco del segnale in ingresso; come si può vedere dalle immagini, tale fenomeno è indipendente dalla capacità del condensatore usato.
 			\begin{figure}[h!]
 				\centering
 				\begin{subfigure}{0.4\textwidth}
@@ -300,7 +300,7 @@
 			Questo evento comporta l'impossibilità, da parte del condensatore, della fase di scarica, per cui esso preserverà la tensione di picco del segnale in ingresso.
 			Data la non-immediatezza del calo di tensione, esiste un momento in cui il segnale diminuisce la sua ampiezza, ma essa rimane superiore alla tensione di soglia del diodo; in tale momento il condensatore effettua una breve fase di scarica, che porta ad un errore nel funzionamento del circuito, in quanto il valore "memorizzato" non è quello della tensione di picco, ma uno leggermente inferiore.
 		\subsection{Circuito per la protezione da scariche elettrostatiche}
-			Abbiamo posizionato gli elementi circuitali sulla breadboard in modo da costruire la protezione ESD; come ci aspettavamo, in uscita, visualizziamo un segnale che presenta i valori di picco limitati, di cui abbiamo determinato $ V_{\mathrm{min}} $ e $ V_{\mathrm{max}} $.
+			Abbiamo posizionato gli elementi circuitali sulla breadboard in modo da costruire la protezione ESD; in questo modo, in uscita, visualizziamo un segnale che presenta i valori di picco limitati, di cui abbiamo determinato $ V_{\mathrm{min}} $ e $ V_{\mathrm{max}} $.
 			\begin{figure}[h!]
 				\centering
 				\begin{subfigure}{0.4\textwidth}
@@ -369,7 +369,7 @@
 				\newline
 				In seguito, abbiamo misurato l'ampiezza di picco del segnale in output, ottenendo $ 4.40 \, \mathrm{V} $.
 			\subsubsection{Diodo di Zener}
-				Successivamente, abbiamo rieseguito la procedura utilizzando il diodo di Zener; vanno sottilineati i valori ottenuti per tensioni negative in input che sono coerenti con la definizione di diodo di Zener.
+				Dopo aver eseguito un'altra volta la procedura utilizzando il diodo di Zener, abbiamo ottenuto dei valori per tensioni negative in input che sono coerenti con la definizione di diodo di Zener.
 				\begin{center}
 					\begin{tabular}{ |c|c|c| }
 						\hline
@@ -391,7 +391,7 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a, circa, $ 500 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{br}} $ è pari a, circa, $ 600 \, \mathrm{mV} $.
+				Come si può intuire dai valori misurati, la tensione di soglia $ V_{\mathrm{\gamma}} $ è pari a $ 600 \, \mathrm{mV} $, mentre la tensione di breakdown $ V_{\mathrm{br}} $ è pari a $ -1 \, \mathrm{V} $.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.5\textwidth}
@@ -482,7 +482,7 @@
 				\newpage
 				Possiamo notare come, anche in questo caso, al decrescere della capacità del condensatore, aumenti l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
 				\newline
-				Infine abbiamo rimontato il diodo D=1N4148 ed, lasciando montato il condensatore da $ 1 \, \mathrm{\mu F} $ e connettendo al circuito il generatore di segnali, impostato al fine di avere un'ampiezza $ V_{\mathrm{pp}} $ pari a $ 10 \, \mathrm{V} $, abbiamo verificato come, al variare della frequenza, variasse l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
+				Infine abbiamo riposizionato il diodo D=1N4148, lasciando montato il condensatore da $ 1 \, \mathrm{\mu F} $ e connettendo al circuito il generatore di segnali impostato al fine di avere un'ampiezza $ V_{\mathrm{pp}} $ pari a $ 10 \, \mathrm{V} $, e abbiamo verificato come, al variare della frequenza, variasse l'ampiezza $ V_{\mathrm{pp}} $ del segnale in output.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
