@@ -52,7 +52,7 @@ urlcolor=blue,
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		Scopo di questa esercitazione è lavorare con amplificatori invertenti e non per apprezzare la differenza tra i due comportamenti, visualizzare in che modo un amplificatore influenza il segnale in ingresso, e sottolineare la differenza tra comportamento ideale studiato e comportamento reale degli amplificatori, mediante il confronto tra le misurazioni effettuate ed i valori ottenuti tramite calcoli.
+		Lo scopo di questa esercitazione è lavorare con amplificatori invertenti e non per apprezzare la differenza tra i due comportamenti, visualizzare in che modo un amplificatore influenza il segnale in ingresso, e sottolineare la differenza tra comportamento ideale studiato e comportamento reale degli amplificatori, mediante il confronto tra le misurazioni effettuate ed i valori ottenuti tramite calcoli.
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -98,14 +98,10 @@ urlcolor=blue,
 		In questa esercitazione ci viene richiesta la misura del guadagno, il calcolo della resistenza i ingresso e in uscita dei due amplificatori, e per quello non-invertente anche la risposta in frequenza con celle RC esterne (che vuol dire?)
 		Per fare ciò abbiamo lavorato con una basetta premontana sulla quale, modificando i vari interruttori si aggingevano/toglievano al circuito varie resistenze.
 		S1 in particolare è l'interruttore che determina se stiamo lavorando con un amplificatore invertente o con uno non-invertente.
-		
 		Il generatore di segnali viene collegato alla basetta tramite il connettore J1.
-		
 		L'alimentatore duale ... connesso su J8
-		
 		Abbiamo connesso all'oscilloscopio, tramite due BNC-coccodrillo, ingresso (J2 e J5 sulla basetta)
 		e uscita (J6 e J7 sulla basetta) del circuito premontato sulla basetta. %dovremmo fare una foto
-		
 		In seguito verranno riportate rappresentazioni dei vari circuiti analizzati e misurati.
 		\subsection{Amplificatore non-invertente}
 			\subsubsection{Misura del guadagno}
@@ -129,7 +125,6 @@ urlcolor=blue,
 					%homework matlab? 
 		\subsection{Amplificatore invertente}
 			Abbiamo commutato S1 ed S2 in modo che fosse connesso l'amplificatore invertente ed abbiamo effettuato le stesse misurazioni del punto precedente.
-		
 			\subsubsection{Misura del guadagno}
 				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
 				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
@@ -150,7 +145,6 @@ urlcolor=blue,
 	%-----------------------------------------------------------------------------
 	\section{Risultati}
 		\subsection{Amplificatore non-invertente}
-			
 			\subsubsection{Misura del guadagno}
 				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 8.72 V, di conseguenza Av = 7.78, Av = 17.82 dB. 
 				Evidenziamo come l'amplificatore abbia amplificato il segnale ricevuto come input.
@@ -163,17 +157,15 @@ urlcolor=blue,
 				R10 = 1kOhm.
 				Con R10 connessa Vu = 4.40 V, con R10 disconnessa Vu = 8.72 V
 				%rispettivamente foto 4 e foto 3
-				
-				
 		\subsection{Amplificatore invertente}
 			Rispetto al non-invertente possiamo notare come Vs e Vu risultino invertite. 
-		%foto 6
+			%foto 6
 			\subsubsection{Misura del guadagno}
-			Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 10.30 V, di conseguenza Av = 9.20, Av = 19.27 dB. 
-			%foto6
-			Abbiamo effettuato la misurazione anche per f = 1kHz:
-			Vi = 1.08 V e Vu = 10.3 V, quindi Av= 9.53, Av = 19.59 dB
-			%foto 9
+				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 10.30 V, di conseguenza Av = 9.20, Av = 19.27 dB. 
+				%foto6
+				Abbiamo effettuato la misurazione anche per f = 1kHz:
+				Vi = 1.08 V e Vu = 10.3 V, quindi Av= 9.53, Av = 19.59 dB
+				%foto 9
 			\subsubsection{Misura della resistenza equivalente in ingresso}	
 				R9 = 10 kOhm.
 				Con R9 connessa Vu = 6.24 V, con R9 disconnessa Vu = 10.3 V
