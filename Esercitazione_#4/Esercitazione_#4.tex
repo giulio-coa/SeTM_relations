@@ -1,12 +1,12 @@
 \documentclass[a4paper]{article}
 \usepackage[
-pdftex,
-colorlinks=true,
-bookmarksnumbered=true,
-bookmarksopen=true,
-bookmarksopenlevel=3,
-pdfstartview=FitP,
-urlcolor=blue,
+	pdftex,
+	colorlinks=true,
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	pdfstartview=FitP,
+	urlcolor=blue,
 ]{hyperref}
 \pdfinfo{
 	/Title(Esercitazione di Laboratorio: Misure su amplificatori)
@@ -52,7 +52,11 @@ urlcolor=blue,
 	%  PURPOSE OF THE EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Scopo dell'esperienza}
-		Lo scopo di questa esercitazione è lavorare con amplificatori invertenti e non per apprezzare la differenza tra i due comportamenti, visualizzare in che modo un amplificatore influenza il segnale in ingresso, e sottolineare la differenza tra comportamento ideale studiato e comportamento reale degli amplificatori, mediante il confronto tra le misurazioni effettuate ed i valori ottenuti tramite calcoli.
+		Gli scopi di questa esercitazione sono:
+		\begin{itemize}
+			\item Analizzare il comportamento e misurare i parametri di moduli amplificatori (invertenti e non).
+			\item Verificare alcune deviazioni rispetto al comportamento previsto con i modelli di prima approssimazione.
+		\end{itemize}
 	%-----------------------------------------------------------------------------
 	%  INSTRUMENTATION USED
 	%-----------------------------------------------------------------------------
@@ -60,9 +64,6 @@ urlcolor=blue,
 		La strumentazione usata durante l'esercitazione è:
 		\begin{center}
 			\begin{tabular}{ |c|c|c| }
-				\hline
-				\multirow{\textbf{Strumento}}	 & \textbf{Marca e Modello} & \textbf{Caratteristiche} \\
-				\hline
 				\multirow{Multimetro}			 & Agilent 34401A			& \\
 				\multirow{Oscilloscopio}		 & Rigol DS1054Z			& 4 canali, \\
 												 &							& $ B = 50 \, \mathrm{MHz} $, \\
@@ -73,6 +74,15 @@ urlcolor=blue,
 				\multirow{Generatore di segnali} & Rigol DG1022				& 2 canali, \\
 												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
 												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
+				\multirow{Alimentatore in DC}	 & Rigol DP832				& 2 canali, \\
+												 &							& $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
+												 &							& $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
+				\multirow{Sonda}				 & Rigol PVP215				& $ B = 35 \, \mathrm{MHz} $, \\
+												 &							& $ V_{\mathrm{nominale}} = 300 \, \mathrm{V} $, \\
+												 &							& $ L_{\mathrm{cavo}} = 1.2 \, \mathrm{m} $, \\
+												 &							& $ R_{\mathrm{s}} = 1 \, \mathrm{M\Omega} $, \\
+												 &							& Intervallo di compensazione: $ 10 \div 25 \, \mathrm{pF} $ \\
+				\multirow{Scheda premontata}	 & A2						& \\
 				\multirow{Cavi coassiali}		 &							& Capacità dell'ordine dei $ 80 \div 100 \, \mathrm{p\frac{F}{m}} $ \\
 				\multirow{Connettori}			 &							& \\
 				\hline
