@@ -100,92 +100,366 @@
 				\item l’incertezza di lettura dovuta all’errore del posizionamento dei cursori.
 			\end{itemize}
 			Quest’ultima incertezza deriva dal fatto che il segnale visualizzato non ha uno spessore nullo sullo schermo.
-		\subsection{Other}
-			.
+		\subsection{Amplificatore}
+			Un amplificatore è un doppio bipolo unidirezionale caratterizzato dalla seguente relazione
+			\begin{center}
+				$ y(t) = A \cdot x(t) $
+			\end{center}
+			\newline
+			Dove $ A $ è detto guadagno dell'amplifiatore.
+			\begin{figure}[h!]
+				\centering
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.7]{amplificatore}
+					\caption{Amplificatore.}
+				\end{subfigure}
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.7]{amplificatoreCircuito}
+					\caption{Circuito equivalente ad un amplificatore.}
+				\end{subfigure}
+				\label{fig:amplificatore}
+			\end{figure}
+			\newline
+			In base al tipo di segnale in ingresso e in uscita, possiamo distinguere quattro tipi di amplifiatori:
+			\begin{itemize}
+				\item Amplificatore di Tensione.
+				\item Amplificatore di Transconduttanza.
+				\item Amplificatore di Transresistenza.
+				\item Amplificatore di Corrente.
+			\end{itemize}
+			\subsubsection{Amplificatore operazionale}
+				L'amplificatore operazionale è un amplificatore differenziale, ovvero amplifica la differenza delle tensioni ai suoi capi, che presenta un'amplificazione $ A_{\mathrm{d}} $ idealmente infinita.
+				\begin{equation*}
+					\begin{split}
+						A_{\mathrm{d}} &= \frac{v_{\mathrm{out}}}{v_{\mathrm{d}}} = \\
+									   &= \frac{v_{\mathrm{out}}}{v^{+} - v^{-}}
+					\end{split}
+				\end{equation*}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.7]{amplificatoreOperazionale}
+					\caption{Amplificatore operazionale}
+					\label{fig:amplificatoreOperazionale}
+				\end{figure}
+				\subsubsection{Amplificatore invertente}
+					L'amplificatore invertente è un derivato dell'amplificatore di transresistenza che fornisce, in uscita, un segnale proporzionale al segnale in ingresso ma che presenta fase invertita rispetto ad esso; esso caratterizzato dalle seguenti relazioni
+					\begin{equation*}
+						\begin{split}
+							v_{\mathrm{out}} &= A_{\mathrm{v}} \cdot v_{\mathrm{in}} = \\
+											 &= -\frac{R_{2}}{R_{1}} \cdot v_{\mathrm{in}}
+						\end{split}
+					\end{equation*}
+					\begin{center}
+						$ R_{\mathrm{in}} = R_{1} $
+					\end{center}
+					\newline
+					\begin{center}
+						$ R_{\mathrm{out}} = 0 $
+					\end{center}
+					\newline
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.7]{amplificatoreInvertente}
+						\caption{Amplificatore invertente}
+						\label{fig:amplificatoreInvertente}
+					\end{figure}
+					\newline
+					\begin{scriptsize}
+						\textbf{N.B.} $ R_{\mathrm{in}} $ non è necessariamente elevata. 
+					\end{scriptsize}
 	%-----------------------------------------------------------------------------
 	%  LABORATORY EXPERIENCE
 	%-----------------------------------------------------------------------------
 	\section{Esperienza in laboratorio}
-		In questa esercitazione ci viene richiesta la misura del guadagno, il calcolo della resistenza i ingresso e in uscita dei due amplificatori, e per quello non-invertente anche la risposta in frequenza con celle RC esterne (che vuol dire?)
-		Per fare ciò abbiamo lavorato con una basetta premontana sulla quale, modificando i vari interruttori si aggingevano/toglievano al circuito varie resistenze.
-		S1 in particolare è l'interruttore che determina se stiamo lavorando con un amplificatore invertente o con uno non-invertente.
-		Il generatore di segnali viene collegato alla basetta tramite il connettore J1.
-		L'alimentatore duale ... connesso su J8
-		Abbiamo connesso all'oscilloscopio, tramite due BNC-coccodrillo, ingresso (J2 e J5 sulla basetta)
-		e uscita (J6 e J7 sulla basetta) del circuito premontato sulla basetta. %dovremmo fare una foto
-		In seguito verranno riportate rappresentazioni dei vari circuiti analizzati e misurati.
-		\subsection{Amplificatore non-invertente}
+		Abbiamo realizzato il circuito richiesto, collegando:
+		\begin{itemize}
+			\item Il generatore di segnali al connettore coassiale J1.
+			\item L'alimentatore duale viene connesso, in modalità tracking, al morsetto J8.
+			\item L'oscilloscopio, tramite due cavi coassiali BNC-coccodrillo, all'ingresso e all'uscita del circuito, rispettivamente gli ancoraggi J4 e J5 (massa) e J6 e J7 (massa).
+		\end{itemize}
+		E portando gli switch S1 ed S2, che determinano il tipo d'amplificatore da usare, se invertente o meno, sull'1, ovvero selezionando l'amplificatore non-invertente.
+		\subsection{Parametri di un amplificatore}
 			\subsubsection{Misura del guadagno}
-				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
-				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
-				In seguito abbiamoeseguito i cacoli per diversi valori di frequenza.
+				Abbiamo disposto la scheda premontata in modo da applicare la tensione del generatore direttamente all'ingresso dell'amplificatore non-invertente, seguendo la seguente tabella
+				\begin{center}
+					\begin{tabular}{ |c|c|c| }
+						\hline
+						\multirow{\textbf{Interruttore}} & \textbf{Posizione} & \textbf{Note} \\
+						\hline
+						\multirow{S1}		     		 & 2				  & \\
+						\multirow{S2}		     		 & 2				  & \\
+						\multirow{S3}		     		 & 2				  & chiuso \\
+						\multirow{S4}		     		 & 2				  & chiuso \\
+						\multirow{S5}		     		 & 2				  & chiuso \\
+						\multirow{S6}		     		 & 1				  & aperto \\
+						\multirow{S7}		     		 & 1				  & aperto \\
+						\multirow{S8}		     		 & 1				  & aperto \\
+						\multirow{S9}		     		 & 1				  & aperto \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Impostando il generatore di segnali come richiesto, abbiamo misurato, tramite cursori, l'ampiezza d'ingresso e d'uscita al fine di calcolare il guadagno dell'amplificatore.
 			\subsubsection{Misura della resistenza equivalente in ingresso}
-				Per misurare Ri, la resistenza all'ingresso dell'amplificatore ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore.
-				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
-				Nel concreto questo viene otenuto modificando la  posizione dello switch S5, che, se aperto, fa passare la corrente nella resistenza R9, se chiuso la cortocicuita.
-				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R9, notando come la tensione in uscita ali quando la resisteza è connessa, usare Vu invece di Vi permette di evidenziare maggiormente quanto la resistenza influenzi il segnale. %riportare calcoli effettuari per ottenere Ri
-				%pezzo da mettere in una parte più teorica.
-				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
-			\subsubsection{Misura della resistenza equivalente in uscita}	
-				Per misurare Ru, la resistenza all'uscita dell'amplificatore ci avvaliamo di una resistenza esterna R10, di valore noto, mettendola in parallelo all'uscita.
-				Frequenza e ampiezza picco-picco restano invariate rispetto al punto precedente. 
-				Nel concreto questo viene otenuto modificando la  posizione dello switch S6, che, se chiuso, collega R10, se aperto non vi permette il passaggio di corrente.
-				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R10, notando come la tensione in uscita cali quando la resisteza è connessa. %riportare calcoli effettuari per ottenere Ru
-				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
-				\subsubsection{Calcolo poli e zero}
-					%homework matlab? 
+				Al fine di misurare la resistenza in ingresso all'amplificatore, ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore; in questo modo si va a creare un partitore di tensione che sfrutteremo per determinare $ R_{\mathrm{i}} $.
+				\newline
+				Nel concreto, ciò avviene commutando la posizione dello switch S5, che determina la presenza della resistenza $ R_{9} $ nel circuito.
+				\newline
+				Abbiamo effettuato le misurazioni sulla tensione di uscita, poichè ciò permette di evidenziare maggiormente quanto la resistenza influenzi il segnale.
+			\subsubsection{Misura della resistenza equivalente di uscita}	
+				Al fine di misurare la resistenza di uscita all'amplificatore, ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie all'uscita; in questo modo si va a creare un partitore di tensione che sfrutteremo per determinare $ R_{\mathrm{u}} $.
+				\newline
+				Nel concreto, ciò viene ottenuto commutando la posizione dello switch S6, che determina la presenza della resistenza $ R_{10} $ nel circuito.
+				\newline
+				Abbiamo effettuato le misurazioni sulla tensione di uscita, poichè ciò permette di evidenziare maggiormente quanto la resistenza influenzi il segnale.				
+				\newline
+				\begin{scriptsize}
+					\textbf{N.B.} Ovviamente, prima di procedere con questa parte dell'esercitazione, abbiamo ripristinato lo stato iniziale dell'amplificatore, ovvero abbiamo cortocircuitato la resistenza $ R_{9} $. 
+				\end{scriptsize}
+		\subsection{Risposta in frequenza di un amplificatore con celle RC esterne}
+			Abbiamo disposto la scheda premontata come richiesto, seguendo la seguente tabella
+			\begin{center}
+				\begin{tabular}{ |c|c|c| }
+					\hline
+					\multirow{\textbf{Interruttore}} & \textbf{Posizione} & \textbf{Note} \\
+					\hline
+					\multirow{S1}		     		 & 2				  & \\
+					\multirow{S2}		     		 & 2				  & \\
+					\multirow{S3}		     		 & 2				  & $ C_{10} $ inserito \\
+					\multirow{S4}		     		 & 1				  & $ C_{5} $ non cortocircuitato \\
+					\multirow{S5}		     		 & 2				  & chiuso \\
+					\multirow{S6}		     		 & 1				  & aperto \\
+					\multirow{S7}		     		 & 1				  & aperto \\
+					\multirow{S8}		     		 & 2				  & $ C_{6} $ inserito \\
+					\multirow{S9}		     		 & 1				  & $ C_{9} $ non inserito \\
+					\hline
+				\end{tabular}
+			\end{center}
+			Successivamente, abbiamo eseguito le misure di guadagno per frequenze da $ 300 \, \mathrm{Hz} $ a $ 1 \, \mathrm{MHz} $, con due misure per decade, usando, come consigliatoci, un segnale con ampiezza $ V_{\mathrm{pp}} $ pari a $ 1 \, \mathrm{V} $ per frequenze fino a $ 30 \, \mathrm{kHz} $ ed un segnale con ampiezza $ V_{\mathrm{pp}} $ pari a $ 200 \, \mathrm{mV} $ per frequenze a partire da $ 100 \, \mathrm{kHz} $.
 		\subsection{Amplificatore invertente}
-			Abbiamo commutato S1 ed S2 in modo che fosse connesso l'amplificatore invertente ed abbiamo effettuato le stesse misurazioni del punto precedente.
-			\subsubsection{Misura del guadagno}
-				Abbiamo disposto gli interruttori come da istruzioni, ottenendo un segnale passante solo per l'amplificatore, e quindi gli elementi circuitali che gi appartengono. %riportare tabella
-				Impostando frequenza ed ampiezza picco-picco come richiesto abbiamo misurato tramite cursori l'ampiezza d'ingresso e di uscita rappresentate dall'oscilloscopio, per poi calcolare Av = Vu/Vi.
-				Abbiamo poi effettuato il guadagno per una frequenza di 1 KHz.
-			\subsubsection{Misura della resistenza equivalente in ingresso}	
-				Per misurare Ri, la resistenza all'ingresso dell'amplificatore ci avvaliamo di una resistenza esterna, di valore noto, mettendola in serie al generatore.
-				Nel concreto questo viene otenuto modificando la  posizione dello switch S5, che, se aperto, fa passare la corrente nella resistenza R9, se chiuso la cortocicuita.
-				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R9, notando come la tensione in uscita ali quando la resisteza è connessa, usare Vu invece di Vi permette di evidenziare maggiormente quanto la resistenza influenzi il segnale. %riportare calcoli effettuari per ottenere Ri
-				%pezzo da mettere in una parte più teorica.
-				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
-			\subsubsection{Misura della resistenza equivalente in uscita}	
-				Per misurare Ru, la resistenza all'uscita dell'amplificatore ci avvaliamo di una resistenza esterna R10, di valore noto, mettendola in parallelo all'uscita.
-				Nel concreto questo viene otenuto modificando la  posizione dello switch S6, che, se chiuso, collega R10, se aperto non vi permette il passaggio di corrente.
-				Abbiamo effettuato misurazioni sulla tensione in uscita sia con che senza R10, questa volta la connessione della resistenza non infuenza la tensione in uscita, deduciamo che è trascurabile. %riportare calcoli effettuari per ottenere Ru
-				Le misurazioni sono state effettuate con l'osclilloscopio, quindi per mezzo dei cursori.
+			Abbiamo disposto la scheda premontata di modo da utizzare l'amplificatore invertente, ovvero abbiamo commutato gli switch S1 ed S2, e, successivamente, abbiamo ripetuto l'esperienza effettuata precedentemente e verificato l'inversione di fase tra il segnale e la tensione in uscita.
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
 	\section{Risultati}
-		\subsection{Amplificatore non-invertente}
+		\subsection{Parametri di un amplificatore}
 			\subsubsection{Misura del guadagno}
-				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 8.72 V, di conseguenza Av = 7.78, Av = 17.82 dB. 
-				Evidenziamo come l'amplificatore abbia amplificato il segnale ricevuto come input.
-				%foto1
-			\subsubsection{Misura della resistenza equivalente in ingresso}	
-				R9 = 10 kOhm.
-				Con R9 connessa Vu = 4.64 V, con R9 disconnessa Vu = 8.72 V
-				%rispettivamente foto 2 e foto 3
-			\subsubsection{Misura della resistenza equivalente in uscita}
-				R10 = 1kOhm.
-				Con R10 connessa Vu = 4.40 V, con R10 disconnessa Vu = 8.72 V
-				%rispettivamente foto 4 e foto 3
+				\begin{center}
+					\begin{tabular}{ |c|c|c|c| }
+						\hline
+						\multirow{\textbf{$ V_{\mathrm{i}} $ [$ \mathrm{V} $]}} & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} & \textbf{$ A_{\mathrm{v}} $} & \textbf{$ A_{\mathrm{v}} $ [$ \mathrm{dB} $]} \\
+						\hline
+						\multirow{$ 1.12 $}		     		    				& $ 8.72 $									   & $ 7.78 $					 & $ 17.82 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Come si può vedere, il risultato ottenuto rientra nel range fornito dal costruttore ($ 9.33 \pm 0.93 $).
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.3]{misuraDelGuadagnoAmplificatoreNonInvertente}
+					\caption{Misura del guadagno dell'amplificatore non-invertente.}
+					\label{fig:misuraDelGuadagnoAmplificatoreNonInvertente}
+				\end{figure}
+			\subsubsection{Misura della resistenza equivalente in ingresso}
+				\begin{center}
+					\begin{tabular}{ |c|c| }
+						\hline
+						\multirow{} 						 & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} \\
+						\hline
+						\multirow{$ R_{9} $ inserita}		 & $ 4.64 \pm 0.48 $ \\
+						\multirow{$ R_{9} $ cortocircuitata} & $ 8.72 \pm 0.48 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}} = \\
+						  &= 532m
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
+									   &= 532m \cdot 10k \cdot \frac{1}{1 - 532m} = \\
+									   &= 11.4 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto non rientra nel range dato dal costruttore ($ 10 \pm 0.5 \, \mathrm{k\Omega} $) a causa dei vari contributi d'incertezza dati dagli strumenti.
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreNonInvertenteR9InCorto}
+						\caption{Misura della resistenza equivalente d'ingresso con R9 cortocircuitata.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreNonInvertenteR9Inserita}
+						\caption{Misura della resistenza equivalente d'ingresso con R9 inserita.}
+					\end{subfigure}
+					\label{fig:misuraDellaResistenzaEquivalenteInIngressoAmplificatoreNonInvertente}
+				\end{figure}
+			\subsubsection{Misura della resistenza equivalente di uscita}	
+				\begin{center}
+					\begin{tabular}{ |c|c| }
+						\hline
+						\multirow{} 						  & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} \\
+						\hline
+						\multirow{$ R_{10} $ inserita}		  & $ 4.40 $ \\
+						\multirow{$ R_{10} $ cortocircuitata} & $ 8.72 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Sfruttando il partitore di tensione formatosi all'uscita dell'amplifiatore quando la resistenza $ R_{10} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{10}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{10}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{10}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}} = \\
+						  &= 505m
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{u}} &= w \cdot R_{10} \cdot \frac{1}{1 - w} = \\
+									   &= 505m \cdot 1k \cdot \frac{1}{1 - 505m} = \\
+									   &= 1.02 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto rientra nel range dato dal costruttore ($ 1 \pm 0.05 \, \mathrm{k\Omega} $).
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreNonInvertenteR9InCorto}
+						\caption{Misura della resistenza equivalente d'uscita con R10 cortocircuitata.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteDiUscitaAmplificatoreNonInvertenteR10Inserita}
+						\caption{Misura della resistenza equivalente d'uscita con R10 inserita.}
+					\end{subfigure}
+					\label{fig:misuraDellaResistenzaEquivalenteDiUscitaAmplificatoreNonInvertente}
+				\end{figure}
+		\subsection{Risposta in frequenza di un amplificatore con celle RC esterne}
+			\begin{center}
+				\begin{tabular}{ |c|c|c|c| }
+					\hline
+					\multirow{\textbf{Frequenza}} & \textbf{Pulsazione} & \textbf{$ A_{\mathrm{v}} $ calcolato [$ \mathrm{dB} $]} & \textbf{$ A_{\mathrm{v}} $ misurato [$ \mathrm{dB} $]} \\
+					\hline
+					\multirow{$ 300 \, \mathrm{Hz} $}  & $ 1.88 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 13.1 $ \\
+					\multirow{$ 1 \, \mathrm{kHz} $}   & $ 6.28 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 14.1 $ \\
+					\multirow{$ 3 \, \mathrm{kHz} $}   & $ 18.8 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 17.1 $ \\
+					\multirow{$ 10 \, \mathrm{kHz} $}  & $ 62.8 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 16.5 $ \\
+					\multirow{$ 30 \, \mathrm{kHz} $}  & $ 188 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 11.7 $ \\
+					\multirow{$ 100 \, \mathrm{kHz} $} & $ 628 \, \mathrm{k\frac{rad}{s}} $ & $ 103 $ & $ 3.29 $ \\
+					\multirow{$ 300 \, \mathrm{kHz} $} & $ 1.88 \, \mathrm{M\frac{rad}{s}} $ & $ 103 $ & $ -8.89 $ \\
+					\multirow{$ 1 \, \mathrm{MHz} $}   & $ 6.28 \, \mathrm{M\frac{rad}{s}} $ & $ 103 $ & $ -23.4 $ \\
+					\hline
+				\end{tabular}
+			\end{center}
+			% foto Bode
 		\subsection{Amplificatore invertente}
-			Rispetto al non-invertente possiamo notare come Vs e Vu risultino invertite. 
-			%foto 6
 			\subsubsection{Misura del guadagno}
-				Alla fraquenza 0.8 kHz e Vpp = 1V abbiamo misurato Vi = 1.12 V e Vu = 10.30 V, di conseguenza Av = 9.20, Av = 19.27 dB. 
-				%foto6
-				Abbiamo effettuato la misurazione anche per f = 1kHz:
-				Vi = 1.08 V e Vu = 10.3 V, quindi Av= 9.53, Av = 19.59 dB
-				%foto 9
-			\subsubsection{Misura della resistenza equivalente in ingresso}	
-				R9 = 10 kOhm.
-				Con R9 connessa Vu = 6.24 V, con R9 disconnessa Vu = 10.3 V
-				%rispettivamente foto7 e foto 8
-			\subsubsection{Misura della resistenza equivalente in uscita}	
-				R10 = 1kOhm.
-				Con R10 connessa Vu = 10.3 V, con R10 disconnessa Vu = 10.3 V.
-				Notiamo, quindi, che la resistenza non influenza la tensione in uscita.
-				%rispettivamente foto 8 e foto 8
-		\subsection{Other}
-			.
+				\begin{center}
+					\begin{tabular}{ |c|c|c|c| }
+						\hline
+						\multirow{\textbf{$ V_{\mathrm{i}} $ [$ \mathrm{V} $]}} & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} & \textbf{$ A_{\mathrm{v}} $} & \textbf{$ A_{\mathrm{v}} $ [$ \mathrm{dB} $]} \\
+						\hline
+						\multirow{$ 1.12 $}		     		    				& $ 10.3 $									   & $ 9.20 $					 & $ 19.27 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Come si può vedere, il risultato ottenuto rientra nel range fornito dal costruttore ($ 9.33 \pm 0.93 $).
+				\newline
+				Alla frequenza $ f = 1 \, \mathrm{kHz} $, il guadagno dell'amplificatore invertente è pari a
+				\begin{center}
+					\begin{tabular}{ |c|c|c|c| }
+						\hline
+						\multirow{\textbf{$ V_{\mathrm{i}} $ [$ \mathrm{V} $]}} & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} & \textbf{$ A_{\mathrm{v}} $} & \textbf{$ A_{\mathrm{v}} $ [$ \mathrm{dB} $]} \\
+						\hline
+						\multirow{$ 1.08 $}		     		    				& $ 10.3 $									   & $ 9.54 $					 & $ 19.59 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.3]{misuraDelGuadagnoAd1kAmplificatoreInvertente}
+					\caption{Misura del guadagno dell'amplificatore invertente alla frequenza $ f = 1 \, \mathrm{kHz} $.}
+					\label{fig:misuraDelGuadagnoAd1kAmplificatoreInvertente}
+				\end{figure}
+				\newline
+			\subsubsection{Misura della resistenza equivalente in ingresso}
+				\begin{center}
+					\begin{tabular}{ |c|c| }
+						\hline
+						\multirow{} 						 & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} \\
+						\hline
+						\multirow{$ R_{9} $ inserita}		 & $ 6.24 $ \\
+						\multirow{$ R_{9} $ cortocircuitata} & $ 10.3 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}} = \\
+						  &= 606m
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
+									   &= 606m \cdot 10k \cdot \frac{1}{1 - 606m} = \\
+									   &= 15.4 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto rientra nel range dato dal costruttore ($ 15 \pm 0.75 \, \mathrm{k\Omega} $).
+				\begin{figure}[h!]
+					\centering
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertenteR9InCorto}
+						\caption{Misura della resistenza equivalente d'ingresso con R9 cortocircuitata.}
+					\end{subfigure}
+					\begin{subfigure}{0.4\textwidth}
+						\centering
+						\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertenteR9Inserita}
+						\caption{Misura della resistenza equivalente d'ingresso con R9 inserita.}
+					\end{subfigure}
+					\label{fig:misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertente}
+				\end{figure}
+			\subsubsection{Misura della resistenza equivalente di uscita}	
+				\begin{center}
+					\begin{tabular}{ |c|c| }
+						\hline
+						\multirow{} 				   		  & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} \\
+						\hline
+						\multirow{$ R_{10} $ inserita} 		  & $ 10.3 $ \\
+						\multirow{$ R_{10} $ cortocircuitata} & $ 10.3 $ \\
+						\hline
+					\end{tabular}
+				\end{center}
+				Dato che le due tensioni misurate sono uguali, deduciamo che il valore di $ R_{\mathrm{u}} $ è trascurabile e, quindi, essa è assimilabile ad un cortocircuito.
+				\begin{figure}[h!]
+					\centering
+					\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertenteR9InCorto}
+					\caption{Misura della resistenza equivalente d'uscita.}
+					\label{fig:misuraDellaResistenzaEquivalenteDiUscitaAmplificatoreInvertente}
+				\end{figure}
 \end{document}
