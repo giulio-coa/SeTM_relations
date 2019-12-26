@@ -29,6 +29,7 @@ h_1 = A_v * (C_5 + C_10);
 h_2 = R_u * C_6 + R_i * (C_5 + C_10);
 h_3 = R_i * R_u * C_6 * (C_5 + C_10);
 H = tf([h_1 0], [h_3 h_2 1]); % funzione di trasferimento
+magnitude = bode(H, x)
 bode(H, 'b')
 hold on
 bode(H, x, 'r*')
