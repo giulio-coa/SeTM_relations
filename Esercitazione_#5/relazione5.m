@@ -41,17 +41,16 @@ C_7 = 100 * n;
 A_d = 200 * k;
 R_id = 1 * M;
 R_o = 100;
+beta = R_2 / (R_1 + R_2);
 
-% PUNTO 2.2.2
+% PUNTO 2.1.2
 
-x = [100, 1*k, 10*k, 100*k]; % vettore con le frequenze
-h_1 = R_i * A_v * (R_5 + R_10);
-h_2 = R_u * R_6 + R_i * (R_5 + R_10);
-h_3 = R_i * R_u * R_6 * (R_5 + R_10);
-H = tf([h_1 0], [h_3 h_2 1]); % funzione di trasferimento
-magnitude = bode(H, x);
-magnitude = squeeze(magnitude);
-bode(H, 'b')
-hold on
-bode(H, x, 'r*')
-grid on
+A_v = beta * A_d / (1 + beta * A_d) / beta
+R_in = (R_id + parallel(R_1, R_2)) * (1 + A_d * (parallel(R_2, R_id))/(parallel(R_2, R_id) + R_1))
+R_out = parallel((R_o) / (1 + beta * A_d), R_1 + R_2)
+
+% FUNZIONI
+
+function result = parallel(x, y)
+	result = (x * y) / (x + y);
+end
