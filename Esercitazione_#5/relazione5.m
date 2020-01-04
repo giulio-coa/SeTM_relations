@@ -61,11 +61,34 @@ R_in = R_9 + (R_o + R_10) / (1 + A_d)
 R_out = (R_9 + R_10 + R_o) / (R_9 * (1 + A_d) + R_10 + R_o) * parallel(R_o, R_9 + R_10)
 
 % PUNTO 2.3.2
-beta = 0;
 
-A_v = 0
-R_in = 0
-R_out = 0
+A_v_S8 = 1
+A_v_S9 = 2 / 3 * (1 + R_10 / R_9) - R_10 / R_9
+A_v_S10 = 1 / 3 * (1 + R_10 / R_9) - R_10 / R_9
+A_v_S11 = - R_10 / R_9
+
+% PUNTO 2.4.2.e
+
+x = [100, 300, 500, 1000, 3000, 5000, 10000, 15000, 16000, 18000, 20000, 25000, 30000, 1000000]; % vettore con le frequenze
+h_1 = C_4 * (R_1 + R_2);
+h_2 = C_4 * R_2;
+H = tf([h_1 1], [h_2 1]); % funzione di trasferimento
+bode(H, 'b')
+hold on
+bode(H, x, 'r*')
+grid on
+
+% PUNTO 2.4.2.f
+
+figure()
+x = [1000, 2000, 3000, 5000, 7000, 7500, 8300, 8500, 10000, 12000, 14000, 15000, 20000, 30000, 50000]; % vettore con le frequenze
+h_1 = C_5 * R_4 * (R_1 + R_2);
+h_2 = C_5 * R_2 * R_4;
+H = tf([h_1 0], [h_2 R_2]); % funzione di trasferimento
+bode(H, 'b')
+hold on
+bode(H, x, 'r*')
+grid on
 
 % FUNZIONI
 
