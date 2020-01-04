@@ -33,6 +33,7 @@ R_id = 1 * M;
 R_o = 100;
 
 % PUNTO 2.1.2
+
 beta = R_2 / (R_1 + R_2);
 beta_primo = (parallel(R_2, R_id + R_3) + R_o) / (parallel(R_2, R_id + R_3) + R_o + R_1);
 R_in_0 = R_id + R_3 + parallel(R_1 + R_o, R_2);
@@ -43,6 +44,7 @@ R_in = R_in_0 * (1 + A_d * beta_primo)
 R_out = parallel((R_o) / (1 + beta * A_d), R_1 + R_2)
 
 % PUNTO 2.2.2
+
 beta = - R_9 / R_10;
 
 A_v_oo = 1 / beta
@@ -58,6 +60,7 @@ A_v_S10 = 1 / 3 * (1 + R_10 / R_9) - R_10 / R_9
 A_v_S11 = - R_10 / R_9
 
 % PUNTO 2.4.2
+
 x = [100, 1*k, 10*k, 100*k]; % vettore con le frequenze
 
 h = R_1 + R_2;
@@ -68,6 +71,7 @@ bode(H, x, 'r*')
 grid on
 
 % SEZIONE d
+
 figure()
 
 h = C_3 * R_1 * R_2;
@@ -78,6 +82,7 @@ bode(H, x, 'r*')
 grid on
 
 % SEZIONE e
+
 figure()
 
 h_1 = C_4 * (R_1 + R_2);
@@ -89,6 +94,7 @@ bode(H, x, 'r*')
 grid on
 
 % SEZIONE f
+
 figure()
 
 h_1 = C_5 * R_4 * (R_1 + R_2);
