@@ -69,6 +69,7 @@ bode(H, x, 'r*')
 grid on
 
 % SEZIONE e
+figure()
 
 h_1 = C_4 * (R_1 + R_2);
 h_2 = C_4 * R_2;
