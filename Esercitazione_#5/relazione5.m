@@ -17,24 +17,14 @@ R_1 = 100 * k;
 R_2 = 12 * k;
 R_3 = 4.7 * k;
 R_4 = 10 * k;
-R_5 = 2.2 * k;
-R_6 = 10 * k;
-R_7 = 10 * k;
-R_8 = 10 * k;
 R_9 = 22 * k;
 R_10 = 100 * k;
-R_11 = 1 * k;
-R_12 = 100;
 
 % CONDENSATORI
 
-C_1 = 100 * n;
-C_2 = 100 * n;
 C_3 = 15 * p;
 C_4 = 100 * n;
 C_5 = 100 * n;
-C_6 = 100 * n;
-C_7 = 100 * n;
 
 % AMPLIFICATORE
 
@@ -67,9 +57,19 @@ A_v_S9 = 2 / 3 * (1 + R_10 / R_9) - R_10 / R_9
 A_v_S10 = 1 / 3 * (1 + R_10 / R_9) - R_10 / R_9
 A_v_S11 = - R_10 / R_9
 
-% PUNTO 2.4.2.e
+% PUNTO 2.4.2
+% SEZIONE d
+x = [100, 1*k, 10*k, 100*k]; % vettore con le frequenze
 
-x = [100, 300, 500, 1000, 3000, 5000, 10000, 15000, 16000, 18000, 20000, 25000, 30000, 1000000]; % vettore con le frequenze
+h = C_3 * R_1 * R_2;
+H = tf([0 R_1], [h R_2]); % funzione di trasferimento
+bode(H, 'b')
+hold on
+bode(H, x, 'r*')
+grid on
+
+% SEZIONE e
+
 h_1 = C_4 * (R_1 + R_2);
 h_2 = C_4 * R_2;
 H = tf([h_1 1], [h_2 1]); % funzione di trasferimento
@@ -78,10 +78,9 @@ hold on
 bode(H, x, 'r*')
 grid on
 
-% PUNTO 2.4.2.f
-
+% SEZIONE f
 figure()
-x = [1000, 2000, 3000, 5000, 7000, 7500, 8300, 8500, 10000, 12000, 14000, 15000, 20000, 30000, 50000]; % vettore con le frequenze
+
 h_1 = C_5 * R_4 * (R_1 + R_2);
 h_2 = C_5 * R_2 * R_4;
 H = tf([h_1 0], [h_2 R_2]); % funzione di trasferimento
