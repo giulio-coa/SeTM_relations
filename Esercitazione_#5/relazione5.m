@@ -58,8 +58,17 @@ A_v_S10 = 1 / 3 * (1 + R_10 / R_9) - R_10 / R_9
 A_v_S11 = - R_10 / R_9
 
 % PUNTO 2.4.2
-% SEZIONE d
 x = [100, 1*k, 10*k, 100*k]; % vettore con le frequenze
+
+h = R_1 + R_2;
+H = tf([0 h], [0 R_2]); % funzione di trasferimento
+bode(H, 'b')
+hold on
+bode(H, x, 'r*')
+grid on
+
+% SEZIONE d
+figure()
 
 h = C_3 * R_1 * R_2;
 H = tf([0 R_1], [h R_2]); % funzione di trasferimento
