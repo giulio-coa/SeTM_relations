@@ -179,7 +179,7 @@
 			\item L'alimentatore duale viene connesso, in modalità tracking, al morsetto J8.
 			\item L'oscilloscopio, tramite due cavi coassiali BNC-coccodrillo, all'ingresso e all'uscita del circuito, rispettivamente gli ancoraggi J4 e J5 (massa) e J6 e J7 (massa).
 		\end{itemize}
-		E portando gli switch S1 ed S2, che determinano il tipo d'amplificatore da usare, se invertente o meno, sull'1, ovvero selezionando l'amplificatore non-invertente.
+		E portando gli switch S1 ed S2, che determinano il tipo d'amplificatore da usare, sull'1, ovvero selezionando l'amplificatore non-invertente.
 		\subsection{Parametri di un amplificatore}
 			\subsubsection{Misura del guadagno}
 				Abbiamo disposto la scheda premontata in modo da applicare la tensione del generatore direttamente all'ingresso dell'amplificatore non-invertente, seguendo la seguente tabella
@@ -267,31 +267,11 @@
 						\hline
 						\multirow{} 						 & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} \\
 						\hline
-						\multirow{$ R_{9} $ inserita}		 & $ 4.64 \pm 0.48 $ \\
-						\multirow{$ R_{9} $ cortocircuitata} & $ 8.72 \pm 0.48 $ \\
+						\multirow{$ R_{9} $ inserita}		 & $ 4.64 \pm 0.87 $ \\
+						\multirow{$ R_{9} $ cortocircuitata} & $ 8.72 \pm 0.88 $ \\
 						\hline
 					\end{tabular}
 				\end{center}
-				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
-				\begin{equation*}
-					\begin{split}
-						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
-						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
-						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
-						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
-						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}} = \\
-						  &= 532m
-					\end{split}
-				\end{equation*}
-				Da cui
-				\begin{equation*}
-					\begin{split}
-						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
-									   &= 532m \cdot 10k \cdot \frac{1}{1 - 532m} = \\
-									   &= 11.4 \, \mathrm{k\Omega}
-					\end{split}
-				\end{equation*}
-				Il valore ottenuto non rientra nel range dato dal costruttore ($ 10 \pm 0.5 \, \mathrm{k\Omega} $) a causa dei vari contributi d'incertezza dati dagli strumenti.
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -305,7 +285,34 @@
 						\caption{Misura della resistenza equivalente d'ingresso con R9 inserita.}
 					\end{subfigure}
 					\label{fig:misuraDellaResistenzaEquivalenteInIngressoAmplificatoreNonInvertente}
+					\caption{Si può notare, sia dalle immagini sia dalle misurazioni, come si riduce l'ampiezza di $ V_{\mathrm{u}} $ a causa dell'aggiunta della resistenza $ R_{9} $ in serie all'ingresso.}
 				\end{figure}
+				\newpage
+				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= 532m
+					\end{split}
+				\end{equation*}
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
+									   &= 532m \cdot 10k \cdot \frac{1}{1 - 532m} = \\
+									   &= 11.4 \pm 3.88 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto è compatibile col valore dato dal costruttore ($ 10 \pm 0.5 \, \mathrm{k\Omega} $), in quanto le due fasce d'incertezza si sovrappongono.
 			\subsubsection{Misura della resistenza equivalente di uscita}	
 				\begin{center}
 					\begin{tabular}{ |c|c| }
@@ -317,26 +324,6 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Sfruttando il partitore di tensione formatosi all'uscita dell'amplifiatore quando la resistenza $ R_{10} $ è inserita, possiamo scrivere
-				\begin{equation*}
-					\begin{split}
-						w &= \frac{v_{\mathrm{out,R_{10}}}}{v_{\mathrm{out}}} = \\
-						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{10}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
-						  &= \frac{V_{\mathrm{i,R_{10}}}}{V_{\mathrm{i}}} = \\
-						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}}}{v_{\mathrm{s}}} = \\
-						  &= \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}} = \\
-						  &= 505m
-					\end{split}
-				\end{equation*}
-				Da cui
-				\begin{equation*}
-					\begin{split}
-						R_{\mathrm{u}} &= w \cdot R_{10} \cdot \frac{1}{1 - w} = \\
-									   &= 505m \cdot 1k \cdot \frac{1}{1 - 505m} = \\
-									   &= 1.02 \, \mathrm{k\Omega}
-					\end{split}
-				\end{equation*}
-				Il valore ottenuto rientra nel range dato dal costruttore ($ 1 \pm 0.05 \, \mathrm{k\Omega} $).
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -350,7 +337,34 @@
 						\caption{Misura della resistenza equivalente d'uscita con R10 inserita.}
 					\end{subfigure}
 					\label{fig:misuraDellaResistenzaEquivalenteDiUscitaAmplificatoreNonInvertente}
+					\caption{Si può notare, sia dalle immagini sia dalle misurazioni, come si riduce l'ampiezza di $ V_{\mathrm{u}} $ a causa dell'aggiunta della resistenza $ R_{10} $ in serie all'uscita.}
 				\end{figure}
+				\newline
+				Sfruttando il partitore di tensione formatosi all'uscita dell'amplifiatore quando la resistenza $ R_{10} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{10}}}}{v_{\mathrm{out}}} = \\
+						  &= 505m
+					\end{split}
+				\end{equation*}
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{10}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{10}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{10}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{u}}}{R_{10} + R_{\mathrm{u}}}
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{u}} &= w \cdot R_{10} \cdot \frac{1}{1 - w} = \\
+									   &= 505m \cdot 1k \cdot \frac{1}{1 - 505m} = \\
+									   &= 1.02 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto rientra nel range dato dal costruttore ($ 1 \pm 0.05 \, \mathrm{k\Omega} $).
 		\subsection{Risposta in frequenza di un amplificatore con celle RC esterne}
 			\begin{center}
 				\begin{tabular}{ |c|c|c|c| }
@@ -395,7 +409,7 @@
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.3]{misuraDelGuadagnoAd1kAmplificatoreInvertente}
-					\caption{Misura del guadagno dell'amplificatore invertente alla frequenza $ f = 1 \, \mathrm{kHz} $.}
+					\caption{Si può notare come l'amplificatore invertente inverta la fase del segnale in ingresso.}
 					\label{fig:misuraDelGuadagnoAd1kAmplificatoreInvertente}
 				\end{figure}
 				\newline
@@ -410,26 +424,6 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
-				\begin{equation*}
-					\begin{split}
-						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
-						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
-						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
-						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
-						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}} = \\
-						  &= 606m
-					\end{split}
-				\end{equation*}
-				Da cui
-				\begin{equation*}
-					\begin{split}
-						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
-									   &= 606m \cdot 10k \cdot \frac{1}{1 - 606m} = \\
-									   &= 15.4 \, \mathrm{k\Omega}
-					\end{split}
-				\end{equation*}
-				Il valore ottenuto rientra nel range dato dal costruttore ($ 15 \pm 0.75 \, \mathrm{k\Omega} $).
 				\begin{figure}[h!]
 					\centering
 					\begin{subfigure}{0.4\textwidth}
@@ -443,7 +437,34 @@
 						\caption{Misura della resistenza equivalente d'ingresso con R9 inserita.}
 					\end{subfigure}
 					\label{fig:misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertente}
+					\caption{Si può notare, sia dalle immagini sia dalle misurazioni, come si riduce l'ampiezza di $ V_{\mathrm{u}} $ a causa dell'aggiunta della resistenza $ R_{9} $ in serie all'ingresso.}
 				\end{figure}
+				\newline
+				Sfruttando il partitore di tensione formatosi all'ingresso dell'amplifiatore quando la resistenza $ R_{9} $ è inserita, possiamo scrivere
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= 606m
+					\end{split}
+				\end{equation*}
+				\begin{equation*}
+					\begin{split}
+						w &= \frac{v_{\mathrm{out,R_{9}}}}{v_{\mathrm{out}}} = \\
+						  &= \frac{A_{\mathrm{v}} \cdot V_{\mathrm{i,R_{9}}}}{A_{\mathrm{v}} \cdot V_{\mathrm{i}}} = \\
+						  &= \frac{V_{\mathrm{i,R_{9}}}}{V_{\mathrm{i}}} = \\
+						  &= \frac{v_{\mathrm{s}} \cdot \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}}{v_{\mathrm{s}}} = \\
+						  &= \frac{R_{\mathrm{i}}}{R_{9} + R_{\mathrm{i}}}
+					\end{split}
+				\end{equation*}
+				Da cui
+				\begin{equation*}
+					\begin{split}
+						R_{\mathrm{i}} &= w \cdot R_{9} \cdot \frac{1}{1 - w} = \\
+									   &= 606m \cdot 10k \cdot \frac{1}{1 - 606m} = \\
+									   &= 15.4 \, \mathrm{k\Omega}
+					\end{split}
+				\end{equation*}
+				Il valore ottenuto rientra nel range dato dal costruttore ($ 15 \pm 0.75 \, \mathrm{k\Omega} $).
 			\subsubsection{Misura della resistenza equivalente di uscita}	
 				\begin{center}
 					\begin{tabular}{ |c|c| }
@@ -455,11 +476,12 @@
 						\hline
 					\end{tabular}
 				\end{center}
-				Dato che le due tensioni misurate sono uguali, deduciamo che il valore di $ R_{\mathrm{u}} $ è trascurabile e, quindi, essa è assimilabile ad un cortocircuito.
 				\begin{figure}[h!]
 					\centering
 					\includegraphics[scale=0.2]{misuraDellaResistenzaEquivalenteInIngressoAmplificatoreInvertenteR9InCorto}
 					\caption{Misura della resistenza equivalente d'uscita.}
 					\label{fig:misuraDellaResistenzaEquivalenteDiUscitaAmplificatoreInvertente}
 				\end{figure}
+				\newpage
+				Dato che le due tensioni misurate sono uguali, deduciamo che il valore di $ R_{\mathrm{u}} $ è trascurabile e, quindi, essa è assimilabile ad un cortocircuito.
 \end{document}
