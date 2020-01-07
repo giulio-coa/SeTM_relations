@@ -251,8 +251,25 @@
 			Successivamente, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale triangolare con $ V_{\mathrm{pp}} $ pari ad $ 2 \, \mathrm{V} $ e frequenza pari a $ 300 \, \mathrm{Hz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio.
 			\newline
 			Infine, abbiamo verificato che la tensione sui morsetti dell'amplificatore fosse nulla o prossima allo zero ed abbiamo proceduto ad aumentare l'ampiezza del segnale al fine di ottenere il presentarsi del fenomeno di clipping.
-			% foto 2 e foto 3 affiancate
-			% foto 4 con commento $ V_{\mathrm{pp}} = 5.5 \, \mathrm{V} $
+			\begin{figure}[h!]
+				\centering
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{tensioneMorsettoNonInvertente}
+					\caption{Verifica della tensione al morsetto non-invertente.}
+				\end{subfigure}
+				\begin{subfigure}{0.4\textwidth}
+					\centering
+					\includegraphics[scale=0.2]{tensioneMorsettoInvertente}
+					\caption{Verifica della tensione al morsetto invertente.}
+				\end{subfigure}
+				\begin{subfigure}{0.7\textwidth}
+					\centering
+					\includegraphics[scale=0.3]{clipping}
+					\caption{Verifica del fenomeno di clipping ($ V_{\mathrm{pp}} = 5.5 \, \mathrm{V} $).}
+				\end{subfigure}
+				\label{fig:punto2.2.3}
+			\end{figure}
 		\subsection{Amplificatore differenziale}
 			Abbiamo realizzato il circuito richiesto, posizionando gli interruttori seguendo la seguente tabella
 			\begin{center}
@@ -285,16 +302,28 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Infine, prima di procedere con l'esperienza, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1.6 \, \mathrm{V} $ e frequenza pari a $ 10 \, \mathrm{kHz} $.
+			Poi, prima di procedere con l'esperienza, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1.6 \, \mathrm{V} $ e frequenza pari a $ 10 \, \mathrm{kHz} $.
+			\newline
+			Infine, abbiamo valutato, nel dominio di Laplace, il circuito nelle varie configurazioni.
 			\begin{enumerate}[label=\alph*.]
 				\item \ 
 					\newline
 					Successivamente, abbiamo osservato come, al crescere della frequenza, il segnale venga distorto a causa della limitazione di Slew Rate.
-					% foto 5
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{slewRate}
+						\caption{Verifica della limitazione di Slew Rate.}
+						\label{fig:slewRate}
+					\end{figure}
 					\newline
 					Di conseguenza, abbiamo determinato sperimentalmente quale fosse la tensione per cui la limitazione di Slew Rate fosse rispettata ed abbiamo proceduto al ridurre l'ampiezza $ V_{\mathrm{pp}} $ fino a tale valore, passando da $ 1.6 \, \mathrm{V} $ a $ 300 \, \mathrm{mV} $.
-					% foto 6
-					\newline
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{segnaleCorrettoSlewRate}
+						\caption{Ingresso ed uscita dell'amplificatore alla frequenza di $ 100 \, \mathrm{kHz} $.}
+						\label{fig:segnaleCorrettoSlewRate}
+					\end{figure}
+					\newpage
 					A questo punto abbiamo proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio, alle varie frequenze in esame.
 				\item \label{item:b} \ 
 					\newline
@@ -304,24 +333,48 @@
 					Al fine di verificare che l'amplificatore amplificasse eventuali offset del segnale, abbiamo applicato, dapprima, un offset di $ 140 \, \mathrm{mV} $ e, successivamente, un offset di $ 180 \, \mathrm{mV} $, riscontrando un'amplificazione di un fattore $ A_{\mathrm{v}} $ del suddetto.
 					\newline
 					Sono stati mantenuti valori piccoli per gli offset di modo da evitare errate visualizzazioni del segnale.
-					% foto 9 e foto 10 affiancate
+					\begin{figure}[h!]
+						\centering
+						\begin{subfigure}{0.4\textwidth}
+							\centering
+							\includegraphics[scale=0.2]{offset140}
+							\caption{Segnale con un offset di $ 140 \, \mathrm{mV} $.}
+						\end{subfigure}
+						\begin{subfigure}{0.4\textwidth}
+							\centering
+							\includegraphics[scale=0.2]{offset180}
+							\caption{Segnale con un offset di $ 180 \, \mathrm{mV} $.}
+						\end{subfigure}
+						\label{fig:punto2.4.3.c}
+					\end{figure}
 				\item \ 
 					\newline
 					\textbf{N.B.} Il condensatore $ C_{3} $ preso in esame ha un valore di $ 15 \, \mathrm{pF} $ e non di $ 10 \, \mathrm{nF} $ come riportato nel testo dell'esercitazione; ciò ha portato ad un'esperienza che si discosta da quella che era stata pensata per l'esercitazione.
 					\newline
 					\newline
-					Abbiamo commutato lo switch S1, inserendo il condensatore $ C_{3} $ nel circuito, ed abbiamo riapplicato la procedura al punto ~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
+					Abbiamo commutato lo switch S1, inserendo il condensatore $ C_{3} $ nel circuito, ed abbiamo riapplicato la procedura al punto~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
 					\newline
-					Infine, abbiamo determinato il guadagno in continua dell'amplificatore tramite l'applicazione di offset.
-					% foto 12 e foto 13 affiancate
+					Infine, abbiamo determinato il guadagno in continua dell'amplificatore tramite l'applicazione di due offset.
+					\begin{figure}[h!]
+						\centering
+						\begin{subfigure}{0.4\textwidth}
+							\centering
+							\includegraphics[scale=0.2]{offset140C3}
+							\caption{Segnale con un offset di $ 140 \, \mathrm{mV} $.}
+						\end{subfigure}
+						\begin{subfigure}{0.4\textwidth}
+							\centering
+							\includegraphics[scale=0.2]{offset180C3}
+							\caption{Segnale con un offset di $ 180 \, \mathrm{mV} $.}
+						\end{subfigure}
+						\label{fig:punto2.4.3.d}
+					\end{figure}
 				\item \ 
 					\newline
-					Inserendo il condensatore $ C_{4} $ ed impostando Vi= 360 mV otteniamo Vu=2,86 V ed una nuova frequenza di taglio f = 83kHz, cioè inferiore di 3 kHz rispetto a quella del circuito privo di condensatori. 
-					% foto 19
+					Abbiamo commutato lo switch S2, inserendo il condensatore $ C_{4} $ nel circuito, ed abbiamo riapplicato la procedura al punto~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
 				\item \ 
 					\newline
-					Abbiamo inserito $ C_{5} $, Vi invariata, Vu= 2,86 V, quindi il condensatore non influenza la tensione di ucita, e frequenza di taglio f= 84kHz.
-					% foto 14
+					Abbiamo commutato lo switch S4, inserendo il condensatore $ C_{5} $ nel circuito, ed abbiamo riapplicato la procedura al punto~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
 			\end{enumerate}
 	%-----------------------------------------------------------------------------
 	%  RESULTS
@@ -480,7 +533,18 @@
 			\begin{enumerate}[label=\alph*.]
 				\item \ 
 					\newline
-					% inserire tabella
+					\begin{center}
+						\begin{tabular}{ |c|c|c|c| }
+							\hline
+							\multirow{\textbf{Frequenza}}	   & \textbf{$ V_{\mathrm{i}} $ [$ \mathrm{mV} $]} & \textbf{$ V_{\mathrm{u}} $ [$ \mathrm{V} $]} & \textbf{$ A_{\mathrm{v}} $} \\
+							\hline
+							\multirow{$ 100 \, \mathrm{Hz} $}  & $ 324 $ 									   & $ 2.96 $ 									  & $ 9.14 $ \\
+							\multirow{$ 1 \, \mathrm{kHz} $}   & $ 324 $ 									   & $ 2.96 $ 									  & $ 9.14 $ \\
+							\multirow{$ 10 \, \mathrm{kHz} $}  & $ 380 $ 									   & $ 2.88 $ 									  & $ 7.58 $ \\
+							\multirow{$ 100 \, \mathrm{kHz} $} & $ 360 $ 									   & $ 1.80 $ 									  & $ 5.00 $ \\
+							\hline
+						\end{tabular}
+					\end{center}
 				\item \ 
 					\newline
 					\begin{center}
@@ -498,23 +562,53 @@
 												  &= 2.04 \, \mathrm{V}
 						\end{split}
 					\end{equation*}
-					% foto 8 con commento $ f = 86.08 \, \mathrm{kHz} $
-				\item \ 
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{frequenzaDiTaglio}
+						\caption{Segnale alla frequenza di taglio ($ f = 86.08 \, \mathrm{kHz} $).}
+						\label{fig:frequenzaDiTaglio}
+					\end{figure}
 				\item \ 
 					\newline
 					\textbf{N.B.} Il condensatore $ C_{3} $ preso in esame ha un valore di $ 15 \, \mathrm{pF} $ e non di $ 10 \, \mathrm{nF} $ come riportato nel testo dell'esercitazione; ciò ha portato ad un'esperienza che si discosta da quella che era stata pensata per l'esercitazione.
 					\newline
 					\newline
-					Abbiamo inserito $ C_{3} $ come da istruzioni ed abbiamo ricalcolato la frequenza di taglio, ottenendo f = 54kHz, quindi 32kHz di calo.
-					\newline
-					Invece troviamo il guadagno del segnale di 8, 56 e un guadagno della componente continua di circa 10, quindi si è verificato un aumento di circa 0,7
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{frequenzaDiTaglioC3}
+						\caption{Segnale alla frequenza di taglio ($ f = 54 \, \mathrm{kHz} $).}
+						\label{fig:frequenzaDiTaglioC3}
+					\end{figure}
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 140m}}}{V_{\mathrm{u, 140m}}} = \\
+											   &= \frac{1.4}{140m} = \\
+											   &= 10
+						\end{split}
+					\end{equation*}
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 180m}}}{V_{\mathrm{u, 180m}}} = \\
+											   &= \frac{1.8}{180m} = \\
+											   &= 10
+						\end{split}
+					\end{equation*}
 				\item \ 
 					\newline
-					Inserendo il condensatore $ C_{4} $ ed impostando Vi= 360 mV otteniamo Vu=2,86 V ed una nuova frequenza di taglio f = 83kHz, cioè inferiore di 3 kHz rispetto a quella del circuito privo di condensatori. 
-					% foto 19
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{frequenzaDiTaglioC4}
+						\caption{Segnale alla frequenza di taglio ($ f = 83 \, \mathrm{kHz} $).}
+						\label{fig:frequenzaDiTaglioC4}
+					\end{figure}
 				\item \ 
 					\newline
-					Abbiamo inserito $ C_{5} $, Vi invariata, Vu= 2,86 V, quindi il condensatore non influenza la tensione di ucita, e frequenza di taglio f= 84kHz.
-					% foto 14
+					\newpage
+					\begin{figure}[h!]
+						\centering
+						\includegraphics[scale=0.4]{frequenzaDiTaglioC5}
+						\caption{Segnale alla frequenza di taglio ($ f = 84 \, \mathrm{kHz} $).}
+						\label{fig:frequenzaDiTaglioC5}
+					\end{figure}
 			\end{enumerate}
 \end{document}
