@@ -13,7 +13,7 @@
 	/Author(Coa Giulio, Licastro Dario, Montano Alessandra)
 }
 \usepackage[italian]{babel}
-\usepackage{geometry,titling,mdsymbol,stmaryrd,graphicx,subcaption,amsmath}
+\usepackage{amsmath,enumerate,enumitem,geometry,graphicx,mdsymbol,stmaryrd,subcaption,titling}
 \graphicspath{{./Image/}}
 \renewcommand\maketitlehooka{
 	\null
@@ -225,7 +225,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Infine, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1 \, \mathrm{V} $ e frequenza pari a $ 2 \, \mathrm{kHz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $ tramite l'uso dell'oscilloscopio.
+			Infine, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1 \, \mathrm{V} $ e frequenza pari a $ 2 \, \mathrm{kHz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio.
 		\subsection{Amplificatore invertente}
 			Abbiamo realizzato il circuito richiesto, collegando il modulo A3-2:
 			\begin{itemize}
@@ -248,7 +248,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Successivamente, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale triangolare con $ V_{\mathrm{pp}} $ pari ad $ 2 \, \mathrm{V} $ e frequenza pari a $ 300 \, \mathrm{Hz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $ tramite l'uso dell'oscilloscopio.
+			Successivamente, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale triangolare con $ V_{\mathrm{pp}} $ pari ad $ 2 \, \mathrm{V} $ e frequenza pari a $ 300 \, \mathrm{Hz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio.
 			\newline
 			Infine, abbiamo verificato che la tensione sui morsetti dell'amplificatore fosse nulla o prossima allo zero ed abbiamo proceduto ad aumentare l'ampiezza del segnale al fine di ottenere il presentarsi del fenomeno di clipping.
 			% foto 2 e foto 3 affiancate
@@ -266,7 +266,7 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Infine, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1.6 \, \mathrm{V} $ e frequenza pari a $ 200 \, \mathrm{Hz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $ tramite l'uso dell'oscilloscopio.
+			Successivamente, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1.6 \, \mathrm{V} $ e frequenza pari a $ 200 \, \mathrm{Hz} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio, per le varie configurazioni.
 		\subsection{Amplificatore AC/DC}
 			Abbiamo realizzato il circuito richiesto, collegando il modulo A3-1:
 			\begin{itemize}
@@ -285,7 +285,44 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Successivamente, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale triangolare con $ V_{\mathrm{pp}} $ pari ad $ 300 \, \mathrm{mV} $, e proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $ tramite l'uso dell'oscilloscopio.
+			Infine, prima di procedere con l'esperienza, abbiamo impostato il generatore di segnali, in modo da visualizzare un segnale sinusoidale con $ V_{\mathrm{pp}} $ pari ad $ 1.6 \, \mathrm{V} $ e frequenza pari a $ 10 \, \mathrm{kHz} $.
+			\begin{enumerate}[label=\alph*.]
+				\item \ 
+					\newline
+					Successivamente, abbiamo osservato come, al crescere della frequenza, il segnale venga distorto a causa della limitazione di Slew Rate.
+					% foto 5
+					\newline
+					Di conseguenza, abbiamo determinato sperimentalmente quale fosse la tensione per cui la limitazione di Slew Rate fosse rispettata ed abbiamo proceduto al ridurre l'ampiezza $ V_{\mathrm{pp}} $ fino a tale valore, passando da $ 1.6 \, \mathrm{V} $ a $ 300 \, \mathrm{mV} $.
+					% foto 6
+					\newline
+					A questo punto abbiamo proceduto con la misurazione di $ V_{\mathrm{i}} $ e $ V_{\mathrm{u}} $, tramite l'uso dell'oscilloscopio, alle varie frequenze in esame.
+				\item \label{item:b} \ 
+					\newline
+					Al fine di determinare la frequenza di taglio, abbiamo determinato il valore di $ V_{\mathrm{u}} $ una volta attenuato di $ 3 \, \mathrm{dB} $ e abbiamo variato la frequenza affinchè il valore di $ V_{\mathrm{u}} $ si avvicinasse il più possibile al valore calcolato.
+				\item \ 
+					\newline
+					Al fine di verificare che l'amplificatore amplificasse eventuali offset del segnale, abbiamo applicato, dapprima, un offset di $ 140 \, \mathrm{mV} $ e, successivamente, un offset di $ 180 \, \mathrm{mV} $, riscontrando un'amplificazione di un fattore $ A_{\mathrm{v}} $ del suddetto.
+					\newline
+					Sono stati mantenuti valori piccoli per gli offset di modo da evitare errate visualizzazioni del segnale.
+					% foto 9 e foto 10 affiancate
+				\item \ 
+					\newline
+					\textbf{N.B.} Il condensatore $ C_{3} $ preso in esame ha un valore di $ 15 \, \mathrm{pF} $ e non di $ 10 \, \mathrm{nF} $ come riportato nel testo dell'esercitazione; ciò ha portato ad un'esperienza che si discosta da quella che era stata pensata per l'esercitazione.
+					\newline
+					\newline
+					Abbiamo commutato lo switch S1, inserendo il condensatore $ C_{3} $ nel circuito, ed abbiamo riapplicato la procedura al punto ~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
+					\newline
+					Infine, abbiamo determinato il guadagno in continua dell'amplificatore tramite l'applicazione di offset.
+					% foto 12 e foto 13 affiancate
+				\item \ 
+					\newline
+					Inserendo il condensatore $ C_{4} $ ed impostando Vi= 360 mV otteniamo Vu=2,86 V ed una nuova frequenza di taglio f = 83kHz, cioè inferiore di 3 kHz rispetto a quella del circuito privo di condensatori. 
+					% foto 19
+				\item \ 
+					\newline
+					Abbiamo inserito $ C_{5} $, Vi invariata, Vu= 2,86 V, quindi il condensatore non influenza la tensione di ucita, e frequenza di taglio f= 84kHz.
+					% foto 14
+			\end{enumerate}
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -389,9 +426,7 @@
 			\end{center}
 			Notiamo che il valore di $ A_{\mathrm{v}} $ ottenuto dalle misurazioni è leggermente più basso del valore teorico; tale la differenza è piccola e, pertanto, trascurabile. Inoltre, esso presenta segno positivo poichè l’oscilloscopio tiene in considerazione la differenza di fase di $ 180 $\textdegree \ tra l'ingresso e l'uscita.
 		\subsection{Amplificatore differenziale}
-			(Dopo ogni misurazione il circuito è stato riposizionato alla situazione di partenza)
-			%inizio elenco
-			* Chiudendo S8 creiamo una maglia priva di resistenze, il generatore è direttamente collegato al morsetto non invertente, infatti V2=Vi, di conseguenza la loro differenza è pari a 0 ed il guadagno che avremo sarà unitario, ovvero la tensione che entra nell'amlificatore resta invariata.
+			Chiudendo lo switch S8, creiamo una maglia priva di resistenze dove, per l'appunto, la tensione sul morsetto non-invertente è pari a quella sul morsetto invertente ($ V_{2} = V_{\mathrm{i}} $); a causa di ciò, la differenza tra le due tensioni è nulla ed il guadagno dell'amplificatore differenziale sarà unitario, ovvero non vi sarà una variazione del segnale.
 			\begin{equation*}
 				\begin{split}
 					A_{\mathrm{v, S8}} &= 1 + \frac{R_{10}}{R_{9}} - \frac{R_{10}}{R_{9}} = \\
@@ -399,7 +434,7 @@
 									   &= 1
 				\end{split}
 			\end{equation*}
-			* Chiudendo S9 creiamo una maglia con R6 = 10kOhm, di conseguenza avremo una diminuzione di V2  =2/3Vi, che porterà ad un incremento del guadagno in modulo, come riscontrabile anche dai calcoli effettuati.
+			Chiudendo lo switch S9, creiamo una maglia in cui è presente la resistenza $ R_{6} $; a causa di ciò, si avrà una diminuzione della tensione sul morsetto non-invertente rispetto alla tensione sul morsetto invertente ($ V_{2} = \frac{2}{3} \cdot V_{\mathrm{i}} $).
 			\begin{equation*}
 				\begin{split}
 					A_{\mathrm{v, S9}} &= \frac{2}{3} \cdot (1 + \frac{R_{10}}{R_{9}}) - \frac{R_{10}}{R_{9}} = \\
@@ -407,7 +442,7 @@
 									   &= -0.85
 				\end{split}
 			\end{equation*}
-			* Chiudendo S10 creiamo una maglia con R6 = 10kOhm e R7 = 10kOhm, di conseguenza avremo una diminuzione di V2  =1/3Vi, che porterà ad un incremento del guadagno in modulo, come riscontrabile anche dai calcoli effettuati.
+			Chiudendo lo switch S10, creiamo una maglia in cui è presente la resistenza $ R_{6} $ ed $ R_{7} $; a causa di ciò, si avrà una diminuzione della tensione sul morsetto non-invertente rispetto alla tensione sul morsetto invertente ($ V_{2} = \frac{1}{3} \cdot V_{\mathrm{i}} $) che porterà ad un incremento, in modulo, del guadagno dell'amplificatore, come riscontrabile dai calcoli.
 			\begin{equation*}
 				\begin{split}
 					A_{\mathrm{v, S10}} &= \frac{1}{3} \cdot (1 + \frac{R_{10}}{R_{9}}) - \frac{R_{10}}{R_{9}} = \\
@@ -415,7 +450,7 @@
 										&= -2.7
 				\end{split}
 			\end{equation*}
-			* Chiudendo S11 colleghiamo direttamente il morsetto non-invertenta alla massa, quindi V2  =0, otteniamo il circuito di un amplificatore invertente, con guadagno massimo
+			Chiudendo lo switch S11, colleghiamo, direttamente, il morsetto non-invertente alla massa e, quindi, avremo che la tensione su di esso sarà nulla, rendendo l'amplificatore un amplificatore invertente.
 			\begin{equation*}
 				\begin{split}
 					A_{\mathrm{v, S11}} &= - \frac{R_{10}}{R_{9}} = \\
@@ -435,29 +470,51 @@
 					\hline
 				\end{tabular}
 			\end{center}
-			Le misurazioni effettuate sono coerenti con i valori calcolati, infatti al massimo troviamo differenze di un decimo del valore, ma tendenzialmente la differenza è molto minore.
+			Le misurazioni effettuate sono coerenti con i valori calcolati, infatti, abbiamo riscontrato differenze dell'ordine dei centesimi ($ 0.01 \div 0.09 $), ma tendenzialmente la differenza è molto minore.
+			\newline
+			\newline
+			\begin{scriptsize}
+				I calcoli effettuati sono stati svolti utilizzando il principio di sovrapposizione degli effetti. 
+			\end{scriptsize}
 		\subsection{Amplificatore AC/DC}
-			Punto a)
-				Abbiamo osservato, per mezzo dell'oscilloscopio, che al crescere della frequenza il segnae veniva distorto a causa della limitazione di slew rate %foto 5
-				di conseguenza abbiamo continuato ad aumentare la frequenza in ingresso come richiesto, riducendo però la Vpp, partendo da un valore di 1,6V per scendere fino a 300 mV, rimanendo, quindi, nei limiti richiesti.
-				%foto 6
-				%inserire tabella
-			Punto b)	
-				Calcolando la frequenza di taglio abbiamo ottenuto f=86.08kHz???????????
-			Punto c)
-				Per verificare che l'offset vega amplificato lo abbiamo inserito pari a 140mV (foto 9), per poi aumentarlo fino a 180 mV (foto 10) ed apprezzare la differente rappresentazione dell'offset, sono stati mantenuti valori bassi per evitare distorsioni del segnale.
-				Il segnale in uscita presenta l'offset anch'esso amplificato di un fattore Av.
-			Punto d)
-				(Premessa: il valore misurato di C3è 15pF, non 10nF come riportato nella consegna)
-				Abbiamo inserito C3 come da istruzioni ed abbiamo ricalcolato la frequenza di taglio, ottenendo f = 54kHz, quindi 32kHz di calo. 
-				Invece troviamo il guadagno del segnale di 8, 56 e un guadagno della componente continua di circa 10, quindi si è verificato un aumento di circa 0,7
-				%foto 12 e 13
-				Variazioni di offset per misurare il guadagno in continua
-			Punto e)
-				Inserendo il condensatore C4= 100 nF ed impostando Vi= 360 mV otteniamo Vu=2,86 V ed una nuova frequenza di taglio f = 83kHz, cioè inferiore di 3 kHz rispetto a quella del circuito privo di condensatori. 
-				%foto 19
-			Punto f)
-				Abbiamo inserito C5, Vi invariata, Vu= 2,86 V, quindi il condensatore non influenza la tensione di ucita, e frequenza di taglio f= 84kHz.
-				%foto 14
-			
+			\begin{enumerate}[label=\alph*.]
+				\item \ 
+					\newline
+					% inserire tabella
+				\item \ 
+					\newline
+					\begin{center}
+						$ 20 \log \frac{V_{\mathrm{u, f_{T}}}}{V_{\mathrm{u}}} = -3 $
+					\end{center}
+					\newline
+					\begin{center}
+						$ \frac{V_{\mathrm{u, f_{T}}}}{V_{\mathrm{u}}} = 10^{-\frac{3}{20}} $
+					\end{center}
+					\newline
+					\begin{equation*}
+						\begin{split}
+							V_{\mathrm{u, f_{T}}} &= 10^{-\frac{3}{20}} \cdot V_{\mathrm{u}} = \\
+												  &= 0.707 \cdot 2.88 = \\
+												  &= 2.04 \, \mathrm{V}
+						\end{split}
+					\end{equation*}
+					% foto 8 con commento $ f = 86.08 \, \mathrm{kHz} $
+				\item \ 
+				\item \ 
+					\newline
+					\textbf{N.B.} Il condensatore $ C_{3} $ preso in esame ha un valore di $ 15 \, \mathrm{pF} $ e non di $ 10 \, \mathrm{nF} $ come riportato nel testo dell'esercitazione; ciò ha portato ad un'esperienza che si discosta da quella che era stata pensata per l'esercitazione.
+					\newline
+					\newline
+					Abbiamo inserito $ C_{3} $ come da istruzioni ed abbiamo ricalcolato la frequenza di taglio, ottenendo f = 54kHz, quindi 32kHz di calo.
+					\newline
+					Invece troviamo il guadagno del segnale di 8, 56 e un guadagno della componente continua di circa 10, quindi si è verificato un aumento di circa 0,7
+				\item \ 
+					\newline
+					Inserendo il condensatore $ C_{4} $ ed impostando Vi= 360 mV otteniamo Vu=2,86 V ed una nuova frequenza di taglio f = 83kHz, cioè inferiore di 3 kHz rispetto a quella del circuito privo di condensatori. 
+					% foto 19
+				\item \ 
+					\newline
+					Abbiamo inserito $ C_{5} $, Vi invariata, Vu= 2,86 V, quindi il condensatore non influenza la tensione di ucita, e frequenza di taglio f= 84kHz.
+					% foto 14
+			\end{enumerate}
 \end{document}
