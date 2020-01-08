@@ -372,9 +372,13 @@
 				\item \ 
 					\newline
 					Abbiamo commutato lo switch S2, inserendo il condensatore $ C_{4} $ nel circuito, ed abbiamo riapplicato la procedura al punto~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
+					\newline
+					Inoltre, si è verificato come l'offset in ingresso non venisse amplificato in uscita.
 				\item \ 
 					\newline
 					Abbiamo commutato lo switch S4, inserendo il condensatore $ C_{5} $ nel circuito, ed abbiamo riapplicato la procedura al punto~\ref{item:b} al fine di determinare la nuova frequenza di taglio.
+					\newline
+					Inoltre, si è verificato come l'offset in ingresso venisse annullato in uscita.
 			\end{enumerate}
 	%-----------------------------------------------------------------------------
 	%  RESULTS
@@ -579,28 +583,45 @@
 						\caption{Segnale alla frequenza di taglio ($ f = 54 \, \mathrm{kHz} $).}
 						\label{fig:frequenzaDiTaglioC3}
 					\end{figure}
+					\newpage
 					\begin{equation*}
 						\begin{split}
-							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 140m}}}{V_{\mathrm{u, 140m}}} = \\
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 140m}}}{V_{\mathrm{i, 140m}}} = \\
 											   &= \frac{1.4}{140m} = \\
 											   &= 10
 						\end{split}
 					\end{equation*}
 					\begin{equation*}
 						\begin{split}
-							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 180m}}}{V_{\mathrm{u, 180m}}} = \\
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 180m}}}{V_{\mathrm{i, 180m}}} = \\
 											   &= \frac{1.8}{180m} = \\
 											   &= 10
 						\end{split}
 					\end{equation*}
 				\item \ 
 					\newline
+					\newpage
 					\begin{figure}[h!]
 						\centering
 						\includegraphics[scale=0.4]{frequenzaDiTaglioC4}
 						\caption{Segnale alla frequenza di taglio ($ f = 83 \, \mathrm{kHz} $).}
 						\label{fig:frequenzaDiTaglioC4}
 					\end{figure}
+					\newline
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 140m}}}{V_{\mathrm{i, 140m}}} = \\
+											   &= \frac{140m}{140m} = \\
+											   &= 1
+						\end{split}
+					\end{equation*}
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 180m}}}{V_{\mathrm{i, 180m}}} = \\
+											   &= \frac{180m}{180m} = \\
+											   &= 1
+						\end{split}
+					\end{equation*}
 				\item \ 
 					\newline
 					\newpage
@@ -610,5 +631,20 @@
 						\caption{Segnale alla frequenza di taglio ($ f = 84 \, \mathrm{kHz} $).}
 						\label{fig:frequenzaDiTaglioC5}
 					\end{figure}
+					\newline
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 140m}}}{V_{\mathrm{i, 140m}}} = \\
+											   &= \frac{0}{140m} = \\
+											   &= 0
+					\end{split}
+					\end{equation*}
+					\begin{equation*}
+						\begin{split}
+							A_{\mathrm{v, DC}} &= \frac{V_{\mathrm{u, 180m}}}{V_{\mathrm{i, 180m}}} = \\
+											   &= \frac{0}{180m} = \\
+											   &= 0
+						\end{split}
+					\end{equation*}
 			\end{enumerate}
 \end{document}
