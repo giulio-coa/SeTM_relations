@@ -36,7 +36,7 @@
 	showtabs = false,
 	stepnumber = 1,
 	stringstyle = \color{red},
-	tabsize = 1
+	tabsize = 4
 }
 \graphicspath{{./Image/}}
 \renewcommand\maketitlehooka{
@@ -48,6 +48,7 @@
 	\vfill
 	\null
 }
+\newcommand\abs[1]{\left|#1\right|}
 \title{
 	\begin{center}
 		Esercitazione di Laboratorio:
@@ -156,36 +157,32 @@
 				\label{fig:circuitoDiCondizionamento}
 			\end{figure}
 		\subsection{Misura della temperatura}
-			\begin{lstlisting}
-				#include <string.h>
-				
-				//#define INT
-				
-				int pin, time, D_out, N_B;
-				float S, T_C, T_K, V_out, V_FR;
-				
-				void setup() {
-					Serial.begin(9600);	// setup Serial
-					pin = A0;	// set the pin to read data
-					time = 1000;	// set how much time the sensor must execute the measurement of the temperature
-					S = 10 * pow(10, -3);
-					N_B = 10;
-					V_FR = 4.9;
-					#ifdef INT
-						analogReference(INTERNAL);	// set the type of alimentation
-					#endif
-				}
-				void loop(){
-					D_out = analogRead(pin);	// read data from the pin
-					T_K = D_out * V_FR / pow(2, N_B) * 1 / S;
-					T_C = T_K - 273.15;
-					V_out = D_out * V_FR / pow(2, N_B);
-					Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " %*\color{red} \textdegree*)C");
-					delay(time);
-				}
-			\end{lstlisting}
+			Successivamente, abbiamo collegato il sensore all'Arduino UNO, seguendo lo schema nella figura seguente ed impostando una tensione d'alimentazione $ V_{\mathrm{cc}} $ pari a $ 4.85 \pm 0.4 \, \mathrm{V} $.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.5]{collegamentoCircuitoArduino}
+				\label{fig:collegamentoCircuitoArduino}
+			\end{figure}
+			\newline
+			L'Arduino UNO produce, in uscita, un valore numerico nell'intervallo $ 0 \div 1023 $ ($ 0 \div 2^{N_{\mathrm{B}}} - 1 $); al fine di ottenere la temperatura di lavoro del sensore, abbiamo usato la funzione
+			\begin{center}
+				$ T_{\mathrm{K}} = D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot \frac{1}{S} $
+			\end{center}
+			Mentre, per ottenere la tensione ad essa associata, abbiamo sfruttato la relazione $ V_{\mathrm{out}} = S \cdot T_{\mathrm{K}} $, ottenendo la formula
+			\begin{center}
+				$ V_{\mathrm{out}} = D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} $
+			\end{center}
+			Queste formule sono state implementate nel seguente codice, simil \verb!C++!, che è stato usato per settare l'Arduino UNO.
+			\lstinputlisting[language = C++, label = {lst:arduinoCode}]{arduinoCode.cpp}
 		\subsection{Stima dell'incertezza}
-			.
+			Al fine di determinare l'incertezza assoluta associata alla misura di temperatura ottenuta, abbiamo applicato la formula di propagazione delle incertezze del modello deterministico.
+			\begin{center}
+				$ y = f(x_{1}, x_{2}, \ \dots \ , x_{\mathrm{m}}) $
+			\end{center}
+			\begin{center}
+				$$ \delta y = \sum_{i=1}^{m} \abs{\frac{\partial f}{\partial x_{\mathrm{i}}}} \cdot \delta x_{\mathrm{i}} $$
+			\end{center}
+			Il valore ottenuto è molto elevato, percui tale misura non si può considerare affidabile.
 		\subsection{Modifica del circuito di condizionamento}
 			.
 		\subsection{Firmware del micro-controllore}
@@ -198,7 +195,6 @@
 	\section{Risultati}
 		\subsection{Circuito di condizionamento}
 			In base ai dati fornitici, abbiamo proceduto al calcolo della tensione massima e della tensione minima a cui il sensore LM335 deve lavorare.
-			\newline
 			\begin{equation*}
 				\begin{split}
 					V_{\mathrm{out, max}} &= S \cdot T_{\mathrm{K, max}} = \\
@@ -216,27 +212,20 @@
 				\end{split}
 			\end{equation*}
 			Essendo che la resistenza $ R_{1} $ è posta in serie al sensore, la corrente che scorre nel diodo è uguale a quella che scorre nella resistenza (in realtà è approssimabile, dato che si va a misurare la tensione ai capi del diodo e si ha un minimo di "perdite").
-			\newline
 			\begin{center}
 				$ I_{\mathrm{D}} \approx I_{1} = \frac{V_{\mathrm{s}} - V_{\mathrm{out}}}{R_{1}} $
 			\end{center}
-			\newline
 			Da ciò, si ha che le limitazioni sulla corrente che attraversa il diodo diventano
-			\newline
 			\begin{center}
 				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{R_{1}} > 0.4 \, \mathrm{mA} $
 			\end{center}
-			\newline
 			\begin{center}
 				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{R_{1}} < 5 \, \mathrm{mA} $
 			\end{center}
-			\newline
 			Da cui si ha che
-			\newline
 			\begin{center}
 				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{0.4m} > R_{1} > \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{5m} $
 			\end{center}
-			\newline
 			\begin{center}
 				$ 4425 \, \mathrm{\Omega} > R_{1} > 444 \, \mathrm{\Omega} $
 			\end{center}
@@ -258,37 +247,40 @@
 						  &= 1 \, \mathrm{k\Omega}
 				\end{split}
 			\end{equation*}
-		\subsection{Misura della temperatura}
-			\begin{lstlisting}
-				#include <string.h>
-				
-				//#define INT
-				
-				int pin, time, D_out, N_B;
-				float S, T_C, T_K, V_out, V_FR;
-				
-				void setup() {
-				Serial.begin(9600);	// setup Serial
-				pin = A0;	// set the pin to read data
-				time = 1000;	// set how much time the sensor must execute the measurement of the temperature
-				S = 10 * pow(10, -3);
-				N_B = 10;
-				V_FR = 4.9;
-				#ifdef INT
-				analogReference(INTERNAL);	// set the type of alimentation
-				#endif
-				}
-				void loop(){
-				D_out = analogRead(pin);	// read data from the pin
-				T_K = D_out * V_FR / pow(2, N_B) * 1 / S;
-				T_C = T_K - 273.15;
-				V_out = D_out * V_FR / pow(2, N_B);
-				Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " %*\color{red} \textdegree*)C");
-				delay(time);
-				}
-			\end{lstlisting}
+		\subsection{Misura della temperatura} 
+			Il valore di $ D_{\mathrm{out}} $ ottenuto è pari a $ XXXX $, percui la temperatura a cui lavora il sensore sarà
+			\begin{equation*}
+				\begin{split}
+					T_{\mathrm{K}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot \frac{1}{S} = \\
+								   &= XXXX \cdot \frac{5}{2^{10}} \cdot \frac{1}{10m} = \\
+								   &= XXXX \, \mathrm{K}
+				\end{split}
+			\end{equation*}
+			\begin{equation*}
+				\begin{split}
+					T &= T_{\mathrm{K}} - 273.15 = \\
+					  &= XXXX - 273.15 = \\
+					  &= XXXX \, \mathrm{\text{\textdegree} C}
+				\end{split}
+			\end{equation*}
+			Mentre la tensione in uscita sarà
+			\begin{equation*}
+				\begin{split}
+					V_{\mathrm{out}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} = \\
+									 &= XXXX \cdot \frac{5}{2^{10}} = \\
+									 &= XXXX \, \mathrm{V}
+				\end{split}
+			\end{equation*}
 		\subsection{Stima dell'incertezza}
-			.
+			Come detto precedentemente, abbiamo applicato la formula di propagazione delle incertezze del modello deterministico, ottenendo un'incertezza pari a
+			\begin{equation*}
+				\begin{split}
+					\delta T &= \abs{\frac{\partial T}{\partial D_{\mathrm{out}}}} \cdot \delta D_{\mathrm{out}} + \abs{\frac{\partial T}{\partial V_{\mathrm{FR}}}} \cdot \delta V_{\mathrm{FR}} + \abs{\frac{\partial T}{\partial S}} \cdot \delta S = \\
+							 &= \frac{V_{\mathrm{FR}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta D_{\mathrm{out}} + \frac{D_{\mathrm{out}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta V_{\mathrm{FR}} + \delta T^{sensor} = \\
+							 &= \frac{5}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
+							 &= XXXX \, \mathrm{K}
+				\end{split}
+			\end{equation*}
 		\subsection{Modifica del circuito di condizionamento}
 			.
 		\subsection{Firmware del micro-controllore}
