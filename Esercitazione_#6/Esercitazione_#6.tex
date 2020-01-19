@@ -1,66 +1,62 @@
 \documentclass[a4paper]{article}
 \usepackage[
-				pdftex,
-				colorlinks=true,
-				bookmarksnumbered=true,
-				bookmarksopen=true,
-				bookmarksopenlevel=3,
-				pdfstartview=FitP,
-				urlcolor=blue,
-			]{hyperref}
+	pdftex,
+	colorlinks=true,
+	bookmarksnumbered=true,
+	bookmarksopen=true,
+	bookmarksopenlevel=3,
+	pdfstartview=FitP,
+	urlcolor=blue,
+]{hyperref}
 \pdfinfo{
-			/Title(Esercitazione di Laboratorio: Arduino)
-			/Author(Coa Giulio, Licastro Dario, Montano Alessandra)
-		}
+	/Title(Esercitazione di Laboratorio: Arduino)
+	/Author(Coa Giulio, Licastro Dario, Montano Alessandra)
+}
 \usepackage[italian]{babel}
-\usepackage{geometry,titling,mdsymbol,stmaryrd,graphicx,subcaption,amsmath,listings,xcolor}
-\definecolor{green}{rgb}{0, 0.6, 0}
-\definecolor{gray}{rgb}{0.5, 0.5, 0.5}
-\definecolor{purple}{rgb}{0.58, 0, 0.82}
-\definecolor{white}{rgb}{1, 1, 1}
-\definecolor{black}{rgb}{0, 0, 0}
-\definecolor{blue(pigment)}{rgb}{0.2, 0.2, 0.6}
-\lstdefinestyle{mystyle}{
-	backgroundcolor = \color{black},
-	commentstyle = \color{purple},
-	keywordstyle = \color{blue(pigment)},
-	numberstyle = \tiny\color{black},
-	stringstyle = \color{green},
-	basicstyle = \ttfamily \footnotesize \color{white},
+\usepackage{amsmath,geometry,graphicx,listings,mdsymbol,stmaryrd,subcaption,titling,xcolor}
+\definecolor{comment}{rgb}{1, 0.83, 0}
+\lstset{
+	backgroundcolor = \color{white},
+	basicstyle = \ttfamily \footnotesize \color{black},
 	breakatwhitespace = false,
 	breaklines = true,
 	captionpos = b,
+	columns = flexible,
+	commentstyle = \color{comment},
+	escapeinside = {\%*}{*)},
+	frame = tb,
 	keepspaces = true,
-	numbers = none,
+	keywordstyle = \color{blue},
+	language = C++,
+	numbers = left,
 	numbersep = 5pt,
+	numberstyle = \tiny\color{black},
 	showspaces = false,
 	showstringspaces = false,
 	showtabs = false,
+	stepnumber = 1,
+	stringstyle = \color{red},
 	tabsize = 1
-}
-\lstset{
-	style=mystyle,
-	lineskip = 2pt
 }
 \graphicspath{{./Image/}}
 \renewcommand\maketitlehooka{
-								\null
-								\mbox{}
-								\vfill
-							}
+	\null
+	\mbox{}
+	\vfill
+}
 \renewcommand\maketitlehookd{
-								\vfill
-								\null
-							}
+	\vfill
+	\null
+}
 \title{
-		\begin{center}
-			Esercitazione di Laboratorio:
-		\end{center}
-		\newline
-		\begin{center}
-			Arduino
-		\end{center}
-	}
+	\begin{center}
+		Esercitazione di Laboratorio:
+	\end{center}
+	\newline
+	\begin{center}
+		Arduino
+	\end{center}
+}
 \author{
 	Coa Giulio (s236723)
 	\and
@@ -160,7 +156,7 @@
 				\label{fig:circuitoDiCondizionamento}
 			\end{figure}
 		\subsection{Misura della temperatura}
-			\begin{lstlisting}[language=C++]
+			\begin{lstlisting}
 				#include <string.h>
 				
 				//#define INT
@@ -169,22 +165,22 @@
 				float S, T_C, T_K, V_out, V_FR;
 				
 				void setup() {
-					Serial.begin(9600);
-					pin = A0;
-					time = 1000;
+					Serial.begin(9600);	// setup Serial
+					pin = A0;	// set the pin to read data
+					time = 1000;	// set how much time the sensor must execute the measurement of the temperature
 					S = 10 * pow(10, -3);
 					N_B = 10;
 					V_FR = 4.9;
 					#ifdef INT
-						analogReference(INTERNAL);
+						analogReference(INTERNAL);	// set the type of alimentation
 					#endif
 				}
 				void loop(){
-					D_out = analogRead(pin);
+					D_out = analogRead(pin);	// read data from the pin
 					T_K = D_out * V_FR / pow(2, N_B) * 1 / S;
 					T_C = T_K - 273.15;
 					V_out = D_out * V_FR / pow(2, N_B);
-					Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " °C");
+					Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " %*\color{red} \textdegree*)C");
 					delay(time);
 				}
 			\end{lstlisting}
@@ -263,7 +259,7 @@
 				\end{split}
 			\end{equation*}
 		\subsection{Misura della temperatura}
-			\begin{lstlisting}[language=C++]
+			\begin{lstlisting}
 				#include <string.h>
 				
 				//#define INT
@@ -272,23 +268,23 @@
 				float S, T_C, T_K, V_out, V_FR;
 				
 				void setup() {
-					Serial.begin(9600);
-					pin = A0;
-					time = 1000;
-					S = 10 * pow(10, -3);
-					N_B = 10;
-					V_FR = 4.9;
-					#ifdef INT
-						analogReference(INTERNAL);
-					#endif
+				Serial.begin(9600);	// setup Serial
+				pin = A0;	// set the pin to read data
+				time = 1000;	// set how much time the sensor must execute the measurement of the temperature
+				S = 10 * pow(10, -3);
+				N_B = 10;
+				V_FR = 4.9;
+				#ifdef INT
+				analogReference(INTERNAL);	// set the type of alimentation
+				#endif
 				}
 				void loop(){
-					D_out = analogRead(pin);
-					T_K = D_out * V_FR / pow(2, N_B) * 1 / S;
-					T_C = T_K - 273.15;
-					V_out = D_out * V_FR / pow(2, N_B);
-					Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " °C");
-					delay(time);
+				D_out = analogRead(pin);	// read data from the pin
+				T_K = D_out * V_FR / pow(2, N_B) * 1 / S;
+				T_C = T_K - 273.15;
+				V_out = D_out * V_FR / pow(2, N_B);
+				Serial.println("D_out: " + String(D_out) + " -- V_out: " + String(V_out) + " V -- T: " + String(T_K) + " K -- T: " + String(T_C) + " %*\color{red} \textdegree*)C");
+				delay(time);
 				}
 			\end{lstlisting}
 		\subsection{Stima dell'incertezza}
