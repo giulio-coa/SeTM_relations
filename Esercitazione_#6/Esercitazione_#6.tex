@@ -140,8 +140,6 @@
 				\caption{Sensore LM335.}
 				\label{fig:LM335}
 			\end{figure}
-		\subsection{Other}
-			.
 	%-----------------------------------------------------------------------------
 	%  LABORATORY EXPERIENCE
 	%-----------------------------------------------------------------------------
@@ -173,6 +171,7 @@
 				$ V_{\mathrm{out}} = D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} $
 			\end{center}
 			Queste formule sono state implementate nel seguente codice, simil \verb!C++!, che è stato usato per settare l'Arduino UNO.
+			\newpage
 			\lstinputlisting[language = C++, label = {lst:arduinoCode}]{arduinoCode.cpp}
 		\subsection{Stima dell'incertezza}
 			Al fine di determinare l'incertezza assoluta associata alla misura di temperatura ottenuta, abbiamo applicato la formula di propagazione delle incertezze del modello deterministico.
@@ -184,7 +183,34 @@
 			\end{center}
 			Il valore ottenuto è molto elevato, percui tale misura non si può considerare affidabile.
 		\subsection{Modifica del circuito di condizionamento}
-			.
+			Al fine di ridurre l'incertezza associata a tale misurazione, imponiamo che la tensione di fondo scala $ V_{\mathrm{FR}} $ sia pari al riferimento interno $ V_{\mathrm{int}} $ dell'Arduino UNO; questa tensione è nota con un'incertezza assoluta minore e, pertanto, risulta essere più accurata.
+			\newline
+			Per poter applicare questa soluzione, occorre portare la tensione $ V_{\mathrm{out}} $ dal range attuale ($ 0 \div 5 \, \mathrm{V} $) al range $ 0 \div 1.1 \, \mathrm{V} $; a tale scopo, applichiamo un partitore di tensione in parallelo al sensore.
+			\begin{figure}[h!]
+				\centering
+				\includegraphics[scale=0.5]{collegamentoCircuitoArduinoPartitore}
+				\label{fig:collegamentoCircuitoArduinoPartitore}
+			\end{figure}
+			\newpage
+			Tale partitore deve essere strutturato di modo da
+			\begin{itemize}
+				\item Minimizzare gli effetti di carico.
+				\item Imporre una tensione $ V_{3} $ di, massimo, $ 1.1 \, \mathrm{V} $.
+				\item Non assorbire troppa corrente, pena il corretto funzionamento del sensore.
+				\item Attenuare la tensione $ V_{\mathrm{out}} $ di un fattore $ \ge 3 $
+			\end{itemize}
+			A tale scopo le resistenze $ R_{2} $ ed $ R_{3} $ devono essere abbastanza elevate per portare alla saturazione in caso di tensioni maggiori di $ 1.1 \, \mathrm{V} $, ma devono essere abbastanza piccole per evitare di assorbire troppa corrente.
+			\newline
+			L'inserimento di questo partitore si ripercuote sulla funzione usata per determinare la temperatura di lavoro del sensore e la tensione che esso produce in output; nello specifico, esse diventano
+			\begin{center}
+				$ T_{\mathrm{K}} = D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot \frac{1}{S} \cdot (1 + \frac{R_{2}}{R_{3}}) $
+			\end{center}
+			\begin{center}
+				$ V_{\mathrm{out}} = D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot (1 + \frac{R_{2}}{R_{3}}) $
+			\end{center}
+			Queste formule sono state implementate nel codice che è stato presentato al punto \ref{lst:arduinoCode}.
+			\newline
+			Una volta eseguite queste modifiche al circuito, abbiamo ripetuto l'esperienza, misurando nuovamente la temperatura di lavoro del sensore, la tensione che esso produce in uscita e l'incertezza associata alla misura.
 		\subsection{Firmware del micro-controllore}
 			.
 		\subsection{Caratterizzazione del sistema}
