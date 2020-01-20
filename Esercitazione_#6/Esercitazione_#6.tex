@@ -211,10 +211,6 @@
 			Queste formule sono state implementate nel codice che è stato presentato al punto \ref{lst:arduinoCode}.
 			\newline
 			Una volta eseguite queste modifiche al circuito, abbiamo ripetuto l'esperienza, misurando nuovamente la temperatura di lavoro del sensore, la tensione che esso produce in uscita e l'incertezza associata alla misura.
-		\subsection{Firmware del micro-controllore}
-			.
-		\subsection{Caratterizzazione del sistema}
-			.
 	%-----------------------------------------------------------------------------
 	%  RESULTS
 	%-----------------------------------------------------------------------------
@@ -243,17 +239,17 @@
 			\end{center}
 			Da ciò, si ha che le limitazioni sulla corrente che attraversa il diodo diventano
 			\begin{center}
-				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{R_{1}} > 0.4 \, \mathrm{mA} $
+				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, max}}}{R_{1}} > 0.4 \, \mathrm{mA} $
 			\end{center}
 			\begin{center}
 				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{R_{1}} < 5 \, \mathrm{mA} $
 			\end{center}
 			Da cui si ha che
 			\begin{center}
-				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{0.4m} > R_{1} > \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{5m} $
+				$ \frac{V_{\mathrm{s}} - V_{\mathrm{out, max}}}{0.4m} > R_{1} > \frac{V_{\mathrm{s}} - V_{\mathrm{out, min}}}{5m} $
 			\end{center}
 			\begin{center}
-				$ 4425 \, \mathrm{\Omega} > R_{1} > 444 \, \mathrm{\Omega} $
+				$ 4050 \, \mathrm{\Omega} > R_{1} > 414 \, \mathrm{\Omega} $
 			\end{center}
 			Successivamente, abbiamo stimato la temperatura dell'ambiente in cui il diodo avrebbe lavorato, tenendo conto dell'autoriscaldamento del sensore, e, di conseguenza, la tensione in uscita che esso avrebbe prodotto.
 			\begin{equation*}
@@ -269,8 +265,8 @@
 			\begin{equation*}
 				\begin{split}
 					R_{1} &= \frac{V_{\mathrm{s}} - V_{\mathrm{out}}}{I_{1}} = \\
-						  &= \frac{5 - 3}{2m} = \\
-						  &= 1 \, \mathrm{k\Omega}
+						  &= \frac{4.85 - 3}{2m} = \\
+						  &= 925 \, \mathrm{\Omega}
 				\end{split}
 			\end{equation*}
 		\subsection{Misura della temperatura} 
@@ -278,7 +274,7 @@
 			\begin{equation*}
 				\begin{split}
 					T_{\mathrm{K}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot \frac{1}{S} = \\
-								   &= XXXX \cdot \frac{5}{2^{10}} \cdot \frac{1}{10m} = \\
+								   &= XXXX \cdot \frac{4.85}{2^{10}} \cdot \frac{1}{10m} = \\
 								   &= XXXX \, \mathrm{K}
 				\end{split}
 			\end{equation*}
@@ -293,7 +289,7 @@
 			\begin{equation*}
 				\begin{split}
 					V_{\mathrm{out}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} = \\
-									 &= XXXX \cdot \frac{5}{2^{10}} = \\
+									 &= XXXX \cdot \frac{4.85}{2^{10}} = \\
 									 &= XXXX \, \mathrm{V}
 				\end{split}
 			\end{equation*}
@@ -303,14 +299,76 @@
 				\begin{split}
 					\delta T &= \abs{\frac{\partial T}{\partial D_{\mathrm{out}}}} \cdot \delta D_{\mathrm{out}} + \abs{\frac{\partial T}{\partial V_{\mathrm{FR}}}} \cdot \delta V_{\mathrm{FR}} + \abs{\frac{\partial T}{\partial S}} \cdot \delta S = \\
 							 &= \frac{V_{\mathrm{FR}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta D_{\mathrm{out}} + \frac{D_{\mathrm{out}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta V_{\mathrm{FR}} + \delta T^{sensor} = \\
-							 &= \frac{5}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
+							 &= \frac{4.85}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
+							 &= 1 + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
 							 &= XXXX \, \mathrm{K}
 				\end{split}
 			\end{equation*}
 		\subsection{Modifica del circuito di condizionamento}
-			.
-		\subsection{Firmware del micro-controllore}
-			.
-		\subsection{Caratterizzazione del sistema}
-			.
+			Essendo che il partitore deve attenuare di un fattore $ \ge 3 $ la tensione $ V_{\mathrm{out}} $, si ha che
+			\begin{equation*}
+				\begin{split}
+					&V_{3} \le \frac{V_{\mathrm{out}}}{3} \\
+					&V_{3} \le \frac{3}{3} \\
+					&V_{3} \le 1 \, \mathrm{V}
+				\end{split}
+			\end{equation*}
+			Sfruttando questo vincolo, imponiamo che $ V_{3} $ sia pari a $ 1 \, \mathrm{V} $, ovvero, imponiamo che
+			\begin{equation*}
+				\begin{split}
+					V_{3} &= \frac{R_{3}}{R_{2} + R_{3}} \cdot V_{\mathrm{s}} \\
+					\frac{R_{3}}{R_{2} + R_{3}} &= \frac{V_{3}}{V_{\mathrm{s}}} = \\
+												&= \frac{1}{4.85} = \\
+												&= 0.21
+				\end{split}
+			\end{equation*}
+			Questa relazione non identifica univocamente le resistenze del partitore e, pertanto, ci lascia un certo grado di libertà nella progettazione del circuito; nell'ottica di scegliere delle resistenze che consentissero di non avere un partitore che assorba troppa corrente, abbiamo scelto le resistenze coi seguenti valori
+			\begin{center}
+				$ R_{2} = 3.8 \, \mathrm{k\Omega} $
+			\end{center}
+			\begin{center}
+				$ R_{3} = 1 \, \mathrm{k\Omega} $
+			\end{center}
+			L'inserimento del partitore non ci porta a dover ristrutturare il circuito, in quanto la corrente che scorre nel sensore è sufficiente a farlo funzionare.
+			\begin{equation*}
+				\begin{split}
+					I_{\mathrm{D}} &= I_{\mathrm{D, old}} - \frac{V_{\mathrm{out}}}{R_{2} + R_{3}} = \\
+						  &= 2m - \frac{3}{3.8k + 1k} = \\
+						  &= 1.38 \, \mathrm{mA}
+				\end{split}
+			\end{equation*}
+			Il valore di $ D_{\mathrm{out}} $ ottenuto è pari a $ XXXX $, percui la temperatura a cui lavora il sensore sarà
+			\begin{equation*}
+				\begin{split}
+					T_{\mathrm{K}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot \frac{1}{S} \cdot (1 + \frac{R_{2}}{R_{3}}) = \\
+								   &= XXXX \cdot \frac{1.1}{2^{10}} \cdot \frac{1}{10m} \cdot (1 + \frac{3.8k}{1k}) = \\
+								   &= XXXX \, \mathrm{K}
+				\end{split}
+			\end{equation*}
+			\begin{equation*}
+				\begin{split}
+					T &= T_{\mathrm{K}} - 273.15 = \\
+					  &= XXXX - 273.15 = \\
+					  &= XXXX \, \mathrm{\text{\textdegree} C}
+				\end{split}
+			\end{equation*}
+			Mentre la tensione in uscita sarà
+			\begin{equation*}
+				\begin{split}
+					V_{\mathrm{out}} &= D_{\mathrm{out}} \cdot \frac{V_{\mathrm{FR}}}{2^{N_{\mathrm{B}}}} \cdot (1 + \frac{R_{2}}{R_{3}}) = \\
+									 &= XXXX \cdot \frac{1.1}{2^{10}} \cdot (1 + \frac{3.8k}{1k}) = \\
+									 &= XXXX \, \mathrm{V}
+				\end{split}
+			\end{equation*}
+			L'incertezza associata a questa misurazione è
+			\begin{equation*}
+				\begin{split}
+					\delta T &= \abs{\frac{\partial T}{\partial D_{\mathrm{out}}}} \cdot \delta D_{\mathrm{out}} + \abs{\frac{\partial T}{\partial V_{\mathrm{FR}}}} \cdot \delta V_{\mathrm{FR}} + \abs{\frac{\partial T}{\partial S}} \cdot \delta S = \\
+							 &= \frac{V_{\mathrm{FR}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta D_{\mathrm{out}} + \frac{D_{\mathrm{out}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta V_{\mathrm{FR}} + \delta T^{sensor} = \\
+							 &= \frac{1.1}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.1 + 2 = \\
+							 &= 1 + \frac{XXXX}{10m \cdot 2^{10}} \cdot 0.1 + 2 = \\
+							 &= XXXX \, \mathrm{K}
+				\end{split}
+			\end{equation*}
+			Come si può notare, essa è minore dell'incertezza associata alla precedente misurazione, pertanto questa misura è più affidabile della precedente.
 \end{document}
