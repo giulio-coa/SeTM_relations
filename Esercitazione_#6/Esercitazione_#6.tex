@@ -9,7 +9,7 @@
 	urlcolor=blue,
 ]{hyperref}
 \pdfinfo{
-	/Title(Esercitazione di Laboratorio: Arduino)
+	/Title(Esercitazione di Laboratorio: Misure di temperatura con sensore LM335 e scheda Arduino Uno)
 	/Author(Coa Giulio, Licastro Dario, Montano Alessandra)
 }
 \usepackage[italian]{babel}
@@ -55,7 +55,7 @@
 	\end{center}
 	\newline
 	\begin{center}
-		Arduino
+		Misure di temperatura con sensore LM335 e scheda Arduino Uno
 	\end{center}
 }
 \author{
@@ -99,6 +99,7 @@
 												 		   &						  & $ f_{\mathrm{uscita}} = 20 \, \mathrm{MHz} $, \\
 												 		   &						  & $ Z_{\mathrm{uscita}} = 50 \, \mathrm{\Omega} $ \\
 				\multirow{Scheda Arduino}	 		   	   & UNO					  & $ f_{\mathrm{c, max}} = 76.9 \, \mathrm{k\frac{Sa}{s}} $ \\
+														   &						  & $ \delta D_{\mathrm{out}} = 2 \, \mathrm{LSB} $ \\
 				\multirow{Sensore di temperatura}	 	   & LM335					  & $ S = 10 \, \mathrm{m\frac{V}{K}} $, \\
 														   &						  & $ V_{\mathrm{out}} = 0 \, \mathrm{V} $ @ $ 0 \, \mathrm{K} $ \\
 														   &						  & $ \delta T = \pm 2 \, \mathrm{\text{\textdegree}C} $ \\
@@ -299,9 +300,8 @@
 				\begin{split}
 					\delta T &= \abs{\frac{\partial T}{\partial D_{\mathrm{out}}}} \cdot \delta D_{\mathrm{out}} + \abs{\frac{\partial T}{\partial V_{\mathrm{FR}}}} \cdot \delta V_{\mathrm{FR}} + \abs{\frac{\partial T}{\partial S}} \cdot \delta S = \\
 							 &= \frac{V_{\mathrm{FR}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta D_{\mathrm{out}} + \frac{D_{\mathrm{out}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta V_{\mathrm{FR}} + \delta T^{sensor} = \\
-							 &= \frac{4.85}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{602}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
-							 &= 1 + \frac{602}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
-							 &= XXXX \, \mathrm{K}
+							 &= \frac{4.85}{10m \cdot 2^{10}} \cdot 2 + \frac{602}{10m \cdot 2^{10}} \cdot 0.4 + 2 = \\
+							 &= 26.46 \, \mathrm{K}
 				\end{split}
 			\end{equation*}
 		\subsection{Modifica del circuito di condizionamento}
@@ -365,9 +365,8 @@
 				\begin{split}
 					\delta T &= \abs{\frac{\partial T}{\partial D_{\mathrm{out}}}} \cdot \delta D_{\mathrm{out}} + \abs{\frac{\partial T}{\partial V_{\mathrm{FR}}}} \cdot \delta V_{\mathrm{FR}} + \abs{\frac{\partial T}{\partial S}} \cdot \delta S = \\
 							 &= \frac{V_{\mathrm{FR}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta D_{\mathrm{out}} + \frac{D_{\mathrm{out}}}{S \cdot 2^{N_{\mathrm{B}}}} \cdot \delta V_{\mathrm{FR}} + \delta T^{sensor} = \\
-							 &= \frac{1.1}{10m \cdot 2^{10}} \cdot \delta D_{\mathrm{out}} + \frac{566}{10m \cdot 2^{10}} \cdot 0.1 + 2 = \\
-							 &= 1 + \frac{566}{10m \cdot 2^{10}} \cdot 0.1 + 2 = \\
-							 &= XXXX \, \mathrm{K}
+							 &= \frac{1.1}{10m \cdot 2^{10}} \cdot 2 + \frac{566}{10m \cdot 2^{10}} \cdot 0.1 + 2 = \\
+							 &= 7.74 \, \mathrm{K}
 				\end{split}
 			\end{equation*}
 			Come si può notare, essa è minore dell'incertezza associata alla precedente misurazione, pertanto questa misura è più affidabile della precedente.
