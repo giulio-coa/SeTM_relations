@@ -1,12 +1,16 @@
 ---
 name: Bug Report
 about: Create a bug report affecting the library
+title: ''
+labels: bug, help wanted
+assignees: giulioc008
+
 ---
 
 <!-- WARNING: Ignoring this template could lead to the issue being closed as incomplete -->
 
 ## Checklist
-- [ ] I am sure the error is coming from relations and not elsewhere.
+- [ ] I am sure the error is coming from project's code and not elsewhere.
 - [ ] I have searched in the issue tracker for similar bug reports, including closed ones.
 
 ## Description

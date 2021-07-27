@@ -1,7 +1,10 @@
 ---
 name: Feature Request
 about: Suggest ideas, new features or enhancements
-labels: "enhancement"
+title: ''
+labels: enhancement
+assignees: giulioc008
+
 ---
 
 <!-- WARNING: Ignoring this template could lead to the issue being closed as incomplete -->
