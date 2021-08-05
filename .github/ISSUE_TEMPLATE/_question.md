@@ -3,7 +3,7 @@ name: Ask Question
 about: Ask a project related question
 title: ''
 labels: question
-assignees: giulioc008
+assignees: giulio-coa
 
 ---
 

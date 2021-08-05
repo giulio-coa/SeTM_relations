@@ -3,7 +3,7 @@ name: Feature Request
 about: Suggest ideas, new features or enhancements
 title: ''
 labels: enhancement
-assignees: giulioc008
+assignees: giulio-coa
 
 ---
 

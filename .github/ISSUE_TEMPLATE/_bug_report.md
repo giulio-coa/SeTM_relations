@@ -1,9 +1,9 @@
 ---
 name: Bug Report
-about: Create a bug report affecting the library
+about: Create a bug report affecting the project
 title: ''
 labels: bug, help wanted
-assignees: giulioc008
+assignees: giulio-coa
 
 ---
 

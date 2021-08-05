@@ -4,7 +4,7 @@ labels:
   - bug
   - help wanted
 assignees:
-  - giulioc008
+  - giulio-coa
 body:
   - type: checkboxes
     id: checklist

@@ -3,7 +3,7 @@ description: Ask a project related question
 labels:
   - question
 assignees:
-  - giulioc008
+  - giulio-coa
 body:
   - type: markdown
     attributes:

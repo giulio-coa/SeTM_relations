@@ -3,7 +3,7 @@ description: Suggest ideas, new features or enhancements
 labels:
   - enhancement
 assignees:
-  - giulioc008
+  - giulio-coa
 body:
   - type: checkboxes
     id: checklist
